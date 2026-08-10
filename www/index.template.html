@@ -10,55 +10,113 @@
 <title>AI 论文档案库 · 内容直读</title>
 <style>
   :root{
-    --bg:#f4f8ff; --panel:#ffffff; --ink:#0f2747; --muted:#5b7290;
-    --line:#dbe6f5; --accent:#2563eb; --accent-d:#1d4ed8; --accent-soft:#eaf1ff;
+    --bg:#eef1fb; --panel:#ffffff; --ink:#0f2747; --muted:#5b7290;
+    --line:#dce7f6; --accent:#2563eb; --accent-d:#1d4ed8; --accent-soft:#eaf1ff;
     --x:#7c3aed; --x-soft:#f3ecff; --research:#0ea5e9; --research-soft:#e6f6fe;
     --media:#f59e0b; --media-soft:#fff5e6; --hf:#10b981; --hf-soft:#e7faf2;
-    --shadow:0 6px 24px rgba(37,99,235,.08);
+    --purple:#7c3aed; --purple-d:#6d28d9; --purple-soft:#f3ecff;
+    --grad:linear-gradient(135deg,#6366f1,#2563eb 45%,#7c3aed 100%);
+    --shadow:0 8px 30px rgba(99,102,241,.12); --radius:18px;
+    --font-tech:"SF Mono","JetBrains Mono","Fira Code","Roboto Mono",ui-monospace,Consolas,"Courier New",monospace;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
-    background:linear-gradient(180deg,#eef4ff 0%,#f4f8ff 240px,#f4f8ff 100%);
+    background:
+      radial-gradient(circle at 18px 18px, rgba(37,99,235,.05) 1.4px, transparent 1.4px) 0 0/34px 34px,
+      linear-gradient(180deg,#e9f0fd 0%,#eef3fb 200px,#eef3fb 100%);
     color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     line-height:1.65; -webkit-font-smoothing:antialiased;
-    padding-top:env(safe-area-inset-top); padding-bottom:48px;
+    padding-top:env(safe-area-inset-top); padding-bottom:60px;
   }
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
-  /* ---------- Header ---------- */
+  /* ---------- Hero ---------- */
   header.hero{
-    background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);
-    color:#fff;padding:40px 0 30px;box-shadow:0 10px 30px rgba(29,78,216,.25);
+    position:relative;overflow:hidden;
+    background:linear-gradient(125deg,#4f46e5,#2563eb 42%,#7c3aed 72%,#a855f7 100%);
+    background-size:220% 220%;animation:heroShift 14s ease infinite;
+    color:#fff;padding:46px 0 30px;box-shadow:0 14px 44px rgba(99,102,241,.32)
   }
-  .hero .wrap{padding:0 24px}
-  .hero h1{margin:0;font-size:30px;letter-spacing:.5px;font-weight:800}
-  .hero .sub{margin:8px 0 0;opacity:.9;font-size:14px}
+  @keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  header.hero::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%);pointer-events:none
+  }
+  .hero .wrap{position:relative;z-index:1;padding:0 24px}
+  .hero h1{margin:0;font-size:31px;letter-spacing:.5px;font-weight:800;
+    background:linear-gradient(90deg,#fff,#dbeafe);-webkit-background-clip:text;background-clip:text}
+  .hero .sub{margin:9px 0 0;opacity:.92;font-size:14px}
   .stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
   .stat{
-    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
-    border-radius:14px;padding:12px 16px;min-width:140px;flex:1
+    position:relative;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+    border-radius:14px;padding:13px 17px;min-width:142px;flex:1;backdrop-filter:blur(4px);
+    transition:transform .25s,background .25s
   }
+  .stat:hover{transform:translateY(-3px);background:rgba(255,255,255,.2)}
   .stat .k{font-size:12px;opacity:.85}
-  .stat .v{font-size:24px;font-weight:800;margin-top:2px}
-  .stat .sub{font-size:11px;opacity:.75;margin-top:2px}
+  .stat .v{font-size:25px;font-weight:800;margin-top:2px;font-variant-numeric:tabular-nums;font-family:var(--font-tech);letter-spacing:.5px}
+  .stat .sub{font-size:11px;opacity:.72;margin-top:2px}
+  .stat.clickable{cursor:pointer;overflow:hidden}
+  .stat.clickable:hover{transform:translateY(-3px)}
+  .stat .go{position:absolute;right:11px;top:11px;font-size:11px;font-weight:600;opacity:.85}
+  .stat.pdf{
+    background:linear-gradient(135deg,rgba(124,58,237,.32),rgba(37,99,235,.18))!important;
+    border-color:rgba(167,139,250,.55)!important
+  }
+  .stat.pdf:hover{background:linear-gradient(135deg,rgba(124,58,237,.45),rgba(37,99,235,.26)))!important}
+  .stat.pdf .v{color:#fff;text-shadow:0 1px 8px rgba(124,58,237,.4)}
+  .stat.pdf .k,.stat.pdf .sub{color:#eef2ff}
+
+  /* ---------- 指引横幅 ---------- */
+  .hint{
+    display:flex;align-items:flex-start;gap:10px;max-width:1080px;margin:18px auto 0;padding:13px 16px;
+    background:linear-gradient(90deg,#eff6ff,#f5f9ff);border:1px solid #cfe0ff;border-left:4px solid var(--accent);
+    border-radius:12px;font-size:13.5px;color:#274472;box-shadow:var(--shadow);
+    animation:hintIn .5s ease both
+  }
+  @keyframes hintIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .hint .ic{font-size:16px;line-height:1.4}
+  .hint b{color:var(--accent-d)}
+  .hint .x{margin-left:auto;cursor:pointer;border:none;background:none;color:#90a4c4;font-size:18px;line-height:1;padding:0 2px}
+  .hint .x:hover{color:var(--ink)}
+
+  /* ---------- 筛选条 ---------- */
+  .filterbar{display:flex;flex-wrap:wrap;gap:10px;margin:16px auto 0;max-width:1080px}
+  .fbtn{display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:1px solid var(--line);background:#fff;
+    color:var(--muted);font-size:13px;font-weight:600;padding:8px 15px;border-radius:999px;transition:all .2s;font-family:var(--font-tech)}
+  .fbtn span{background:var(--accent-soft);color:var(--accent-d);font-size:11px;padding:1px 8px;border-radius:999px;font-weight:800}
+  .fbtn:hover{border-color:rgba(124,58,237,.4);color:var(--ink)}
+  .fbtn.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(124,58,237,.3)}
+  .fbtn.active span{background:rgba(255,255,255,.25);color:#fff}
 
   /* ---------- Layout ---------- */
-  .archive{display:grid;grid-template-columns:160px 1fr;gap:0;margin-top:30px}
-  .timeline{position:relative;padding-top:6px}
+  .archive{display:grid;grid-template-columns:172px 1fr;gap:0;margin-top:26px;align-items:start}
+  .timeline{
+    position:sticky;top:90px;align-self:start;padding-top:6px;
+    max-height:calc(100vh - 116px);overflow-y:auto;scrollbar-width:thin;
+    scrollbar-color:var(--line) transparent
+  }
   .timeline::before{
     content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;
-    background:linear-gradient(180deg,var(--accent),var(--line));
+    background:linear-gradient(180deg,var(--accent),var(--line));border-radius:2px
   }
   .tl-date{
-    position:relative;margin:0 0 18px;padding-left:42px;font-weight:700;color:var(--accent-d);
-    font-size:13px
+    position:relative;margin:0 0 18px;padding-left:42px;font-weight:700;color:var(--accent-d);font-size:13px;
+    font-family:var(--font-tech);letter-spacing:.5px;text-shadow:0 0 1px rgba(37,99,235,.25);
+    cursor:pointer;transition:color .2s,transform .15s
   }
+  .tl-date:hover{color:var(--accent)}
+  .tl-date:active{transform:scale(.98)}
+  .tl-date .jump{opacity:0;font-size:10px;font-weight:600;color:var(--accent);margin-left:4px;transition:opacity .2s;white-space:nowrap}
+  .tl-date:hover .jump{opacity:1}
   .tl-date::before{
     content:"";position:absolute;left:11px;top:4px;width:16px;height:16px;border-radius:50%;
-    background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft)
+    background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft);
+    animation:nodePulse 2.4s ease-in-out infinite
   }
+  @keyframes nodePulse{0%,100%{box-shadow:0 0 0 4px var(--accent-soft)}50%{box-shadow:0 0 0 7px rgba(37,99,235,.12)}}
   .tl-date small{display:block;font-weight:500;color:var(--muted);font-size:11px}
 
   .cards{display:flex;flex-direction:column;gap:18px;padding-left:8px}
@@ -66,15 +124,24 @@
   /* ---------- Card ---------- */
   .card{
     position:relative;background:var(--panel);border:1px solid var(--line);
-    border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);
-    opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;
-    overflow:hidden
+    border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);
+    opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease,box-shadow .3s;
+    overflow:hidden;scroll-margin-top:96px
   }
   .card.in{opacity:1;transform:none}
-  .card:hover{box-shadow:0 10px 30px rgba(37,99,235,.14);transform:translateY(-2px)}
+  .card::before{
+    content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;
+    background:linear-gradient(135deg,rgba(37,99,235,.0),rgba(37,99,235,.0));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;pointer-events:none
+  }
+  .card:hover{box-shadow:0 14px 38px rgba(37,99,235,.16);transform:translateY(-3px)}
+  .card:hover::before{opacity:1;background:linear-gradient(135deg,rgba(37,99,235,.5),rgba(14,165,233,.35))}
   .seq-wm{
-    position:absolute;right:14px;top:6px;font-size:46px;font-weight:900;
-    color:var(--accent-soft);line-height:1;pointer-events:none;user-select:none
+    position:absolute;right:14px;top:6px;font-size:46px;font-weight:900;line-height:1;
+    font-family:var(--font-tech);letter-spacing:1px;
+    background:linear-gradient(135deg,var(--accent-soft),#dbeafe);-webkit-background-clip:text;background-clip:text;
+    color:transparent;pointer-events:none;user-select:none
   }
   .card-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
   .badge{
@@ -85,12 +152,12 @@
   .badge.b-research{background:var(--research-soft);color:var(--research);border-color:#c7eafb}
   .badge.b-media{background:var(--media-soft);color:#b87403;border-color:#ffe2b0}
   .badge.b-hf{background:var(--hf-soft);color:#0a8a63;border-color:#c4f0dd}
-  .rel{font-size:12px;color:var(--muted)}
-  .title{margin:2px 0 8px;font-size:18px;line-height:1.5;font-weight:800;color:var(--ink);padding-right:54px}
+  .rel{font-size:12px;color:var(--muted);font-family:var(--font-tech);letter-spacing:.3px}
+  .title{margin:2px 0 9px;font-size:18.5px;line-height:1.5;font-weight:800;color:var(--ink);padding-right:54px}
   .summary{margin:0 0 12px;font-size:14.5px;color:#243a57}
   .expand-btn{
     background:none;border:1px dashed #b9cdf0;color:var(--accent-d);
-    font-size:12.5px;padding:5px 12px;border-radius:8px;cursor:pointer;margin-bottom:10px
+    font-size:12.5px;padding:5px 12px;border-radius:8px;cursor:pointer;margin-bottom:10px;transition:background .2s
   }
   .expand-btn:hover{background:var(--accent-soft)}
   .abstract-en{
@@ -98,47 +165,126 @@
     border-radius:10px;padding:12px 14px;font-size:13px;color:#33486a;margin-bottom:12px;
     font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;white-space:pre-wrap
   }
+
+  /* ---------- 底部动作 ---------- */
   .card-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .pdf-link{
-    display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;
-    font-size:13px;font-weight:700;text-decoration:none;padding:8px 14px;border-radius:10px;
-    box-shadow:0 4px 12px rgba(37,99,235,.3)
+    position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:7px;
+    background:linear-gradient(135deg,var(--accent),#3b82f6);color:#fff;
+    font-size:13px;font-weight:700;text-decoration:none;padding:9px 15px;border-radius:11px;
+    box-shadow:0 6px 16px rgba(37,99,235,.32);cursor:pointer;
+    transition:transform .18s,box-shadow .25s
   }
-  .pdf-link:hover{background:var(--accent-d)}
+  .pdf-link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,99,235,.42)}
+  .pdf-link:active{transform:translateY(0) scale(.97)}
+  .pdf-link .pdf-ic{font-size:15px;transition:transform .3s}
+  .pdf-link:hover .pdf-ic{transform:translateY(2px)}
+  .pdf-link.pulse{animation:pdfPulse 1.8s ease-in-out 2}
+  @keyframes pdfPulse{0%,100%{box-shadow:0 6px 16px rgba(37,99,235,.32)}50%{box-shadow:0 0 0 8px rgba(37,99,235,.18),0 6px 16px rgba(37,99,235,.32)}}
+  .pdf-link::after{ /* 悬浮提示 */
+    content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%) translateY(4px);
+    background:#0f2747;color:#fff;font-size:11.5px;font-weight:500;white-space:nowrap;
+    padding:6px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+    box-shadow:0 6px 18px rgba(15,39,71,.3)
+  }
+  .pdf-link::before{ /* 提示小三角 */
+    content:"";position:absolute;left:50%;bottom:calc(100% + 3px);transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:#0f2747;opacity:0;transition:opacity .2s
+  }
+  .pdf-link:hover::after,.pdf-link:hover::before{opacity:1;transform:translateX(-50%) translateY(0)}
+  .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);
+    animation:rip .6s ease-out;pointer-events:none}
+  @keyframes rip{to{transform:scale(3.2);opacity:0}}
+
   .src-link{
     display:inline-flex;align-items:center;gap:5px;color:var(--accent-d);font-size:13px;
     font-weight:600;text-decoration:none;border:1px solid var(--line);
-    padding:7px 12px;border-radius:10px;background:#fff
+    padding:8px 13px;border-radius:11px;background:#fff;transition:background .2s,transform .18s
   }
-  .src-link:hover{background:var(--accent-soft)}
+  .src-link:hover{background:var(--accent-soft);transform:translateY(-1px)}
   .src-link .arw{transition:transform .2s}
   .src-link:hover .arw{transform:translate(2px,-2px)}
   .proxy-note{font-size:12px;color:#94a3b8}
   .proxy-note a{color:#a78bda;text-decoration:none;border-bottom:1px dotted #c4b1ec}
   .proxy-note a:hover{color:var(--x)}
 
-  footer.foot{
-    text-align:center;color:var(--muted);font-size:12px;margin-top:40px;padding:0 16px 10px
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);
+    background:#0f2747;color:#fff;font-size:13px;padding:11px 18px;border-radius:12px;
+    box-shadow:0 10px 30px rgba(15,39,71,.4);opacity:0;pointer-events:none;z-index:50;
+    transition:opacity .3s,transform .3s;display:flex;align-items:center;gap:9px;max-width:90vw
   }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .toast .spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ---------- 可下载 PDF 弹窗 ---------- */
+  .modal{position:fixed;inset:0;z-index:60;display:none}
+  .modal.open{display:block}
+  .modal-back{position:absolute;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(6px);animation:fadeIn .25s ease}
+  .modal-panel{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);
+    width:min(680px,92vw);max-height:84vh;display:flex;flex-direction:column;
+    background:rgba(255,255,255,.97);border:1px solid rgba(124,58,237,.3);border-radius:20px;
+    box-shadow:0 30px 80px rgba(76,29,149,.35);overflow:hidden;animation:popIn .3s cubic-bezier(.2,.8,.2,1)
+  }
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes popIn{from{opacity:0;transform:translate(-50%,-46%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+  .modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;background:var(--grad);color:#fff}
+  .modal-head h2{margin:0;font-size:19px;font-weight:800}
+  .modal-head p{margin:3px 0 0;font-size:12.5px;opacity:.9}
+  .modal-x{border:none;background:rgba(255,255,255,.2);color:#fff;width:32px;height:32px;border-radius:9px;font-size:20px;line-height:1;cursor:pointer;transition:background .2s}
+  .modal-x:hover{background:rgba(255,255,255,.35)}
+  .modal-body{overflow-y:auto;padding:14px 18px 20px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+  .pdf-cat{margin-bottom:14px}
+  .pdf-cat-h{font-size:13px;font-weight:800;color:var(--purple-d);margin:6px 2px 8px;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
+  .pdf-cat-h:hover{color:var(--purple)}
+  .pdf-cat-h span{background:var(--purple-soft);color:var(--purple-d);font-size:11px;padding:1px 9px;border-radius:999px;font-family:var(--font-tech)}
+  .pdf-cat-h .chv{margin-left:auto;font-size:12px;transition:transform .25s;color:var(--purple)}
+  .pdf-cat.collapsed .chv{transform:rotate(-90deg)}
+  .pdf-cat.collapsed .pdf-cat-list{display:none}
+  .modal-head-actions{display:flex;align-items:center;gap:8px}
+  .modal-toggle{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.15);color:#fff;font-size:12px;padding:5px 11px;border-radius:9px;cursor:pointer;transition:background .2s}
+  .modal-toggle:hover{background:rgba(255,255,255,.3)}
+  .pdf-cat-list{display:flex;flex-direction:column;gap:8px}
+  .pdf-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .pdf-row:hover{border-color:rgba(124,58,237,.4);box-shadow:0 6px 18px rgba(124,58,237,.1)}
+  .pdf-row-main{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+  .pdf-seq{font-family:var(--font-tech);font-size:12px;font-weight:800;color:var(--accent);background:var(--accent-soft);border-radius:7px;padding:2px 7px;flex:none}
+  .pdf-title{font-size:13.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pdf-mini{flex:none;display:inline-flex;align-items:center;gap:5px;background:var(--grad);color:#fff;font-size:12.5px;font-weight:700;text-decoration:none;padding:7px 13px;border-radius:10px;box-shadow:0 4px 12px rgba(124,58,237,.3);transition:transform .18s,box-shadow .2s}
+  .pdf-mini:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,58,237,.42)}
+  .pdf-mini:active{transform:scale(.97)}
+
+  footer.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:42px;padding:0 16px 10px}
   footer.foot a{color:var(--accent);text-decoration:none}
 
   /* ---------- Responsive ---------- */
   @media (max-width:760px){
-    .archive{grid-template-columns:34px 1fr;gap:0}
-    .timeline::before{left:6px}
-    .tl-date{padding-left:22px;font-size:12px}
-    .tl-date::before{left:-1px;width:13px;height:13px}
+    .archive{grid-template-columns:60px 1fr;gap:0}
+    .timeline{position:sticky;top:58px;max-height:calc(100vh - 74px)}
+    .timeline::before{left:8px}
+    .tl-date{padding-left:24px;font-size:11px;letter-spacing:0}
+    .tl-date .dy{display:none}
+    .tl-date small{display:none}
+    .tl-date::before{left:2px;width:12px;height:12px;animation:none}
     .tl-time{display:none}
     .cards{padding-left:4px}
     .card{padding:16px 15px}
     .title{font-size:16.5px}
     .seq-wm{font-size:38px}
     .hero h1{font-size:23px}
-    .stat .v{font-size:20px}
+    .stat .v{font-size:21px}
+    .hint{font-size:12.5px}
   }
   @media (max-width:420px){
     .badge{font-size:11px;padding:2px 8px}
     .stat{min-width:calc(50% - 6px)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .card{opacity:1;transform:none}
   }
 </style>
 </head>
@@ -148,13 +294,29 @@
     <h1>AI 论文档案库</h1>
     <p class="sub">最近 7 天精选 · 内容直读版 —— 中文标题与摘要直接呈现，arXiv 附完整摘要，来源链接按需标注</p>
     <div class="stats">
-      <div class="stat"><div class="k">论文总数</div><div class="v" id="stat-total"></div><div class="sub">按发布时间倒序</div></div>
+      <div class="stat"><div class="k">论文总数</div><div class="v" id="stat-total" data-count></div><div class="sub">按发布时间倒序</div></div>
       <div class="stat"><div class="k">收录日期范围</div><div class="v" id="stat-range" style="font-size:19px"></div><div class="sub">北京时间</div></div>
-      <div class="stat"><div class="k">可下载 PDF</div><div class="v" id="stat-pdf"></div><div class="sub">arXiv 官方直链</div></div>
-      <div class="stat"><div class="k">需代理源</div><div class="v" id="stat-x"></div><div class="sub">X / 境外媒体</div></div>
+      <div class="stat pdf clickable" id="stat-pdf-card"><span class="go">↧ 浏览</span><div class="k">可下载 PDF</div><div class="v" id="stat-pdf" data-count></div><div class="sub">arXiv 官方 · 点击看分类</div></div>
+      <div class="stat"><div class="k">需代理源</div><div class="v" id="stat-x" data-count></div><div class="sub">X / 境外媒体</div></div>
     </div>
   </div>
 </header>
+
+<div class="wrap">
+  <div class="hint" id="hint">
+    <span class="ic">💡</span>
+    <div><b>蓝紫渐变按钮「下载 PDF ↧」</b>：点击从 arXiv 官方直接下载论文 PDF（新标签页打开）；<b>底部灰色小字</b>为 X / 境外媒体源，国内需代理才能访问。卡片正文即中文摘要，无需外链也能读。</div>
+    <button class="x" id="hintClose" aria-label="关闭">×</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="filterbar" id="filterbar">
+    <button class="fbtn active" data-f="all">全部 <span></span></button>
+    <button class="fbtn" data-f="pdf">仅可下载 <span></span></button>
+    <button class="fbtn" data-f="proxy">仅需代理 <span></span></button>
+  </div>
+</div>
 
 <main class="wrap">
   <div class="archive">
@@ -167,40 +329,60 @@
   <p>内容由 AI HOT 聚合整理，每日自动更新 · 摘要为 AI 生成中文速览，arXiv 摘要为原文英文 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener">AI HOT</a></p>
 </footer>
 
+<div class="modal" id="pdfModal" aria-hidden="true">
+  <div class="modal-back" id="pdfBack"></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="可下载 PDF 论文">
+    <div class="modal-head">
+      <div><h2>可下载 PDF 论文</h2><p id="pdfModalSub"></p></div>
+      <div class="modal-head-actions">
+        <button class="modal-toggle" id="pdfToggle">全部折叠</button>
+        <button class="modal-x" id="pdfClose" aria-label="关闭">×</button>
+      </div>
+    </div>
+    <div class="modal-body" id="pdfModalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="spin"></span><span id="toastMsg"></span></div>
+
 <script>
 const ARCHIVE = __ARCHIVE_JSON__;
 (function(){
   const papers = ARCHIVE.papers, meta = ARCHIVE.meta;
   // 统计卡
-  document.getElementById('stat-total').textContent = meta.total;
   document.getElementById('stat-range').textContent = meta.earliest + ' ~ ' + meta.latest;
-  document.getElementById('stat-pdf').textContent = meta.pdfCount;
-  document.getElementById('stat-x').textContent = meta.xCount;
+  setCount('stat-total', meta.total);
+  setCount('stat-pdf', meta.pdfCount);
+  setCount('stat-x', meta.xCount);
 
-  // 相对时间（打开时刻实时计算）
+  function setCount(id, n){
+    const el = document.getElementById(id);
+    const target = Number(n)||0;
+    if(!('requestAnimationFrame' in window)){ el.textContent = target; return; }
+    const dur = 900, t0 = performance.now();
+    (function tick(now){
+      const p = Math.min(1,(now-t0)/dur);
+      const e = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*e);
+      if(p<1) requestAnimationFrame(tick); else el.textContent = target;
+    })(t0);
+  }
+
+  // 相对时间
   function relTime(iso){
     const t = new Date(iso).getTime();
-    const now = Date.now();
-    const s = Math.max(1, Math.floor((now - t)/1000));
+    const s = Math.max(1, Math.floor((Date.now()-t)/1000));
     if(s<60) return s+' 秒前';
     const m = Math.floor(s/60); if(m<60) return m+' 分钟前';
     const h = Math.floor(m/60); if(h<24) return h+' 小时前';
     const d = Math.floor(h/24); if(d<30) return d+' 天前';
     return Math.floor(d/30)+' 个月前';
   }
-  function beijingDate(iso){
-    // 转北京时间 YYYY-MM-DD
-    const d = new Date(new Date(iso).getTime() + 8*3600*1000);
-    return d.toISOString().slice(0,10);
-  }
-  function beijingTime(iso){
-    const d = new Date(new Date(iso).getTime() + 8*3600*1000);
-    return d.toISOString().slice(11,16);
-  }
+  function beijingDate(iso){ return new Date(new Date(iso).getTime()+8*3600*1000).toISOString().slice(0,10); }
+  function beijingTime(iso){ return new Date(new Date(iso).getTime()+8*3600*1000).toISOString().slice(11,16); }
 
-  // 按日期分组（北京时间）
-  const groups = [];
-  const map = {};
+  // 分组
+  const groups = [], map = {};
   papers.forEach(p=>{
     const day = beijingDate(p.ts);
     if(!map[day]){ map[day]={day,list:[]}; groups.push(map[day]); }
@@ -212,18 +394,23 @@ const ARCHIVE = __ARCHIVE_JSON__;
   const cards = document.getElementById('cards');
   const esc = s => (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+  let firstPdf = true;
   groups.forEach(g=>{
     const first = g.list[0];
     const div = document.createElement('div');
     div.className='tl-date';
-    div.innerHTML = g.day + '<small>'+ beijingTime(first.ts) +' 起</small>';
+    div.dataset.target = 'day-'+g.day;
+    div.tabIndex = 0;
+    div.setAttribute('role','button');
+    div.setAttribute('aria-label','跳转到 '+g.day+' 的论文');
+    div.innerHTML = '<span class="dy">'+ g.day.slice(0,5) +'</span>'+ g.day.slice(5) +'<small>'+ beijingTime(first.ts) +' 起 <span class="jump">点击跳转 ↓</span></small>';
     tl.appendChild(div);
 
-    g.list.forEach(p=>{
+    g.list.forEach((p, idx)=>{
+      const anchor = (idx===0) ? (' id="day-'+g.day+'"') : '';
       const linkAttr = p.link ? ('href="'+esc(p.link)+'" target="_blank" rel="noopener"') : '';
-      // 卡片正文（摘要直接呈现）
       let html = '';
-      html += '<article class="card" data-type="'+p.srcType+'">';
+      html += '<article class="card"'+anchor+' data-type="'+p.srcType+'"'+(p.pdf?' data-pdf="1"':' data-pdf="0"')+'>';
       html += '<div class="seq-wm">'+String(p.seq).padStart(2,'0')+'</div>';
       html += '<div class="card-head">'
             + '<span class="badge b-'+p.srcType+'">'+esc(p.badge)+'</span>'
@@ -231,20 +418,20 @@ const ARCHIVE = __ARCHIVE_JSON__;
       html += '<h3 class="title">'+esc(p.title)+'</h3>';
       html += '<p class="summary">'+esc(p.summary)+'</p>';
 
-      // arXiv 完整英文摘要（内联展开）
       if(p.abstractEn){
         const aid = 'abs'+p.seq;
         html += '<button class="expand-btn" data-target="'+aid+'">展开原文摘要（英文）▾</button>';
         html += '<div class="abstract-en" id="'+aid+'" hidden>'+esc(p.abstractEn)+'</div>';
       }
 
-      // 底部动作区
       html += '<div class="card-foot">';
       if(p.pdf){
-        html += '<a class="pdf-link" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">下载 PDF ↧</a>';
+        const pulse = firstPdf ? ' pulse' : '';
+        firstPdf = false;
+        html += '<a class="pdf-link'+pulse+'" data-tip="点击从 arXiv 官方下载 PDF · 新标签页打开" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">'
+              + '<span class="pdf-ic">↧</span>下载 PDF</a>';
         html += '<a class="src-link" '+linkAttr+'>arXiv 原文 <span class="arw">↗</span></a>';
       } else if(p.srcType==='x'){
-        // X：链接降为角落小字，注明需代理
         html += '<span class="proxy-note">原文发布于 X（国内需代理打开）：'
               + '<a href="'+esc(p.link)+'" target="_blank" rel="noopener">查看原帖 ↗</a></span>';
       } else if(p.link){
@@ -266,9 +453,134 @@ const ARCHIVE = __ARCHIVE_JSON__;
     });
   });
 
-  // 滚动渐入
+  // 时间轴日期 → 平滑跳转到当天论文
+  document.querySelectorAll('.tl-date').forEach(td=>{
+    const go = ()=>{
+      const el = document.getElementById(td.dataset.target);
+      if(el){
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        el.style.transition = 'box-shadow .4s';
+        el.style.boxShadow = '0 0 0 3px var(--accent-soft), 0 14px 38px rgba(37,99,235,.22)';
+        setTimeout(()=>{ el.style.boxShadow=''; }, 900);
+      }
+    };
+    td.addEventListener('click', go);
+    td.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); }});
+  });
+
+  // 指引横幅
+  const hint = document.getElementById('hint');
+  if(sessionStorage.getItem('aihint_closed')) hint.style.display='none';
+  document.getElementById('hintClose').addEventListener('click', ()=>{
+    hint.style.display='none'; sessionStorage.setItem('aihint_closed','1');
+  });
+
+  // 顶部筛选条
+  const fbtns = document.querySelectorAll('.fbtn');
+  fbtns[0].querySelector('span').textContent = meta.total;
+  fbtns[1].querySelector('span').textContent = meta.pdfCount;
+  fbtns[2].querySelector('span').textContent = meta.xCount;
+  function applyFilter(f){
+    document.querySelectorAll('.card').forEach(card=>{
+      let show = true;
+      if(f==='pdf') show = card.dataset.pdf==='1';
+      else if(f==='proxy') show = card.dataset.type==='x';
+      card.style.display = show ? '' : 'none';
+      if(show) card.classList.add('in');
+    });
+  }
+  fbtns.forEach(b=> b.addEventListener('click', ()=>{
+    fbtns.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    applyFilter(b.dataset.f);
+  }));
+
+  // Toast
+  const toast = document.getElementById('toast'), toastMsg = document.getElementById('toastMsg');
+  let toastTimer;
+  function showToast(msg, ms=2200){
+    toastMsg.textContent = msg; toast.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove('show'), ms);
+  }
+
+  // PDF 点击：水波纹 + toast 指引
+  document.querySelectorAll('.pdf-link').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const r = btn.getBoundingClientRect();
+      const rip = document.createElement('span');
+      const size = Math.max(r.width, r.height);
+      rip.className='ripple';
+      rip.style.width = rip.style.height = size+'px';
+      rip.style.left = (e.clientX - r.left - size/2)+'px';
+      rip.style.top  = (e.clientY - r.top  - size/2)+'px';
+      btn.appendChild(rip);
+      setTimeout(()=>rip.remove(), 600);
+      showToast('正在打开 arXiv 官方 PDF（新标签页）…');
+      // 关闭首次脉冲
+      btn.classList.remove('pulse');
+    });
+  });
+
+  // 可下载 PDF 弹窗（按主题分类）
+  const CAT_ORDER = ['智能体','大语言模型','多模态/视觉','强化学习','检索/RAG','推理与训练','其他'];
+  const pdfModal = document.getElementById('pdfModal');
+  const pdfBody = document.getElementById('pdfModalBody');
+  const pdfSub = document.getElementById('pdfModalSub');
+  function openPdfModal(){
+    const dl = ARCHIVE.papers.filter(p=>p.pdf);
+    const groups = {};
+    dl.forEach(p=>{ (groups[p.cat]=groups[p.cat]||[]).push(p); });
+    const cats = Object.keys(groups).sort((a,b)=> CAT_ORDER.indexOf(a)-CAT_ORDER.indexOf(b));
+    let h = '';
+    cats.forEach(c=>{
+      h += '<div class="pdf-cat"><div class="pdf-cat-h">'+esc(c)+'<span>'+groups[c].length+'</span><span class="chv">▾</span></div><div class="pdf-cat-list">';
+      groups[c].forEach(p=>{
+        h += '<div class="pdf-row"><div class="pdf-row-main"><span class="pdf-seq">'+String(p.seq).padStart(2,'0')+'</span>'
+           + '<span class="pdf-title" title="'+esc(p.title)+'">'+esc(p.title)+'</span></div>'
+           + '<a class="pdf-mini" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">下载 PDF ↧</a></div>';
+      });
+      h += '</div></div>';
+    });
+    pdfBody.innerHTML = h;
+    pdfSub.textContent = '共 '+dl.length+' 篇 · 按主题分类 · 均来自 arXiv 官方';
+    pdfModal.classList.add('open');
+    pdfModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    pdfBody.scrollTop = 0;
+    // 分类折叠
+    pdfBody.querySelectorAll('.pdf-cat-h').forEach(hd=>{
+      hd.addEventListener('click', ()=> hd.parentElement.classList.toggle('collapsed'));
+    });
+    const toggleBtn = document.getElementById('pdfToggle');
+    toggleBtn.textContent = '全部折叠';
+    toggleBtn.onclick = ()=>{
+      const cats = pdfBody.querySelectorAll('.pdf-cat');
+      const anyOpen = [...cats].some(c=>!c.classList.contains('collapsed'));
+      cats.forEach(c=> c.classList.toggle('collapsed', anyOpen));
+      toggleBtn.textContent = anyOpen ? '全部展开' : '全部折叠';
+    };
+  }
+  function closePdfModal(){
+    pdfModal.classList.remove('open');
+    pdfModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('stat-pdf-card').addEventListener('click', openPdfModal);
+  document.getElementById('pdfClose').addEventListener('click', closePdfModal);
+  document.getElementById('pdfBack').addEventListener('click', closePdfModal);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && pdfModal.classList.contains('open')) closePdfModal(); });
+  pdfBody.addEventListener('click', e=>{
+    if(e.target.closest('.pdf-mini')) showToast('正在打开 arXiv 官方 PDF（新标签页）…');
+  });
+
+  // 滚动渐入（带交错）
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        e.target.style.transitionDelay = (Math.min(i,6)*40)+'ms';
+        e.target.classList.add('in'); io.unobserve(e.target);
+      }
+    });
   }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.card').forEach(c=>io.observe(c));
 })();

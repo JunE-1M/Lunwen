@@ -113,6 +113,23 @@ def make_badge(src_name):
     return n
 
 
+def classify_cat(title):
+    """按标题关键词把论文归入主题类（用于『可下载 PDF』弹窗分组）。"""
+    t = (title or "").lower()
+    rules = [
+        ("智能体", ["智能体", "agent", "agentic", "多智能体", "workflow"]),
+        ("大语言模型", ["语言模型", "llm", "大模型", "gpt", "transformer", "预训练", "token"]),
+        ("多模态/视觉", ["视觉", "图像", "vision", "image", "视频", "多模态", "multimodal", "speech"]),
+        ("强化学习", ["强化学习", "reinforcement", "reward", "奖励", "rlhf"]),
+        ("检索/RAG", ["检索", "retrieval", "rag", "embedding", "向量", "search"]),
+        ("推理与训练", ["推理", "训练", "training", "inference", "蒸馏", "微调", "fine-tun", "量化"]),
+    ]
+    for cat, kws in rules:
+        if any(k in t for k in kws):
+            return cat
+    return "其他"
+
+
 # ---------------------------------------------------------------------------
 # arXiv 完整摘要抓取（生成阶段联网；国内用户无需再访问 arXiv）
 # ---------------------------------------------------------------------------
@@ -193,6 +210,7 @@ def build(window="7d", take=50, out=OUTPUT):
             "link": link,              # 原文链接（X 类国内需代理）
             "pdf": None,
             "abstractEn": None,        # arXiv 完整英文摘要（内联展开）
+            "cat": classify_cat(title),  # 主题分类（弹窗分组用）
         }
 
         # arXiv：抓完整摘要 + PDF 直链
