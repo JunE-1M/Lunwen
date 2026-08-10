@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1d4ed8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<title>AI 论文档案库 · 内容直读</title>
+<style>
+  :root{
+    --bg:#f4f8ff; --panel:#ffffff; --ink:#0f2747; --muted:#5b7290;
+    --line:#dbe6f5; --accent:#2563eb; --accent-d:#1d4ed8; --accent-soft:#eaf1ff;
+    --x:#7c3aed; --x-soft:#f3ecff; --research:#0ea5e9; --research-soft:#e6f6fe;
+    --media:#f59e0b; --media-soft:#fff5e6; --hf:#10b981; --hf-soft:#e7faf2;
+    --shadow:0 6px 24px rgba(37,99,235,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:linear-gradient(180deg,#eef4ff 0%,#f4f8ff 240px,#f4f8ff 100%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top); padding-bottom:48px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header ---------- */
+  header.hero{
+    background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);
+    color:#fff;padding:40px 0 30px;box-shadow:0 10px 30px rgba(29,78,216,.25);
+  }
+  .hero .wrap{padding:0 24px}
+  .hero h1{margin:0;font-size:30px;letter-spacing:.5px;font-weight:800}
+  .hero .sub{margin:8px 0 0;opacity:.9;font-size:14px}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .stat{
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+    border-radius:14px;padding:12px 16px;min-width:140px;flex:1
+  }
+  .stat .k{font-size:12px;opacity:.85}
+  .stat .v{font-size:24px;font-weight:800;margin-top:2px}
+  .stat .sub{font-size:11px;opacity:.75;margin-top:2px}
+
+  /* ---------- Layout ---------- */
+  .archive{display:grid;grid-template-columns:160px 1fr;gap:0;margin-top:30px}
+  .timeline{position:relative;padding-top:6px}
+  .timeline::before{
+    content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;
+    background:linear-gradient(180deg,var(--accent),var(--line));
+  }
+  .tl-date{
+    position:relative;margin:0 0 18px;padding-left:42px;font-weight:700;color:var(--accent-d);
+    font-size:13px
+  }
+  .tl-date::before{
+    content:"";position:absolute;left:11px;top:4px;width:16px;height:16px;border-radius:50%;
+    background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft)
+  }
+  .tl-date small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+
+  .cards{display:flex;flex-direction:column;gap:18px;padding-left:8px}
+
+  /* ---------- Card ---------- */
+  .card{
+    position:relative;background:var(--panel);border:1px solid var(--line);
+    border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);
+    opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;
+    overflow:hidden
+  }
+  .card.in{opacity:1;transform:none}
+  .card:hover{box-shadow:0 10px 30px rgba(37,99,235,.14);transform:translateY(-2px)}
+  .seq-wm{
+    position:absolute;right:14px;top:6px;font-size:46px;font-weight:900;
+    color:var(--accent-soft);line-height:1;pointer-events:none;user-select:none
+  }
+  .card-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .badge{
+    font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent-d);border:1px solid #cfe0ff
+  }
+  .badge.b-x{background:var(--x-soft);color:var(--x);border-color:#e3d4ff}
+  .badge.b-research{background:var(--research-soft);color:var(--research);border-color:#c7eafb}
+  .badge.b-media{background:var(--media-soft);color:#b87403;border-color:#ffe2b0}
+  .badge.b-hf{background:var(--hf-soft);color:#0a8a63;border-color:#c4f0dd}
+  .rel{font-size:12px;color:var(--muted)}
+  .title{margin:2px 0 8px;font-size:18px;line-height:1.5;font-weight:800;color:var(--ink);padding-right:54px}
+  .summary{margin:0 0 12px;font-size:14.5px;color:#243a57}
+  .expand-btn{
+    background:none;border:1px dashed #b9cdf0;color:var(--accent-d);
+    font-size:12.5px;padding:5px 12px;border-radius:8px;cursor:pointer;margin-bottom:10px
+  }
+  .expand-btn:hover{background:var(--accent-soft)}
+  .abstract-en{
+    background:#f7faff;border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:12px 14px;font-size:13px;color:#33486a;margin-bottom:12px;
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;white-space:pre-wrap
+  }
+  .card-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .pdf-link{
+    display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;
+    font-size:13px;font-weight:700;text-decoration:none;padding:8px 14px;border-radius:10px;
+    box-shadow:0 4px 12px rgba(37,99,235,.3)
+  }
+  .pdf-link:hover{background:var(--accent-d)}
+  .src-link{
+    display:inline-flex;align-items:center;gap:5px;color:var(--accent-d);font-size:13px;
+    font-weight:600;text-decoration:none;border:1px solid var(--line);
+    padding:7px 12px;border-radius:10px;background:#fff
+  }
+  .src-link:hover{background:var(--accent-soft)}
+  .src-link .arw{transition:transform .2s}
+  .src-link:hover .arw{transform:translate(2px,-2px)}
+  .proxy-note{font-size:12px;color:#94a3b8}
+  .proxy-note a{color:#a78bda;text-decoration:none;border-bottom:1px dotted #c4b1ec}
+  .proxy-note a:hover{color:var(--x)}
+
+  footer.foot{
+    text-align:center;color:var(--muted);font-size:12px;margin-top:40px;padding:0 16px 10px
+  }
+  footer.foot a{color:var(--accent);text-decoration:none}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:760px){
+    .archive{grid-template-columns:34px 1fr;gap:0}
+    .timeline::before{left:6px}
+    .tl-date{padding-left:22px;font-size:12px}
+    .tl-date::before{left:-1px;width:13px;height:13px}
+    .tl-time{display:none}
+    .cards{padding-left:4px}
+    .card{padding:16px 15px}
+    .title{font-size:16.5px}
+    .seq-wm{font-size:38px}
+    .hero h1{font-size:23px}
+    .stat .v{font-size:20px}
+  }
+  @media (max-width:420px){
+    .badge{font-size:11px;padding:2px 8px}
+    .stat{min-width:calc(50% - 6px)}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>AI 论文档案库</h1>
+    <p class="sub">最近 7 天精选 · 内容直读版 —— 中文标题与摘要直接呈现，arXiv 附完整摘要，来源链接按需标注</p>
+    <div class="stats">
+      <div class="stat"><div class="k">论文总数</div><div class="v" id="stat-total"></div><div class="sub">按发布时间倒序</div></div>
+      <div class="stat"><div class="k">收录日期范围</div><div class="v" id="stat-range" style="font-size:19px"></div><div class="sub">北京时间</div></div>
+      <div class="stat"><div class="k">可下载 PDF</div><div class="v" id="stat-pdf"></div><div class="sub">arXiv 官方直链</div></div>
+      <div class="stat"><div class="k">需代理源</div><div class="v" id="stat-x"></div><div class="sub">X / 境外媒体</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="archive">
+    <div class="timeline" id="timeline"></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>内容由 AI HOT 聚合整理，每日自动更新 · 摘要为 AI 生成中文速览，arXiv 摘要为原文英文 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener">AI HOT</a></p>
+</footer>
+
+<script>
+const ARCHIVE = __ARCHIVE_JSON__;
+(function(){
+  const papers = ARCHIVE.papers, meta = ARCHIVE.meta;
+  // 统计卡
+  document.getElementById('stat-total').textContent = meta.total;
+  document.getElementById('stat-range').textContent = meta.earliest + ' ~ ' + meta.latest;
+  document.getElementById('stat-pdf').textContent = meta.pdfCount;
+  document.getElementById('stat-x').textContent = meta.xCount;
+
+  // 相对时间（打开时刻实时计算）
+  function relTime(iso){
+    const t = new Date(iso).getTime();
+    const now = Date.now();
+    const s = Math.max(1, Math.floor((now - t)/1000));
+    if(s<60) return s+' 秒前';
+    const m = Math.floor(s/60); if(m<60) return m+' 分钟前';
+    const h = Math.floor(m/60); if(h<24) return h+' 小时前';
+    const d = Math.floor(h/24); if(d<30) return d+' 天前';
+    return Math.floor(d/30)+' 个月前';
+  }
+  function beijingDate(iso){
+    // 转北京时间 YYYY-MM-DD
+    const d = new Date(new Date(iso).getTime() + 8*3600*1000);
+    return d.toISOString().slice(0,10);
+  }
+  function beijingTime(iso){
+    const d = new Date(new Date(iso).getTime() + 8*3600*1000);
+    return d.toISOString().slice(11,16);
+  }
+
+  // 按日期分组（北京时间）
+  const groups = [];
+  const map = {};
+  papers.forEach(p=>{
+    const day = beijingDate(p.ts);
+    if(!map[day]){ map[day]={day,list:[]}; groups.push(map[day]); }
+    map[day].list.push(p);
+  });
+  groups.sort((a,b)=> b.day < a.day ? -1 : 1);
+
+  const tl = document.getElementById('timeline');
+  const cards = document.getElementById('cards');
+  const esc = s => (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  groups.forEach(g=>{
+    const first = g.list[0];
+    const div = document.createElement('div');
+    div.className='tl-date';
+    div.innerHTML = g.day + '<small>'+ beijingTime(first.ts) +' 起</small>';
+    tl.appendChild(div);
+
+    g.list.forEach(p=>{
+      const linkAttr = p.link ? ('href="'+esc(p.link)+'" target="_blank" rel="noopener"') : '';
+      // 卡片正文（摘要直接呈现）
+      let html = '';
+      html += '<article class="card" data-type="'+p.srcType+'">';
+      html += '<div class="seq-wm">'+String(p.seq).padStart(2,'0')+'</div>';
+      html += '<div class="card-head">'
+            + '<span class="badge b-'+p.srcType+'">'+esc(p.badge)+'</span>'
+            + '<span class="rel">'+relTime(p.ts)+'</span></div>';
+      html += '<h3 class="title">'+esc(p.title)+'</h3>';
+      html += '<p class="summary">'+esc(p.summary)+'</p>';
+
+      // arXiv 完整英文摘要（内联展开）
+      if(p.abstractEn){
+        const aid = 'abs'+p.seq;
+        html += '<button class="expand-btn" data-target="'+aid+'">展开原文摘要（英文）▾</button>';
+        html += '<div class="abstract-en" id="'+aid+'" hidden>'+esc(p.abstractEn)+'</div>';
+      }
+
+      // 底部动作区
+      html += '<div class="card-foot">';
+      if(p.pdf){
+        html += '<a class="pdf-link" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">下载 PDF ↧</a>';
+        html += '<a class="src-link" '+linkAttr+'>arXiv 原文 <span class="arw">↗</span></a>';
+      } else if(p.srcType==='x'){
+        // X：链接降为角落小字，注明需代理
+        html += '<span class="proxy-note">原文发布于 X（国内需代理打开）：'
+              + '<a href="'+esc(p.link)+'" target="_blank" rel="noopener">查看原帖 ↗</a></span>';
+      } else if(p.link){
+        html += '<a class="src-link" '+linkAttr+'>查看原文 <span class="arw">↗</span></a>';
+      }
+      html += '</div>';
+      html += '</article>';
+      cards.insertAdjacentHTML('beforeend', html);
+    });
+  });
+
+  // 展开/收起英文摘要
+  document.querySelectorAll('.expand-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const el = document.getElementById(btn.dataset.target);
+      const hidden = el.hasAttribute('hidden');
+      if(hidden){ el.removeAttribute('hidden'); btn.textContent='收起原文摘要（英文）▴'; }
+      else { el.setAttribute('hidden',''); btn.textContent='展开原文摘要（英文）▾'; }
+    });
+  });
+
+  // 滚动渐入
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
+})();
+</script>
+</body>
+</html>

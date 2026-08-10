@@ -1,0 +1,37 @@
+name: 每日更新 AI 论文档案库
+
+on:
+  schedule:
+    # 北京时间 08:00（UTC 00:00）
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+   steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 重新生成档案库
+        run: python3 update.py
+
+      - name: 提交更新
+        run: |
+          git config user.name "ai-paper-archive-bot"
+          git config user.email "bot@ai-paper-archive.local"
+          git add www/index.html
+          if git diff --cached --quiet; then
+            echo "无变化，跳过提交"
+          else
+            git commit -m "chore: 每日自动更新论文档案库"
+            git push
+          fi
