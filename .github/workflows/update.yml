@@ -1,18 +1,28 @@
 name: 每日更新 AI 论文档案库
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 北京时间 08:00（UTC 00:00）
     - cron: "0 0 * * *"
   workflow_dispatch: {}
 
+# 部署 Pages 需要 pages 与 id-token 权限；提交更新需要 contents: write
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+# 防止并行运行互相覆盖
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
-   steps:
+    steps:
       - name: 检出仓库
         uses: actions/checkout@v4
 
@@ -35,3 +45,12 @@ jobs:
             git commit -m "chore: 每日自动更新论文档案库"
             git push
           fi
+
+      - name: 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: www
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
