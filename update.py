@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI 论文学术档案库 —— 每日自动生成脚本（内容直读版）
+AI 论文学术档案库 —— 每日自动生成脚本（云端累积版）
 
 作用：
-  1. 联网拉取 aihot 最近窗口内的「精选 + 全量公开」论文（约 50 篇，排除未审/爆文榜）
-  2. 对 arXiv 条目，用 arXiv 官方 API 抓取完整英文摘要（生成阶段服务器联网，国内用户无需再访问）
-  3. 处理：有效时间 / 来源徽章 / 摘要（作为卡片内联正文）/ 链接 / PDF 直链
-  4. 注入 HTML 模板，输出 www/index.html（纯单文件、零外部资源、零端点泄漏）
+  1. 拉取 aihot 最近 7 天「精选 + 全量公开」论文（最多 100 篇）
+  2. 与仓库内 archive.json（历史全量，按 id 去重）合并，实现云端累积存档
+  3. 仅保留最近 KEEP_DAYS(30) 天，过滤后重新生成单文件页面
+  4. 对 arXiv 条目抓取完整英文摘要 + PDF 直链
+  5. 注入模板输出 www/index.html，并把合并后历史写回 archive.json
 
 用法：
-  python3 update.py                  # 默认 7 天窗口 / 取 50 篇
-  python3 update.py --window 3d --take 30
-  python3 update.py --out www/index.html
+  python3 update.py
+  python3 update.py --window 7d --take 100 --keep-days 30
 """
 import argparse
 import json
@@ -21,7 +21,6 @@ import sys
 import time
 import urllib.request
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urlparse
 from xml.etree import ElementTree as ET
 
 # ---------------------------------------------------------------------------
@@ -31,6 +30,10 @@ AIHOT_URL = "https://aihot.virxact.com/api/v1/items?mode=all&window={window}&cat
 UA = "aihot-skill/1.2.1 (+https://aihot.virxact.com/aihot-skill/)"
 TEMPLATE = "www/index.template.html"
 OUTPUT = "www/index.html"
+ARCHIVE_PATH = "archive.json"   # 历史全量库（云端累积），与脚本同目录
+WINDOW = "7d"
+LIMIT = 100
+KEEP_DAYS = 30
 BEIJING = timezone(timedelta(hours=8))
 
 
@@ -70,7 +73,6 @@ def eff_iso(it):
         return disc, False
     p = parse_iso(pub)
     dc = parse_iso(disc)
-    # 若收录远晚于发布（如历史长文被翻出），用发布时间更合理
     if (dc - p).total_seconds() > 72 * 3600:
         return pub, True
     return disc, (pub is not None)
@@ -147,7 +149,7 @@ def fetch_arxiv_abstract(arxiv_id):
     """返回 (abstract_en, pdf_url) 或 (None, None)。"""
     try:
         api = f"https://export.arxiv.org/api/query?id_list={arxiv_id}"
-        xml = http_get(api, timeout=25)
+        xml = http_get(api, timeout=12)
         root = ET.fromstring(xml)
         ns = {"a": "http://www.w3.org/2005/Atom"}
         entry = root.find("a:entry", ns)
@@ -155,7 +157,6 @@ def fetch_arxiv_abstract(arxiv_id):
             return None, None
         summ = entry.find("a:summary", ns)
         abstract = summ.text.strip() if summ is not None and summ.text else None
-        # PDF 直链
         pdf_url = None
         for link in entry.findall("a:link", ns):
             if link.get("title") == "pdf":
@@ -169,63 +170,105 @@ def fetch_arxiv_abstract(arxiv_id):
 
 
 # ---------------------------------------------------------------------------
+# 历史存档（云端累积核心）
+# ---------------------------------------------------------------------------
+def load_archive():
+    """读历史全量库（按 id 去重）。不存在/损坏则返回空。"""
+    try:
+        with open(ARCHIVE_PATH, encoding="utf-8") as f:
+            d = json.load(f)
+        return {p["id"]: p for p in d.get("papers", []) if p.get("id")}
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        log("读取 archive 失败，从空开始:", e)
+        return {}
+
+
+def save_archive(m):
+    arr = sorted(m.values(), key=lambda p: parse_iso(p["ts"]), reverse=True)
+    with open(ARCHIVE_PATH, "w", encoding="utf-8") as f:
+        json.dump({"papers": arr}, f, ensure_ascii=False, indent=1)
+
+
+def make_rec(it, skip_arxiv=False):
+    """把单条 aihot 条目转为卡片记录（含 id 以便去重累积）。"""
+    iso, is_pub = eff_iso(it)
+    title = it.get("title") or it.get("originalTitle") or "无标题"
+    summary = (it.get("summary") or "").strip() or "（暂无摘要）"
+    src = it["source"]["name"]
+    link = (it.get("links", {}) or {}).get("original") or (it.get("links", {}) or {}).get("aihot")
+    src_type = classify(src)
+    rec = {
+        "id": it.get("id"),
+        "seq": 0,
+        "title": title,
+        "badge": make_badge(src),
+        "srcType": src_type,
+        "ts": iso,
+        "isPub": is_pub,
+        "summary": summary,
+        "link": link,
+        "pdf": None,
+        "abstractEn": None,
+        "cat": classify_cat(title),
+    }
+    aid = arxiv_id_from(link)
+    if aid:
+        # 即使不抓摘要，也可直接构造 arXiv PDF 直链
+        rec["pdf"] = f"https://arxiv.org/pdf/{aid}"
+        if not skip_arxiv:
+            try:
+                abstract, _ = fetch_arxiv_abstract(aid)
+                if abstract:
+                    rec["abstractEn"] = re.sub(r"\s+", " ", abstract).strip()
+            except Exception as e:
+                log(f"  arXiv 摘要跳过 {aid}: {e}")
+        time.sleep(0.2)  # 礼貌限速
+    return rec
+
+
+# ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
-def build(window="7d", take=50, out=OUTPUT):
-    url = AIHOT_URL.format(window=window, limit=max(take, 60))
+def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv=False):
+    limit = max(take, 60)
+    url = AIHOT_URL.format(window=window, limit=limit)
     log("拉取 aihot:", url)
     data = json.loads(http_get(url))
     items = data.get("items", [])
-    log(f"原始条目 {len(items)}，取前 {take}")
+    log(f"原始条目 {len(items)}，取前 {take} 合并入历史")
 
-    # 有效时间排序（倒序）
     def keyf(it):
         return parse_iso(eff_iso(it)[0])
 
     items = sorted(items, key=keyf, reverse=True)[:take]
 
-    papers = []
-    pdf_count = 0
-    x_count = 0
-    for i, it in enumerate(items, 1):
-        iso, is_pub = eff_iso(it)
-        title = it.get("title") or it.get("originalTitle") or "无标题"
-        summary = (it.get("summary") or "").strip()
-        if not summary:
-            summary = "（暂无摘要）"
-        src = it["source"]["name"]
-        link = (it.get("links", {}) or {}).get("original") or (it.get("links", {}) or {}).get("aihot")
-        src_type = classify(src)
-        if src_type == "x":
-            x_count += 1
+    # 合并进历史（按 id 去重，新抓覆盖旧）
+    existing = load_archive()
+    new_map = {}
+    for it in items:
+        rid = it.get("id")
+        if not rid:
+            continue
+        new_map[rid] = make_rec(it, skip_arxiv)
+    merged = {**existing, **new_map}
+    log(f"合并后历史 {len(merged)} 篇（本次新增/更新 {len(new_map)}）")
 
-        rec = {
-            "seq": i,
-            "title": title,
-            "badge": make_badge(src),
-            "srcType": src_type,
-            "ts": iso,
-            "isPub": is_pub,
-            "summary": summary,        # 卡片内联正文（中文）
-            "link": link,              # 原文链接（X 类国内需代理）
-            "pdf": None,
-            "abstractEn": None,        # arXiv 完整英文摘要（内联展开）
-            "cat": classify_cat(title),  # 主题分类（弹窗分组用）
-        }
+    # 仅保留最近 keep_days 天
+    cutoff = datetime.now(BEIJING) - timedelta(days=keep_days)
+    merged = {k: v for k, v in merged.items() if parse_iso(v["ts"]).astimezone(BEIJING) >= cutoff}
+    log(f"保留最近 {keep_days} 天：{len(merged)} 篇")
 
-        # arXiv：抓完整摘要 + PDF 直链
-        aid = arxiv_id_from(link)
-        if aid:
-            abstract, pdf = fetch_arxiv_abstract(aid)
-            if abstract:
-                rec["abstractEn"] = re.sub(r"\s+", " ", abstract).strip()
-            if pdf:
-                rec["pdf"] = pdf
-                pdf_count += 1
-            time.sleep(0.4)  # 礼貌限速
+    save_archive(merged)
 
-        papers.append(rec)
+    # 排序 + 重新编号 seq
+    papers = sorted(merged.values(), key=lambda p: parse_iso(p["ts"]), reverse=True)
+    for i, p in enumerate(papers, 1):
+        p["seq"] = i
 
+    pdf_count = sum(1 for p in papers if p.get("pdf"))
+    x_count = sum(1 for p in papers if p.get("srcType") == "x")
     bj = [parse_iso(p["ts"]).astimezone(BEIJING) for p in papers]
     meta = {
         "total": len(papers),
@@ -234,12 +277,20 @@ def build(window="7d", take=50, out=OUTPUT):
         "generatedAt": datetime.now(BEIJING).strftime("%Y-%m-%d %H:%M"),
         "pdfCount": pdf_count,
         "xCount": x_count,
+        "keepDays": keep_days,
     }
 
     # 读模板、注入
     with open(TEMPLATE, encoding="utf-8") as f:
         tpl = f.read()
-    blob = json.dumps({"meta": meta, "papers": papers}, ensure_ascii=False)
+    blob = json.dumps({
+        "meta": {
+            "total": meta["total"], "earliest": meta["earliest"], "latest": meta["latest"],
+            "generatedAt": meta["generatedAt"], "pdfCount": pdf_count, "xCount": x_count,
+            "keepDays": keep_days,
+        },
+        "papers": papers,
+    }, ensure_ascii=False)
     blob = blob.replace("</", "<\\/")  # 防 </script> 截断
     html = tpl.replace("__ARCHIVE_JSON__", blob)
     with open(out, "w", encoding="utf-8") as f:
@@ -251,8 +302,10 @@ def build(window="7d", take=50, out=OUTPUT):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--window", default="7d")
-    ap.add_argument("--take", type=int, default=50)
+    ap.add_argument("--window", default=WINDOW)
+    ap.add_argument("--take", type=int, default=LIMIT)
     ap.add_argument("--out", default=OUTPUT)
+    ap.add_argument("--keep-days", type=int, default=KEEP_DAYS)
+    ap.add_argument("--no-arxiv", action="store_true", help="跳过 arXiv 摘要抓取（仅构造 PDF 直链，本地快速验证用）")
     args = ap.parse_args()
-    build(args.window, args.take, args.out)
+    build(args.window, args.take, args.out, args.keep_days, args.no_arxiv)

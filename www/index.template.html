@@ -219,6 +219,24 @@
   .toast .spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
 
+  /* ---------- 搜索框 ---------- */
+  .searchbar{display:flex;gap:10px;margin:16px auto 0;max-width:1080px;padding:0 20px}
+  .searchbar input{flex:1;padding:11px 16px;border:1px solid var(--line);border-radius:12px;font-size:14px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+  .searchbar input:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-soft)}
+  .searchbar .clear{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:12px;padding:0 14px;color:var(--muted);font-size:13px;transition:background .2s,color .2s}
+  .searchbar .clear:hover{background:var(--accent-soft);color:var(--ink)}
+
+  /* ---------- 日期分组折叠 ---------- */
+  .day-group{margin:0 0 4px;padding-left:10px;border-left:3px solid var(--line)}
+  .day-group-h{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;padding:9px 4px;cursor:pointer;
+    background:rgba(238,243,251,.94);backdrop-filter:blur(4px);user-select:none}
+  .day-group-h .dt{font-family:var(--font-tech);font-weight:800;color:var(--accent-d);font-size:14px;letter-spacing:.5px}
+  .day-group-h .cnt{font-size:11px;color:var(--muted);background:var(--accent-soft);border-radius:999px;padding:1px 9px;font-family:var(--font-tech)}
+  .day-group-h .chv{margin-left:auto;color:var(--accent);font-size:13px;transition:transform .25s}
+  .day-group.collapsed .chv{transform:rotate(-90deg)}
+  .day-group.collapsed .cards-in{display:none}
+  .day-group .cards-in{display:flex;flex-direction:column;gap:18px;padding:14px 0 8px}
+
   /* ---------- 可下载 PDF 弹窗 ---------- */
   .modal{position:fixed;inset:0;z-index:60;display:none}
   .modal.open{display:block}
@@ -292,7 +310,7 @@
 <header class="hero">
   <div class="wrap">
     <h1>AI 论文档案库</h1>
-    <p class="sub">最近 7 天精选 · 内容直读版 —— 中文标题与摘要直接呈现，arXiv 附完整摘要，来源链接按需标注</p>
+    <p class="sub">最近 30 天累积 · 内容直读版 —— 中文标题与摘要直接呈现，arXiv 附完整摘要，来源链接按需标注</p>
     <div class="stats">
       <div class="stat"><div class="k">论文总数</div><div class="v" id="stat-total" data-count></div><div class="sub">按发布时间倒序</div></div>
       <div class="stat"><div class="k">收录日期范围</div><div class="v" id="stat-range" style="font-size:19px"></div><div class="sub">北京时间</div></div>
@@ -307,6 +325,13 @@
     <span class="ic">💡</span>
     <div><b>蓝紫渐变按钮「下载 PDF ↧」</b>：点击从 arXiv 官方直接下载论文 PDF（新标签页打开）；<b>底部灰色小字</b>为 X / 境外媒体源，国内需代理才能访问。卡片正文即中文摘要，无需外链也能读。</div>
     <button class="x" id="hintClose" aria-label="关闭">×</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="searchbar">
+    <input id="search" type="search" placeholder="搜索标题 / 来源 / 摘要 / 分类…" aria-label="搜索论文">
+    <button class="clear" id="searchClear">清除</button>
   </div>
 </div>
 
@@ -381,7 +406,7 @@ const ARCHIVE = __ARCHIVE_JSON__;
   function beijingDate(iso){ return new Date(new Date(iso).getTime()+8*3600*1000).toISOString().slice(0,10); }
   function beijingTime(iso){ return new Date(new Date(iso).getTime()+8*3600*1000).toISOString().slice(11,16); }
 
-  // 分组
+  // 分组（按北京时间日期）
   const groups = [], map = {};
   papers.forEach(p=>{
     const day = beijingDate(p.ts);
@@ -394,23 +419,40 @@ const ARCHIVE = __ARCHIVE_JSON__;
   const cards = document.getElementById('cards');
   const esc = s => (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+  const cardMap = {}, groupMap = {};
   let firstPdf = true;
-  groups.forEach(g=>{
+  groups.forEach((g, gi)=>{
     const first = g.list[0];
-    const div = document.createElement('div');
-    div.className='tl-date';
-    div.dataset.target = 'day-'+g.day;
-    div.tabIndex = 0;
-    div.setAttribute('role','button');
-    div.setAttribute('aria-label','跳转到 '+g.day+' 的论文');
-    div.innerHTML = '<span class="dy">'+ g.day.slice(0,5) +'</span>'+ g.day.slice(5) +'<small>'+ beijingTime(first.ts) +' 起 <span class="jump">点击跳转 ↓</span></small>';
-    tl.appendChild(div);
+    // 时间线节点 → 跳转到对应日期分组
+    const tlDiv = document.createElement('div');
+    tlDiv.className='tl-date';
+    tlDiv.dataset.target = 'group-'+g.day;
+    tlDiv.tabIndex = 0;
+    tlDiv.setAttribute('role','button');
+    tlDiv.setAttribute('aria-label','跳转到 '+g.day+' 的论文');
+    tlDiv.innerHTML = '<span class="dy">'+ g.day.slice(0,5) +'</span>'+ g.day.slice(5) +'<small>'+ beijingTime(first.ts) +' 起 <span class="jump">点击跳转 ↓</span></small>';
+    tl.appendChild(tlDiv);
 
-    g.list.forEach((p, idx)=>{
-      const anchor = (idx===0) ? (' id="day-'+g.day+'"') : '';
+    // 日期分组（可折叠，默认最近 7 天展开、更早折叠）
+    const section = document.createElement('section');
+    section.className = 'day-group' + (gi>=7 ? ' collapsed' : '');
+    section.id = 'group-'+g.day;
+    section.dataset.day = g.day;
+    const head = document.createElement('div');
+    head.className='day-group-h';
+    head.dataset.target='group-'+g.day;
+    head.innerHTML = '<span class="dt">'+g.day+'</span><span class="cnt">'+g.list.length+' 篇</span><span class="chv">▾</span>';
+    const inner = document.createElement('div');
+    inner.className='cards-in';
+    section.appendChild(head);
+    section.appendChild(inner);
+    cards.appendChild(section);
+    groupMap[g.day] = section;
+
+    g.list.forEach((p)=>{
       const linkAttr = p.link ? ('href="'+esc(p.link)+'" target="_blank" rel="noopener"') : '';
       let html = '';
-      html += '<article class="card"'+anchor+' data-type="'+p.srcType+'"'+(p.pdf?' data-pdf="1"':' data-pdf="0"')+'>';
+      html += '<article class="card" data-type="'+p.srcType+'"'+(p.pdf?' data-pdf="1"':' data-pdf="0"')+'>';
       html += '<div class="seq-wm">'+String(p.seq).padStart(2,'0')+'</div>';
       html += '<div class="card-head">'
             + '<span class="badge b-'+p.srcType+'">'+esc(p.badge)+'</span>'
@@ -439,7 +481,8 @@ const ARCHIVE = __ARCHIVE_JSON__;
       }
       html += '</div>';
       html += '</article>';
-      cards.insertAdjacentHTML('beforeend', html);
+      inner.insertAdjacentHTML('beforeend', html);
+      cardMap[p.seq] = inner.lastElementChild;
     });
   });
 
@@ -453,19 +496,28 @@ const ARCHIVE = __ARCHIVE_JSON__;
     });
   });
 
-  // 时间轴日期 → 平滑跳转到当天论文
+  // 时间轴日期 → 平滑跳转并展开对应日期分组
   document.querySelectorAll('.tl-date').forEach(td=>{
     const go = ()=>{
       const el = document.getElementById(td.dataset.target);
       if(el){
+        el.classList.remove('collapsed');
         el.scrollIntoView({behavior:'smooth', block:'start'});
-        el.style.transition = 'box-shadow .4s';
-        el.style.boxShadow = '0 0 0 3px var(--accent-soft), 0 14px 38px rgba(37,99,235,.22)';
-        setTimeout(()=>{ el.style.boxShadow=''; }, 900);
+        const head = el.querySelector('.day-group-h');
+        if(head){
+          head.style.transition = 'box-shadow .4s';
+          head.style.boxShadow = '0 0 0 3px var(--accent-soft)';
+          setTimeout(()=>{ head.style.boxShadow=''; }, 900);
+        }
       }
     };
     td.addEventListener('click', go);
     td.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); }});
+  });
+
+  // 日期分组标题 → 折叠/展开
+  document.querySelectorAll('.day-group-h').forEach(hd=>{
+    hd.addEventListener('click', ()=> hd.parentElement.classList.toggle('collapsed'));
   });
 
   // 指引横幅
@@ -475,25 +527,58 @@ const ARCHIVE = __ARCHIVE_JSON__;
     hint.style.display='none'; sessionStorage.setItem('aihint_closed','1');
   });
 
-  // 顶部筛选条
+  // 顶部筛选条 + 搜索（叠加过滤）
   const fbtns = document.querySelectorAll('.fbtn');
   fbtns[0].querySelector('span').textContent = meta.total;
   fbtns[1].querySelector('span').textContent = meta.pdfCount;
   fbtns[2].querySelector('span').textContent = meta.xCount;
-  function applyFilter(f){
-    document.querySelectorAll('.card').forEach(card=>{
-      let show = true;
-      if(f==='pdf') show = card.dataset.pdf==='1';
-      else if(f==='proxy') show = card.dataset.type==='x';
-      card.style.display = show ? '' : 'none';
-      if(show) card.classList.add('in');
+
+  let currentFilter = 'all';
+  let currentQuery = '';
+  function matchSearch(p){
+    if(!currentQuery) return true;
+    const hay = (p.title+' '+p.summary+' '+p.badge+' '+p.cat).toLowerCase();
+    return hay.includes(currentQuery);
+  }
+  function applyAll(){
+    groups.forEach(g=>{
+      let anyVisible = false;
+      g.list.forEach(p=>{
+        const card = cardMap[p.seq];
+        let show = true;
+        if(currentFilter==='pdf') show = !!p.pdf;
+        else if(currentFilter==='proxy') show = p.srcType==='x';
+        if(show) show = matchSearch(p);
+        card.style.display = show ? '' : 'none';
+        if(show) anyVisible = true;
+      });
+      groupMap[g.day].style.display = anyVisible ? '' : 'none';
     });
   }
   fbtns.forEach(b=> b.addEventListener('click', ()=>{
     fbtns.forEach(x=>x.classList.remove('active'));
     b.classList.add('active');
-    applyFilter(b.dataset.f);
+    currentFilter = b.dataset.f;
+    applyAll();
   }));
+
+  // 搜索框
+  const searchInput = document.getElementById('search');
+  const searchClear = document.getElementById('searchClear');
+  function defaultCollapse(){
+    groups.forEach((g,i)=>{
+      if(i>=7) groupMap[g.day].classList.add('collapsed');
+      else groupMap[g.day].classList.remove('collapsed');
+    });
+  }
+  searchInput.addEventListener('input', ()=>{
+    currentQuery = searchInput.value.trim().toLowerCase();
+    if(currentQuery) groups.forEach(g=> groupMap[g.day].classList.remove('collapsed'));
+    applyAll();
+  });
+  searchClear.addEventListener('click', ()=>{
+    searchInput.value=''; currentQuery=''; defaultCollapse(); applyAll();
+  });
 
   // Toast
   const toast = document.getElementById('toast'), toastMsg = document.getElementById('toastMsg');
