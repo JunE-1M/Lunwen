@@ -1,11 +1,11 @@
-name: 每日更新 AI 论文档案库
+name: 每周二更新 AI 论文档案库
 
 on:
   push:
     branches: [main]
   schedule:
-    # 北京时间 08:00（UTC 00:00）
-    - cron: "0 0 * * *"
+    # 北京时间每周二 08:00（UTC 周二 00:00）
+    - cron: "0 0 * * 2"
   workflow_dispatch: {}
 
 # 部署 Pages 需要 pages 与 id-token 权限；提交更新需要 contents: write
@@ -42,7 +42,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "无变化，跳过提交"
           else
-            git commit -m "chore: 每日自动更新论文档案库"
+            git commit -m "chore: 每周自动更新论文档案库（重点论文）"
             git push
           fi
 
