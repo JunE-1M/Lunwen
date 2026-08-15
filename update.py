@@ -16,6 +16,7 @@ AI 论文学术档案库 —— 周更自动生成脚本（云端累积版）
 """
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -169,6 +170,30 @@ def fetch_arxiv_abstract(arxiv_id):
         return None, f"https://arxiv.org/pdf/{arxiv_id}"
 
 
+def download_pdf(arxiv_id, dest_dir):
+    """下载 arXiv PDF 到 dest_dir/<id>.pdf；成功返回相对路径 'pdfs/<id>.pdf'，失败返回 None。
+    仅在云端（--download-pdf）调用，本地不执行，故绝不占用本地磁盘。"""
+    try:
+        os.makedirs(dest_dir, exist_ok=True)
+        dest = os.path.join(dest_dir, arxiv_id + ".pdf")
+        # 已存在且体积正常则直接复用，避免重复下载
+        if os.path.exists(dest) and os.path.getsize(dest) > 5000:
+            return "pdfs/" + arxiv_id + ".pdf"
+        url = f"https://arxiv.org/pdf/{arxiv_id}"
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = r.read()
+        if len(data) < 5000:
+            log(f"  PDF 疑似非文件({len(data)}B)，跳过 {arxiv_id}")
+            return None
+        with open(dest, "wb") as f:
+            f.write(data)
+        return "pdfs/" + arxiv_id + ".pdf"
+    except Exception as e:  # noqa
+        log(f"  PDF 下载失败 {arxiv_id}: {e}")
+        return None
+
+
 # ---------------------------------------------------------------------------
 # 历史存档（云端累积核心）
 # ---------------------------------------------------------------------------
@@ -231,7 +256,7 @@ def make_rec(it, skip_arxiv=False):
 # ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
-def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv=False):
+def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv=False, download_pdf=False):
     limit = max(take, 60)
     url = AIHOT_URL.format(window=window, limit=limit)
     log("拉取 aihot:", url)
@@ -261,6 +286,21 @@ def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv
     log(f"保留最近 {keep_days} 天：{len(merged)} 篇")
 
     save_archive(merged)
+
+    # 云端下载 PDF 到 www/pdfs（仅 --download-pdf 时；本地不执行，故不占用本地磁盘）
+    if download_pdf:
+        pdf_dir = os.path.join(os.path.dirname(os.path.abspath(out)), "pdfs")
+        cached = 0
+        for p in merged.values():
+            aid = arxiv_id_from(p.get("link"))
+            if not aid:
+                continue
+            local = download_pdf(aid, pdf_dir)
+            if local:
+                p["pdf"] = local
+                cached += 1
+            time.sleep(0.3)  # 礼貌限速，避免对 arXiv 造成压力
+        log(f"PDF 同源化完成：本次 {cached} 篇")
 
     # 排序 + 重新编号 seq
     papers = sorted(merged.values(), key=lambda p: parse_iso(p["ts"]), reverse=True)
@@ -307,5 +347,6 @@ if __name__ == "__main__":
     ap.add_argument("--out", default=OUTPUT)
     ap.add_argument("--keep-days", type=int, default=KEEP_DAYS)
     ap.add_argument("--no-arxiv", action="store_true", help="跳过 arXiv 摘要抓取（仅构造 PDF 直链，本地快速验证用）")
+    ap.add_argument("--download-pdf", action="store_true", help="云端将 arXiv PDF 下载到 www/pdfs 实现同源直下（本地请勿使用，避免占用磁盘）")
     args = ap.parse_args()
-    build(args.window, args.take, args.out, args.keep_days, args.no_arxiv)
+    build(args.window, args.take, args.out, args.keep_days, args.no_arxiv, args.download_pdf)

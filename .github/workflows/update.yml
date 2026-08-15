@@ -32,7 +32,7 @@ jobs:
           python-version: "3.11"
 
       - name: 重新生成档案库
-        run: python3 update.py
+        run: python3 update.py --download-pdf
 
       - name: 提交更新
         run: |

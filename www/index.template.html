@@ -323,7 +323,7 @@
 <div class="wrap">
   <div class="hint" id="hint">
     <span class="ic">💡</span>
-    <div><b>蓝紫渐变按钮「下载 PDF ↧」</b>：点击从 arXiv 官方直接下载论文 PDF（新标签页打开）；<b>底部灰色小字</b>为 X / 境外媒体源，国内需代理才能访问。卡片正文即中文摘要，无需外链也能读。</div>
+    <div><b>蓝紫渐变按钮「下载 PDF ↧」</b>：网站已内置 PDF 文件，点击即由浏览器直接下载到本地；<b>底部灰色小字</b>为 X / 境外媒体源，国内需代理才能访问。卡片正文即中文摘要，无需外链也能读。</div>
     <button class="x" id="hintClose" aria-label="关闭">×</button>
   </div>
 </div>
@@ -470,7 +470,9 @@ const ARCHIVE = __ARCHIVE_JSON__;
       if(p.pdf){
         const pulse = firstPdf ? ' pulse' : '';
         firstPdf = false;
-        html += '<a class="pdf-link'+pulse+'" data-tip="点击从 arXiv 官方下载 PDF · 新标签页打开" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">'
+        const isLocalPdf = String(p.pdf).indexOf('pdfs/') === 0;
+        const pdfAttrs = isLocalPdf ? (' download="AI论文-' + String(p.seq).padStart(3,'0') + '.pdf"') : ' target="_blank" rel="noopener"';
+        html += '<a class="pdf-link'+pulse+'" data-tip="' + (isLocalPdf ? '点击直接下载 PDF 文件到本地' : '点击从 arXiv 官方打开 PDF（新标签页）') + '" href="'+esc(p.pdf)+'"'+pdfAttrs+'>'
               + '<span class="pdf-ic">↧</span>下载 PDF</a>';
         html += '<a class="src-link" '+linkAttr+'>arXiv 原文 <span class="arw">↗</span></a>';
       } else if(p.srcType==='x'){
@@ -600,7 +602,8 @@ const ARCHIVE = __ARCHIVE_JSON__;
       rip.style.top  = (e.clientY - r.top  - size/2)+'px';
       btn.appendChild(rip);
       setTimeout(()=>rip.remove(), 600);
-      showToast('正在打开 arXiv 官方 PDF（新标签页）…');
+      const isLocal = String(btn.getAttribute('href')||'').indexOf('pdfs/') === 0;
+      showToast(isLocal ? '已开始下载 PDF 文件到本地…' : '正在打开 arXiv 官方 PDF（新标签页）…');
       // 关闭首次脉冲
       btn.classList.remove('pulse');
     });
@@ -622,7 +625,7 @@ const ARCHIVE = __ARCHIVE_JSON__;
       groups[c].forEach(p=>{
         h += '<div class="pdf-row"><div class="pdf-row-main"><span class="pdf-seq">'+String(p.seq).padStart(2,'0')+'</span>'
            + '<span class="pdf-title" title="'+esc(p.title)+'">'+esc(p.title)+'</span></div>'
-           + '<a class="pdf-mini" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">下载 PDF ↧</a></div>';
+           + '<a class="pdf-mini" href="'+esc(p.pdf)+'"'+(String(p.pdf).indexOf('pdfs/')===0?(' download="AI论文-'+String(p.seq).padStart(3,'0')+'.pdf"'):' target="_blank" rel="noopener"')+'>下载 PDF ↧</a></div>';
       });
       h += '</div></div>';
     });

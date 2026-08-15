@@ -4,3 +4,5 @@ ios/
 .DS_Store
 __pycache__/
 *.pyc
+# PDF 仅在云端下载并随 Pages 部署，绝不进入 git 历史（也不占本地仓库空间）
+www/pdfs/
