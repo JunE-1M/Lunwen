@@ -216,6 +216,44 @@ def save_archive(m):
         json.dump({"papers": arr}, f, ensure_ascii=False, indent=1)
 
 
+def _max_item_date(items):
+    ds = []
+    for it in items:
+        t = (it.get("publishedAt") or it.get("discoveredAt") or "")[:10]
+        if len(t) == 10:
+            ds.append(t)
+    return max(ds) if ds else ""
+
+
+def fetch_aihot_items(url, fresh_days=4):
+    """拉取 aihot 列表，并对『数据新鲜度』做校验。
+
+    aihot 源偶发返回陈旧数据（最新日期远早于今天），故若最新日期
+    比 (今天-fresh_days) 还旧，则重试最多 3 次；仍失败则采用最后一次结果。
+    """
+    cutoff = (datetime.now(BEIJING) - timedelta(days=fresh_days)).strftime("%Y-%m-%d")
+    last_items = []
+    for i in range(3):
+        try:
+            data = json.loads(http_get(url))
+            items = data.get("items", []) or []
+        except Exception as e:  # noqa
+            log(f"  aihot 解析失败({i + 1}/3): {e}")
+            items = []
+        if items:
+            md = _max_item_date(items)
+            if md >= cutoff:
+                log(f"  aihot 数据新鲜(最新 {md})，采用")
+                return items
+            log(f"  aihot 数据偏旧(最新 {md} < 期望 {cutoff})，重试({i + 1}/3)…")
+        else:
+            log(f"  aihot 返回空，重试({i + 1}/3)…")
+        last_items = items
+        time.sleep(15)
+    log("  达到重试上限，采用最后一次抓取结果")
+    return last_items
+
+
 def make_rec(it, skip_arxiv=False):
     """把单条 aihot 条目转为卡片记录（含 id 以便去重累积）。"""
     iso, is_pub = eff_iso(it)
@@ -260,8 +298,7 @@ def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv
     limit = max(take, 60)
     url = AIHOT_URL.format(window=window, limit=limit)
     log("拉取 aihot:", url)
-    data = json.loads(http_get(url))
-    items = data.get("items", [])
+    items = fetch_aihot_items(url)
     log(f"原始条目 {len(items)}，取前 {take} 合并入历史")
 
     def keyf(it):
