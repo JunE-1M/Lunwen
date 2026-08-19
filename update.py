@@ -4,7 +4,7 @@
 AI 论文学术档案库 —— 周更自动生成脚本（云端累积版）
 
 作用：
-  1. 拉取 aihot 最近 7 天「重点 / 精选」论文（mode=selected）
+  1. 拉取 aihot 最近 7 天全量论文（mode=all，新鲜到当天）
   2. 与仓库内 archive.json（历史全量，按 id 去重）合并，实现云端累积存档
   3. 仅保留最近 KEEP_DAYS(30) 天，过滤后重新生成单文件页面
   4. 对 arXiv 条目抓取完整英文摘要 + PDF 直链
@@ -27,7 +27,7 @@ from xml.etree import ElementTree as ET
 # ---------------------------------------------------------------------------
 # 配置
 # ---------------------------------------------------------------------------
-AIHOT_URL = "https://aihot.virxact.com/api/v1/items?mode=selected&window={window}&category=paper&limit={limit}"
+AIHOT_URL = "https://aihot.virxact.com/api/v1/items?mode=all&window={window}&category=paper&limit={limit}"
 UA = "aihot-skill/1.2.1 (+https://aihot.virxact.com/aihot-skill/)"
 TEMPLATE = "www/index.template.html"
 OUTPUT = "www/index.html"

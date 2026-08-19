@@ -51,7 +51,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "无变化，跳过提交"
           else
-            git commit -m "chore: 每周自动更新论文档案库（重点论文）"
+            git commit -m "chore: 每周自动更新论文档案库（最近7天）"
             git push
           fi
 
