@@ -22,6 +22,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -31,8 +32,16 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 重新生成档案库
-        run: python3 update.py --download-pdf
+      - name: 重新生成档案库（失败自动重试 3 次）
+        run: |
+          for i in 1 2 3; do
+            if python3 update.py --download-pdf; then
+              echo "生成成功"
+              break
+            fi
+            echo "第 $i 次生成失败，10s 后重试…"
+            sleep 10
+          done
 
       - name: 提交更新
         run: |
