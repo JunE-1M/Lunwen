@@ -14,10 +14,10 @@ permissions:
   pages: write
   id-token: write
 
-# 防止并行运行互相覆盖
+# 防止并行运行互相覆盖；新推送取消仍在排队的旧运行
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:

@@ -181,7 +181,7 @@ def download_pdf(arxiv_id, dest_dir):
             return "pdfs/" + arxiv_id + ".pdf"
         url = f"https://arxiv.org/pdf/{arxiv_id}"
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=30) as r:
+        with urllib.request.urlopen(req, timeout=15) as r:
             data = r.read()
         if len(data) < 5000:
             log(f"  PDF 疑似非文件({len(data)}B)，跳过 {arxiv_id}")
@@ -325,6 +325,7 @@ def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv
     save_archive(merged)
 
     # 云端下载 PDF 到 www/pdfs（仅 --download-pdf 时；本地不执行，故不占用本地磁盘）
+    # 只为「本次新抓到」的论文下载同源 PDF；旧论文改回 arXiv 规范直链，避免陈旧本地路径 404
     if download_pdf:
         pdf_dir = os.path.join(os.path.dirname(os.path.abspath(out)), "pdfs")
         cached = 0
@@ -332,10 +333,15 @@ def build(window=WINDOW, take=LIMIT, out=OUTPUT, keep_days=KEEP_DAYS, skip_arxiv
             aid = arxiv_id_from(p.get("link"))
             if not aid:
                 continue
-            local = download_pdf(aid, pdf_dir)
-            if local:
-                p["pdf"] = local
-                cached += 1
+            if p.get("id") in new_map:
+                local = download_pdf(aid, pdf_dir)
+                p["pdf"] = local if local else f"https://arxiv.org/pdf/{aid}"
+                if local:
+                    cached += 1
+            else:
+                # 旧论文：本地 pdfs/ 路径不跨部署持久，退回 arXiv 规范直链，永不 404
+                if str(p.get("pdf", "")).startswith("pdfs/"):
+                    p["pdf"] = f"https://arxiv.org/pdf/{aid}"
             time.sleep(0.3)  # 礼貌限速，避免对 arXiv 造成压力
         log(f"PDF 同源化完成：本次 {cached} 篇")
 
