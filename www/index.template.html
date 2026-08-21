@@ -166,6 +166,14 @@
     font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;white-space:pre-wrap
   }
 
+  /* ---------- 摘要展示功能1：点击卡片展开/收起中文摘要 ---------- */
+  .card.collapsed .summary{display:none}
+  .card.collapsed .expand-btn{display:none}
+  .card.collapsed .abstract-en{display:none}
+  .card-toggle{margin:2px 0 10px;font-size:12.5px;color:var(--muted);cursor:pointer;user-select:none;transition:color .2s}
+  .card-toggle:hover{color:var(--accent)}
+  .card.collapsed .card-toggle{color:var(--accent-d);font-weight:600}
+
   /* ---------- 底部动作 ---------- */
   .card-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .pdf-link{
@@ -452,12 +460,13 @@ const ARCHIVE = __ARCHIVE_JSON__;
     g.list.forEach((p)=>{
       const linkAttr = p.link ? ('href="'+esc(p.link)+'" target="_blank" rel="noopener"') : '';
       let html = '';
-      html += '<article class="card" data-type="'+p.srcType+'"'+(p.pdf?' data-pdf="1"':' data-pdf="0"')+'>';
+      html += '<article class="card collapsed" data-type="'+p.srcType+'"'+(p.pdf?' data-pdf="1"':' data-pdf="0"')+'>';
       html += '<div class="seq-wm">'+String(p.seq).padStart(2,'0')+'</div>';
       html += '<div class="card-head">'
             + '<span class="badge b-'+p.srcType+'">'+esc(p.badge)+'</span>'
             + '<span class="rel">'+relTime(p.ts)+'</span></div>';
       html += '<h3 class="title">'+esc(p.title)+'</h3>';
+      html += '<div class="card-toggle">▾ 点击展开摘要</div>';
       html += '<p class="summary">'+esc(p.summary)+'</p>';
 
       if(p.abstractEn){
@@ -485,6 +494,18 @@ const ARCHIVE = __ARCHIVE_JSON__;
       html += '</article>';
       inner.insertAdjacentHTML('beforeend', html);
       cardMap[p.seq] = inner.lastElementChild;
+    });
+  });
+
+  // 摘要展示功能1：点击卡片任意处展开/收起中文摘要（链接与按钮不触发折叠）
+  document.querySelectorAll('.card').forEach(card=>{
+    const toggle = card.querySelector('.card-toggle');
+    const sync = ()=>{ if(toggle) toggle.textContent = card.classList.contains('collapsed') ? '▾ 点击展开摘要' : '▴ 点击收起'; };
+    sync();
+    card.addEventListener('click', (e)=>{
+      if(e.target.closest('a,button')) return; // PDF / 原文 / 英文摘要按钮等保持各自行为
+      card.classList.toggle('collapsed');
+      sync();
     });
   });
 
