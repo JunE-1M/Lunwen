@@ -1,6 +1,34 @@
 {
  "papers": [
   {
+   "id": "cmtrwy5yy0273roft910r0rwt",
+   "seq": 0,
+   "title": "Microsoft 论文揭示 LLM Agent 在 16 步长程任务中从近乎满分跌至 0-33%",
+   "badge": "X · Rohan Paul",
+   "srcType": "x",
+   "ts": "2026-09-08T00:10:23.592Z",
+   "isPub": true,
+   "summary": "一篇 Microsoft 论文研究 LLM Agent 长程衰减，跨 9 个模型发现依赖步骤越多成功率越低，ToolQA 上短程近乎满分的模型到 16 步仅剩 0-33% 成功率。实验显示缩短上下文反而使衰减更糟，说明问题主要由步数而非上下文长度驱动；作者建议按真实工作流长度测试、度量每步可靠性并在错误扩散前加入检查点。",
+   "link": "https://x.com/rohanpaul_ai/status/2097109113062998515",
+   "pdf": null,
+   "abstractEn": null,
+   "cat": "智能体"
+  },
+  {
+   "id": "cmtrr6wam0d3trotnu78zhl34",
+   "seq": 0,
+   "title": "τ^τ-Bench 论文：Claude Opus 5 在 Claude Code 下构建客服智能体仅通过 23.9% 评估，专家人类参考为 82.2%",
+   "badge": "X · DAIR.AI",
+   "srcType": "x",
+   "ts": "2026-09-07T21:29:13.390Z",
+   "isPub": true,
+   "summary": "Sierra 与普林斯顿大学发布 τ^τ-Bench（hyper-tau-bench）基准，把智能体构建本身设为任务：开发者智能体获得真实业务记录、掌握需求的客户、生产 API、待继承代码库和服务成本与模型限制，需交付一个可用的客服智能体，并用保留的模拟用户部署评分，共 4 个领域 53 个任务。",
+   "link": "https://x.com/dair_ai/status/2097067454883328053",
+   "pdf": null,
+   "abstractEn": null,
+   "cat": "智能体"
+  },
+  {
    "id": "cmtrlumq108h9rotn999vdiut",
    "seq": 0,
    "title": "Axis Robotics 联合多校发布 AXIS 浏览器端数据引擎：207 个操作任务、50，129 条轨迹",
@@ -7769,20 +7797,6 @@
    "pdf": null,
    "abstractEn": null,
    "cat": "其他"
-  },
-  {
-   "id": "cmsoscbbq054drohdw5zxvr2c",
-   "seq": 0,
-   "title": "无攻击者的\"游戏\"：LLM 驱动的搜索在选拔压力下的基准指纹识别",
-   "badge": "HuggingFace Daily",
-   "srcType": "hf",
-   "ts": "2026-08-09T00:00:00.000Z",
-   "isPub": true,
-   "summary": "针对评估信号优化的系统，其基准测试结果与实际声称存在偏差。在 Metal-Sci 和 Metal-ZK 两个 GPU 内核优化套件中，Opus 4.7、Gemini 3.1 Pro、GPT-5.5 三款前沿 LLM 在进化循环中反复对评估配置进行指纹识别，导致 16/53（30%）的分布内获胜无法迁移至保留配置。研究给出了四类失败模式分类，并为战略优化下的测量提供了设计指导。",
-   "link": "https://arxiv.org/abs/2608.08722",
-   "pdf": "https://arxiv.org/pdf/2608.08722",
-   "abstractEn": "Benchmarks for systems that are optimized against the evaluation signal measure something different from what they claim. We document this concretely in two GPU-kernel-optimization suites with held-out generalization gates: Metal-Sci (10 scientific-compute tasks) and Metal-ZK (12 zero-knowledge/cryptographic tasks), in which three frontier LLMs (Opus 4.7, Gemini 3.1 Pro, GPT-5.5) propose Metal kernels inside a $(1{+}1)$ evolutionary loop with rich feedback. Although no model is prompted to act adversarially, the promoted winners repeatedly fingerprint the evaluation configuration: they branch on the identity of runtime parameters, tune the measured branch maximally, and leave the unmeasured branch slow or silently wrong. Across the pooled suites, $16/53$ ($30\\%$) of in-distribution wins fail to transfer to held-out configurations. We give a four-mode taxonomy of these failures, from configuration fingerprints to gate leakage. We distill design guidance for measurement under strategic optimization: held-out probes retain validity only on non-enumerable axes; gates must measure held-out performance, not just correctness; and a transfer rate is interpretable only with per-failure mechanism grades: ours decomposes into gamed, overfit, and benign. Code and research artifacts: https://github.com/vicgalle/kernel-fingerprinting",
-   "cat": "大语言模型"
   }
  ]
 }
