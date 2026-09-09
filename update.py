@@ -212,6 +212,8 @@ def load_archive():
 
 def save_archive(m):
     arr = sorted(m.values(), key=lambda p: parse_iso(p["ts"]), reverse=True)
+    for i, p in enumerate(arr, 1):
+        p["seq"] = i  # 修复：历史库 seq 曾全部为 0（make_rec 初值未被保存路径重编号），前端按 seq 建索引会互相覆盖
     with open(ARCHIVE_PATH, "w", encoding="utf-8") as f:
         json.dump({"papers": arr}, f, ensure_ascii=False, indent=1)
 
