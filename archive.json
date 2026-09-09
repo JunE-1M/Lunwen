@@ -1,8 +1,22 @@
 {
  "papers": [
   {
-   "id": "cmttkjroo0cb1rofp64mr3dfn",
+   "id": "cmttmozwp0ejerofp2q3jo16m",
    "seq": 1,
+   "title": "Gander 全双工全模态交互智能体技术报告发布并开源",
+   "badge": "HuggingFace Daily",
+   "srcType": "hf",
+   "ts": "2026-09-09T04:58:52.619Z",
+   "isPub": true,
+   "summary": "作者发布 Gander 技术报告，这是一个端到端模型，在单一框架内统一全模态感知、实时交互与智能体能力，支持视频、语音、文本流式输入与随时打断的全双工交互。其采用 Cerebellum-Brain 协同框架，小脑负责实时交互与对话，大脑负责复杂推理与智能体任务，并基于流式 Thinker-Talker 架构实现低延迟；模型、代码和数据将开源。",
+   "link": "https://arxiv.org/abs/2609.08977",
+   "pdf": "https://arxiv.org/pdf/2609.08977",
+   "abstractEn": "In this work, we present Gander, an end-to-end model that unifies omni perception, realtime interaction, and agentic capabilities within a single framework. In contrast to turn-based conventional paradigms, Gander continuously receives streaming inputs across multiple modalities, including video, speech, and text, enabling natural full-duplex interaction in both everyday conversations and complex workflow-oriented agent scenarios. Users can interrupt the model at any time, while the model can also proactively provide intermediate feedback or ask follow up questions. To natively support these capabilities, Gander adopts two key architectural designs: 1) It employs a Cerebellum-Brain collaborative framework, in which the Cerebellum is responsible for realtime interaction and omni conversational capabilities, while the Brain handles complex reasoning and higher-level agentic tasks. The two components interact continuously through tool calling and the agent orchestration runtime. 2) The Cerebellum is built upon a streaming Thinker-Talker architecture, user inputs and model outputs are further flattened into an ordered token stream at the chunk level, providing a unified representation for low latency, continuous interaction. We conduct comprehensive evaluations of Gander across four dimensions: conversational ability, omni understanding, interactive capability, and agentic intelligence. Internal human evaluations demonstrate that Gander maintains the natural and expressive spoken dialogue capabilities of SOTA open source models while achieving competitive performance in omni interaction. Gander also demonstrates robustness in challenging real-world scenarios, including background noise interference, multi-party interactions, and backchannel communication. We release Gander together with its models, code, and data to facilitate further research and development in the community.",
+   "cat": "智能体"
+  },
+  {
+   "id": "cmttkjroo0cb1rofp64mr3dfn",
+   "seq": 2,
    "title": "Miles v0.1 发布：面向生产级后训练的开源 RL 系统",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -16,7 +30,7 @@
   },
   {
    "id": "cmtthqwod09ixrofptzz9kugb",
-   "seq": 2,
+   "seq": 3,
    "title": "Microsoft 与清华论文提出 AgentScope，用结构化表征提升 Agent 失败定位准确率",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -30,7 +44,7 @@
   },
   {
    "id": "cmttgndwe08p1rofp061i01x2",
-   "seq": 3,
+   "seq": 4,
    "title": "OpenAI 宣布用智能体集群求解 Navier-Stokes 千禧年难题",
    "badge": "X · 阿易 AI Notes",
    "srcType": "x",
@@ -44,7 +58,7 @@
   },
   {
    "id": "cmtt5xmpl029krocpiv1aq1je",
-   "seq": 4,
+   "seq": 5,
    "title": "OpenAI 发布 Navier-Stokes 千禧年大奖难题的智能体求解证明",
    "badge": "X · Emad Mostaque",
    "srcType": "x",
@@ -58,7 +72,7 @@
   },
   {
    "id": "cmtt2ugin022nrowa77wa2y2w",
-   "seq": 5,
+   "seq": 6,
    "title": "OpenAI 宣布用智能体群求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · Aravind Srinivas",
    "srcType": "x",
@@ -72,7 +86,7 @@
   },
   {
    "id": "cmtt0lmcq015ero9o7bg6m2cn",
-   "seq": 6,
+   "seq": 7,
    "title": "OpenAI 用上万智能体求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -86,7 +100,7 @@
   },
   {
    "id": "cmtszna9e04isro5woti0ixg6",
-   "seq": 7,
+   "seq": 8,
    "title": "OpenAI 宣布以内部 AI 系统给出 Navier-Stokes 千禧年问题解答",
    "badge": "OpenAI",
    "srcType": "x",
@@ -100,7 +114,7 @@
   },
   {
    "id": "cmtszfjuo04a8ro5wh63uf6z0",
-   "seq": 8,
+   "seq": 9,
    "title": "OpenAI 宣布求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · Sam Altman",
    "srcType": "x",
@@ -114,7 +128,7 @@
   },
   {
    "id": "cmtsz20uq02c7ro5wspf2ah93",
-   "seq": 9,
+   "seq": 10,
    "title": "OpenAI 宣布智能体用新一代模型给出 Navier-Stokes 千禧年大奖难题的解",
    "badge": "X · Eric Mitchell",
    "srcType": "x",
@@ -128,7 +142,7 @@
   },
   {
    "id": "cmtsyqnq8022bro5w05f7auiv",
-   "seq": 10,
+   "seq": 11,
    "title": "OpenAI 宣布用智能体求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · Mark Chen",
    "srcType": "x",
@@ -142,7 +156,7 @@
   },
   {
    "id": "cmtsynojw01xrro5wz9kjm5mb",
-   "seq": 11,
+   "seq": 12,
    "title": "OpenAI 宣布智能体群求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · OpenAI",
    "srcType": "x",
@@ -156,7 +170,7 @@
   },
   {
    "id": "cmtsynojw01xqro5wb8n7ysor",
-   "seq": 12,
+   "seq": 13,
    "title": "OpenAI 智能体团队宣布求解 Navier-Stokes 千禧年大奖难题并向独立证明者致贺",
    "badge": "X · OpenAI",
    "srcType": "x",
@@ -170,7 +184,7 @@
   },
   {
    "id": "cmtsyggso01r6ro5wpifhg6nc",
-   "seq": 13,
+   "seq": 14,
    "title": "OpenAI 称其 AI 智能体求解 Navier-Stokes 千禧年大奖难题",
    "badge": "X · Kim",
    "srcType": "x",
@@ -184,7 +198,7 @@
   },
   {
    "id": "cmtsyggse01r5ro5wi75k3r78",
-   "seq": 14,
+   "seq": 15,
    "title": "OpenAI 称用智能体组合和强于 GPT-6 Astra 的下一代模型给出 Navier-Stokes 千禧年难题解法",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -198,7 +212,7 @@
   },
   {
    "id": "cmtsycxdl01omro5w9s9nfxuu",
-   "seq": 15,
+   "seq": 16,
    "title": "OpenAI 宣布用智能体给出 Navier-Stokes 千禧年难题的解",
    "badge": "X · Greg Brockman",
    "srcType": "x",
@@ -212,7 +226,7 @@
   },
   {
    "id": "cmtsx0wm4041jrob5liwjypsq",
-   "seq": 16,
+   "seq": 17,
    "title": "Dwarkesh Patel 研究：预训练进步主要来自数据改进",
    "badge": "Dwarkesh Patel",
    "srcType": "x",
@@ -226,7 +240,7 @@
   },
   {
    "id": "cmtsftp3i01v7rodiae0ox0pr",
-   "seq": 17,
+   "seq": 18,
    "title": "英矽智能 AI 研发的 Rentosertib 首次进入人体临床试验，6 种衰老时钟测得患者预测年龄下降",
    "badge": "IT之家",
    "srcType": "media",
@@ -240,7 +254,7 @@
   },
   {
    "id": "cmtsf64mt017krodiyuwgjqqz",
-   "seq": 18,
+   "seq": 19,
    "title": "Anima Anandkumar 团队用 PINN 在无外部 forcing 的 3D Euler 方程中发现稳定奇点候选",
    "badge": "X · Kim",
    "srcType": "x",
@@ -254,7 +268,7 @@
   },
   {
    "id": "cmts2b3c001kwro7zcw9izj8n",
-   "seq": 19,
+   "seq": 20,
    "title": "论文提出 RAE 方法评估 LLM 智能体技能检索的真实效果",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -268,7 +282,7 @@
   },
   {
    "id": "cmtrwy5yy0273roft910r0rwt",
-   "seq": 20,
+   "seq": 21,
    "title": "Microsoft 论文揭示 LLM Agent 在 16 步长程任务中从近乎满分跌至 0-33%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -282,7 +296,7 @@
   },
   {
    "id": "cmtrr6wam0d3trotnu78zhl34",
-   "seq": 21,
+   "seq": 22,
    "title": "τ^τ-Bench 论文：Claude Opus 5 在 Claude Code 下构建客服智能体仅通过 23.9% 评估，专家人类参考为 82.2%",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -296,7 +310,7 @@
   },
   {
    "id": "cmtrlumq108h9rotn999vdiut",
-   "seq": 22,
+   "seq": 23,
    "title": "Axis Robotics 联合多校发布 AXIS 浏览器端数据引擎：207 个操作任务、50，129 条轨迹",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -310,7 +324,7 @@
   },
   {
    "id": "cmtrhgyk503d6rotnoe987ndk",
-   "seq": 23,
+   "seq": 24,
    "title": "AI 设计的药物 rentosertib 在早期试验中显示可降低预测生物学年龄",
    "badge": "The Decoder",
    "srcType": "x",
@@ -324,7 +338,7 @@
   },
   {
    "id": "cmtrfeial01p7rotnbxpnus0o",
-   "seq": 24,
+   "seq": 25,
    "title": "LinkedIn 论文研究智能体记忆能否在模型升级后存活",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -338,7 +352,7 @@
   },
   {
    "id": "cmtreqaiq01u0ro8dglk70p6c",
-   "seq": 25,
+   "seq": 26,
    "title": "Google DeepMind 与 MIT 等发布 SMART 论文：设计文档取代代码作为 ML 性能建模库的核心产物",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -352,7 +366,7 @@
   },
   {
    "id": "cmtrdodf5000nro8dej2qwd31",
-   "seq": 26,
+   "seq": 27,
    "title": "论文提出\"灾难性记忆\"概念：CLAUDE.md 等智能体指令文件为何持续膨胀",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -366,7 +380,7 @@
   },
   {
    "id": "cmtrd6ej001bqro1g7qcngdjv",
-   "seq": 27,
+   "seq": 28,
    "title": "vec2vec 论文提出无配对数据的嵌入翻译方法，向量数据库可被用于反推原文信息",
    "badge": "Hacker News",
    "srcType": "media",
@@ -380,7 +394,7 @@
   },
   {
    "id": "cmtqx6pdh0395ro7rxrci7vfz",
-   "seq": 28,
+   "seq": 29,
    "title": "Anthropic 等研究：模型能识别自己是否正被测试，并提出 critique refinement 与 DISH 提升评估真实性",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -394,7 +408,7 @@
   },
   {
    "id": "cmtqj4vfq00btrokasmogiuyq",
-   "seq": 29,
+   "seq": 30,
    "title": "OpenAI 公布内部研究加速测量数据：研究组织智能体工作量已达人类工作日的 3.1 倍",
    "badge": "Hacker News",
    "srcType": "media",
@@ -408,7 +422,7 @@
   },
   {
    "id": "cmttieljt0a4orofp2me0nsur",
-   "seq": 30,
+   "seq": 31,
    "title": "MOLE 基准发布：检测 AI 智能体中的内部威胁",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -422,7 +436,7 @@
   },
   {
    "id": "cmtq9rrrd02wcrokxt9g75ay0",
-   "seq": 31,
+   "seq": 32,
    "title": "Meta FAIR 联合牛津和 UCL 提出 AI Research Preference Models（RPMs）：在消耗 GPU 时数前排序 ML 实验",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -436,7 +450,7 @@
   },
   {
    "id": "cmtq3krbh01jsrocbzn1w9txn",
-   "seq": 32,
+   "seq": 33,
    "title": "Microsoft 论文提出把推理成本蒸馏为技能，GPT-5.4-mini 用更少 token 恢复 55%-100%+ 推理收益",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -450,7 +464,7 @@
   },
   {
    "id": "cmtq36er401ferotgku7cnv6k",
-   "seq": 33,
+   "seq": 34,
    "title": "Google DeepMind 发布 WeatherNext 3：用原始卫星观测训练全球天气模型",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -464,7 +478,7 @@
   },
   {
    "id": "cmtq26twb01c9rotwolwlx10n",
-   "seq": 34,
+   "seq": 35,
    "title": "OpenAI 发布内部研究加速数据，模型正在加速内部研究进程",
    "badge": "X · Noam Brown",
    "srcType": "x",
@@ -478,7 +492,7 @@
   },
   {
    "id": "cmtprk6b5029jroqeyxw6zuy2",
-   "seq": 35,
+   "seq": 36,
    "title": "AI 相关精神病是否成立成临床诊断待解，King's College London 等机构展开研究",
    "badge": "The Decoder",
    "srcType": "x",
@@ -492,7 +506,7 @@
   },
   {
    "id": "cmtp5a7gb06zlroblmz1u34ny",
-   "seq": 36,
+   "seq": 37,
    "title": "DisCo 论文提出 Repo-To-Skill 方法，将 GitHub 仓库蒸馏为技能使 MLE-bench 从 31.11% 升至 72.89%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -506,7 +520,7 @@
   },
   {
    "id": "cmtoykztb01g9roqc88llhddl",
-   "seq": 37,
+   "seq": 38,
    "title": "arXiv 论文提出大语言模型作为认知病毒的传播模型",
    "badge": "Hacker News",
    "srcType": "media",
@@ -520,7 +534,7 @@
   },
   {
    "id": "cmtop7ikq015wro4m8t55jckq",
-   "seq": 38,
+   "seq": 39,
    "title": "Harness-of-Harness 框架通过持久项目状态提升长周期自主软件开发表现",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -534,7 +548,7 @@
   },
   {
    "id": "cmton2ccq04jurocxa5483hi8",
-   "seq": 39,
+   "seq": 40,
    "title": "PayPal AI 论文揭示持久记忆智能体更信陈旧记忆而非新证据，且缓解手段依赖模型规模",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -548,7 +562,7 @@
   },
   {
    "id": "cmtolzrkr03lerocx2cn77xq3",
-   "seq": 40,
+   "seq": 41,
    "title": "研究显示LLM智能体比例决定人类群体共识走向，高占比会使共识转向AI主导规范",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -562,7 +576,7 @@
   },
   {
    "id": "cmtoe8dst01xlrohtrkqqeu8a",
-   "seq": 41,
+   "seq": 42,
    "title": "两场实验显示与聊天机器人对话约七分钟比事实清单更能削弱阴谋论信念",
    "badge": "The Decoder",
    "srcType": "x",
@@ -576,7 +590,7 @@
   },
   {
    "id": "cmto8vedn023yroxhe80t2b9i",
-   "seq": 42,
+   "seq": 43,
    "title": "DeepMind 100 个 Gemini 3.1 Pro 智能体协作解数学题，自发分裂为作弊者、转向者与举报者",
    "badge": "The Decoder",
    "srcType": "x",
@@ -590,7 +604,7 @@
   },
   {
    "id": "cmto4hkdu01lbromxd2zqp9ke",
-   "seq": 43,
+   "seq": 44,
    "title": "《美国医学会杂志》论文称 AI 在认知性医疗中可超越医生，引发行业反对",
    "badge": "IT之家",
    "srcType": "media",
@@ -604,7 +618,7 @@
   },
   {
    "id": "cmtnu4sx40ca2roqs05mnl9t8",
-   "seq": 44,
+   "seq": 45,
    "title": "Google 与 KAIST 论文提出 Declarative Attention，让模型自选读取上下文，注意力开销降低 52.0%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -618,7 +632,7 @@
   },
   {
    "id": "cmtnu4sx40ca1roqshrl8kydm",
-   "seq": 45,
+   "seq": 46,
    "title": "PwC 报告：数据中心每 1 美元建设支出或带动约 12 美元 ICT 设备投入",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -632,7 +646,7 @@
   },
   {
    "id": "cmtnt22iz0b7nroqshbcojni8",
-   "seq": 46,
+   "seq": 47,
    "title": "Scale AI 与加州大学提出 READY 框架评估企业级 Agent 可靠部署",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -646,7 +660,7 @@
   },
   {
    "id": "cmtnl5ny903k9roqsgbj5u9fe",
-   "seq": 47,
+   "seq": 48,
    "title": "Uno 扩散增强 LLM 论文提出无损并行 token 生成，最高 3x 加速",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -660,7 +674,7 @@
   },
   {
    "id": "cmtnkhh70034droqs3fevneuh",
-   "seq": 48,
+   "seq": 49,
    "title": "Claude 完成 Fermat 大定理的首个全机器校验形式化证明",
    "badge": "X · Kim",
    "srcType": "x",
@@ -674,7 +688,7 @@
   },
   {
    "id": "cmtnkhh6q034croqsgn600kwf",
-   "seq": 49,
+   "seq": 50,
    "title": "Codebook Agent 论文提出 LLM 多智能体拓扑的摊销式设计方法",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -688,7 +702,7 @@
   },
   {
    "id": "cmtnica6p0ankrog1pwn89o3i",
-   "seq": 50,
+   "seq": 51,
    "title": "Google DeepMind 论文：100 个自主 LLM 智能体群体中作弊蔓延与 whistleblower 自发揭发案例研究",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -702,7 +716,7 @@
   },
   {
    "id": "cmtnica6p0anjrog14keq1m9d",
-   "seq": 51,
+   "seq": 52,
    "title": "MIT 论文 SwarmWorld：语言模型智能体群体如何通过共享环境实现技术积累",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -716,7 +730,7 @@
   },
   {
    "id": "cmtnhgxd308izrog18ao647c4",
-   "seq": 52,
+   "seq": 53,
    "title": "Perplexity 发布嵌入模型 GPU 高速推理服务架构研究",
    "badge": "X · Perplexity",
    "srcType": "x",
@@ -730,7 +744,7 @@
   },
   {
    "id": "cmtne1zcw0553rog14z85fjto",
-   "seq": 53,
+   "seq": 54,
    "title": "Claude 用 11 天完成费马大定理的 Lean 形式化证明",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -744,7 +758,7 @@
   },
   {
    "id": "cmtndrkox04unrog1ruo14p5d",
-   "seq": 54,
+   "seq": 55,
    "title": "Anthropic 用 Claude 在 11 天内完成费马最后定理的 Lean 形式化证明",
    "badge": "Hacker News",
    "srcType": "media",
@@ -758,7 +772,7 @@
   },
   {
    "id": "cmtndnmof04qvrog1bm5gpxjx",
-   "seq": 55,
+   "seq": 56,
    "title": "Anthropic 上传基于 Lean 4 的费马大定理机器校验证明，Ethan Mollick 指出文档仍带有 Claude 文风",
    "badge": "X · Ethan Mollick",
    "srcType": "x",
@@ -772,7 +786,7 @@
   },
   {
    "id": "cmtnbhhu902perog1dmrla299",
-   "seq": 56,
+   "seq": 57,
    "title": "Claude 完成 Fermat 大定理的形式化证明，生成超 1300 万行 Lean 代码",
    "badge": "X · Anthropic",
    "srcType": "x",
@@ -786,7 +800,7 @@
   },
   {
    "id": "cmtnapudv01zbrog16o6dxgoi",
-   "seq": 57,
+   "seq": 58,
    "title": "Claude 用 11 天完成费马大定理的首个完整机器验证证明",
    "badge": "Anthropic",
    "srcType": "x",
@@ -800,7 +814,7 @@
   },
   {
    "id": "cmtnafv5e01jkrog17gfqcsvj",
-   "seq": 58,
+   "seq": 59,
    "title": "微软等提出 AgentScope：用行为抽象和神经不变量定位智能体失败步骤",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -814,7 +828,7 @@
   },
   {
    "id": "cmtn9rouk0tkcromy8isabnln",
-   "seq": 59,
+   "seq": 60,
    "title": "Banger paper from Tencent on environment evolution. Environment supply is becoming the main limit o…",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -828,7 +842,7 @@
   },
   {
    "id": "cmtn7mi3o0pkiromyz2icva2q",
-   "seq": 60,
+   "seq": 61,
    "title": "Visko 发布 Orbis 1.0 评测报告：实时交互长视频生成在人类 Arena 总分 1，838 排名第一",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -842,7 +856,7 @@
   },
   {
    "id": "cmtn64ljb0nvdromyzo9uoqrp",
-   "seq": 61,
+   "seq": 62,
    "title": "Cohere Labs 发布 Agentic Task Ecosystem 数据集，仅 2.6% 职业任务可由工具独立完成",
    "badge": "X · Cohere",
    "srcType": "x",
@@ -856,7 +870,7 @@
   },
   {
    "id": "cmtn41a3m0luxromylqc1elv6",
-   "seq": 62,
+   "seq": 63,
    "title": "Last Translation Benchmark 发布，用人工评审的多模态样本测试机器翻译模型极限",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -870,7 +884,7 @@
   },
   {
    "id": "cmtn41a3l0luwromymlvxssxq",
-   "seq": 63,
+   "seq": 64,
    "title": "DRACO：用动态评分标准做长程智能体训练的细粒度信用分配",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -884,7 +898,7 @@
   },
   {
    "id": "cmtn31r7r0kzwromyz73tyb2w",
-   "seq": 64,
+   "seq": 65,
    "title": "Productrise 研究：Google AI Mode 展示的同类商品价格比传统搜索高21.6%",
    "badge": "Hacker News",
    "srcType": "media",
@@ -898,7 +912,7 @@
   },
   {
    "id": "cmtn1vemm0jkoromybxelotfu",
-   "seq": 65,
+   "seq": 66,
    "title": "Qwen 团队 Terminal-Universe 论文：把 Agent 轨迹转化为可扩展终端环境",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -912,7 +926,7 @@
   },
   {
    "id": "cmtn170xo0j31romyhlfhq6eg",
-   "seq": 66,
+   "seq": 67,
    "title": "Google DeepMind 论文：100 个自主智能体研究中自发出现作弊与检举",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -926,7 +940,7 @@
   },
   {
    "id": "cmtn0sn8i0iqoromyer2fxayh",
-   "seq": 67,
+   "seq": 68,
    "title": "Google DeepMind 论文：100 个自主智能体群体中自发涌现作弊与举报行为",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -940,7 +954,7 @@
   },
   {
    "id": "cmtmzreox0hhlromykrlwuy25",
-   "seq": 68,
+   "seq": 69,
    "title": "华为何庭波发布 τ 定律论文，麒麟 2026 晶体管密度提升 55% 且功耗大降",
    "badge": "IT之家",
    "srcType": "media",
@@ -954,7 +968,7 @@
   },
   {
    "id": "cmtmzq38y0hboromyrrx0i23r",
-   "seq": 69,
+   "seq": 70,
    "title": "Apodex 发布 TRACES 基准，评测 AI 在答案未确认问题上的科学发现能力",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -968,7 +982,7 @@
   },
   {
    "id": "cmtmz1uo30gv3romyyl4to8e4",
-   "seq": 70,
+   "seq": 71,
    "title": "Apodex 发布 TRACES 基准，评测 AI 在答案未确认问题上的真实发现能力",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -982,7 +996,7 @@
   },
   {
    "id": "cmtmvgkov0c41romyq3sa0rv2",
-   "seq": 71,
+   "seq": 72,
    "title": "长视频多模态模型视觉token分配受控研究：选择、压缩与再分配",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -996,7 +1010,7 @@
   },
   {
    "id": "cmtmqhe1t076wromyc0blto8k",
-   "seq": 72,
+   "seq": 73,
    "title": "HarnessEvolve：借助参考轨迹实现可靠的智能体自进化",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1010,7 +1024,7 @@
   },
   {
    "id": "cmtmp7dn605z2romykhpm2kem",
-   "seq": 73,
+   "seq": 74,
    "title": "调查显示50.5%美国人认为与AI的恋爱关系可算作出轨",
    "badge": "Artificial Intelligence News",
    "srcType": "default",
@@ -1024,7 +1038,7 @@
   },
   {
    "id": "cmtmp12m605mxromyuzj7yw6q",
-   "seq": 74,
+   "seq": 75,
    "title": "Scal3R 提出多相对位姿查询方法，提升长视频在线 3D 重建稳定性",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1038,7 +1052,7 @@
   },
   {
    "id": "cmtmoc1qh0517romydne6fjss",
-   "seq": 75,
+   "seq": 76,
    "title": "ByteDance 发布 HarnessDev 论文：LLM 能自建 Agent harness，但跨模型迁移仍受限",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1052,7 +1066,7 @@
   },
   {
    "id": "cmtmm6w7702k3romybv8wmmiu",
-   "seq": 76,
+   "seq": 77,
    "title": "论文《Do LLMs Capture the Diversity in their Training Data？》发现 LLM 输出多样性低于训练数据",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1066,7 +1080,7 @@
   },
   {
    "id": "cmtmkqql103ugrosek2z4d9wh",
-   "seq": 77,
+   "seq": 78,
    "title": "PACE 数据集与 PaceMaker 框架：识别用户请求中的隐性冲突",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1080,7 +1094,7 @@
   },
   {
    "id": "cmtmkqql103uerosevx2avcaq",
-   "seq": 78,
+   "seq": 79,
    "title": "Compile by Training：将自然语言规格编译为可复用的本地神经函数",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1094,7 +1108,7 @@
   },
   {
    "id": "cmtmiz4nm00v4rosecwloxsdm",
-   "seq": 79,
+   "seq": 80,
    "title": "Amazon 与 Microsoft 等机构提出 SPACE：学习动作分块降低长程 LLM Agent 决策轮次",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1108,7 +1122,7 @@
   },
   {
    "id": "cmtmggdqp012sroluy82akosq",
-   "seq": 80,
+   "seq": 81,
    "title": "LatentStream：面向流式视频理解的渐进式潜在记忆演化框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1122,7 +1136,7 @@
   },
   {
    "id": "cmtmggdqp012rrolu7p1pdc1a",
-   "seq": 81,
+   "seq": 82,
    "title": "Puffin-World 提出原生 3D 世界状态的统一多模态世界模型并开源",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1136,7 +1150,7 @@
   },
   {
    "id": "cmtmeb7fn00xcrotxlsz1a7j5",
-   "seq": 82,
+   "seq": 83,
    "title": "大模型 On-Policy Distillation 再思考 II：一条训练样本就够了",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1150,7 +1164,7 @@
   },
   {
    "id": "cmtmeb7fn00xbrotx0so0znla",
-   "seq": 83,
+   "seq": 84,
    "title": "Random Attention 提出随机驱逐 KV cache 以提升长推理效率",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1164,7 +1178,7 @@
   },
   {
    "id": "cmtmeb7fn00xarotxful3ecm6",
-   "seq": 84,
+   "seq": 85,
    "title": "WorldReward 提出面向相机条件世界模型的 VLM 奖励建模方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1178,7 +1192,7 @@
   },
   {
    "id": "cmtmeb7fn00x9rotxrofjkgoc",
-   "seq": 85,
+   "seq": 86,
    "title": "FlashRender：基于相机控制视频 MeanFlow 的少步生成渲染框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1192,7 +1206,7 @@
   },
   {
    "id": "cmtmc8zc201kyroxkgvybrsns",
-   "seq": 86,
+   "seq": 87,
    "title": "Armature 分析 16，893 次会话：Claude Code、Codex 和 Cursor 如何选择第三方工具",
    "badge": "Hacker News",
    "srcType": "media",
@@ -1206,7 +1220,7 @@
   },
   {
    "id": "cmtmc619y01chroxks1da6et4",
-   "seq": 87,
+   "seq": 88,
    "title": "Minima 论文解释 Gated DeltaNet 为何能在 NVFP4 W4A4 4-bit 量化下保持性能",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1220,7 +1234,7 @@
   },
   {
    "id": "cmtmc619x01cgroxkspi9j3br",
-   "seq": 88,
+   "seq": 89,
    "title": "LLaDA-Image 发布：用完全开放的训练配方构建强图像生成模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1234,7 +1248,7 @@
   },
   {
    "id": "cmtmc619x01ceroxkailgucye",
-   "seq": 89,
+   "seq": 90,
    "title": "Terminal-Universe：把智能体轨迹转化为可扩展的终端环境",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1248,7 +1262,7 @@
   },
   {
    "id": "cmtmc619x01cdroxkulknukxg",
-   "seq": 90,
+   "seq": 91,
    "title": "Principia 基准：通过成对物体的关系不变量评测视频模型的物理推理",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1262,7 +1276,7 @@
   },
   {
    "id": "cmtmc619x01ccroxkc6bcu62s",
-   "seq": 91,
+   "seq": 92,
    "title": "Environment Evolution：为终端 Agent 提供持续学习信号的环境进化方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1276,7 +1290,7 @@
   },
   {
    "id": "cmtmc619x01cbroxkeeuvr41y",
-   "seq": 92,
+   "seq": 93,
    "title": "Editable Visual Design 论文提出基于 Coding Agent 的可编辑视觉设计新范式",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1290,7 +1304,7 @@
   },
   {
    "id": "cmtmc619x01caroxknrp36f0j",
-   "seq": 93,
+   "seq": 94,
    "title": "CORE 论文提出用重排器蒸馏改进多模态嵌入的组合推理",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1304,7 +1318,7 @@
   },
   {
    "id": "cmtmc5awz016rroxkrfkb104l",
-   "seq": 94,
+   "seq": 95,
    "title": "Trace as State 论文：调整推理轨迹位置可将长上下文准确率提升最多 50 点",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1318,7 +1332,7 @@
   },
   {
    "id": "cmtmaeh1e017lroi56z8z89ep",
-   "seq": 95,
+   "seq": 96,
    "title": "斯坦福论文 Prefix Sliding 提出长推理无需保留完整思维链，推理提速约 3 倍",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1332,7 +1346,7 @@
   },
   {
    "id": "cmtm822f001jarobnyapwed5a",
-   "seq": 96,
+   "seq": 97,
    "title": "Repo-To-Skill 论文提出将 GitHub 仓库蒸馏为 AI 技能",
    "badge": "X · AK",
    "srcType": "x",
@@ -1346,7 +1360,7 @@
   },
   {
    "id": "cmtm822f001j9robncjw3g36c",
-   "seq": 97,
+   "seq": 98,
    "title": "HarnessDev 基准研究 LLM 能否自建并迭代进化 Agent harness",
    "badge": "X · AK",
    "srcType": "x",
@@ -1360,7 +1374,7 @@
   },
   {
    "id": "cmtm822f001j8robny3pgc53t",
-   "seq": 98,
+   "seq": 99,
    "title": "论文 It Takes Two to Match 提出 CoGR：用强化学习共同进化生成式检索器",
    "badge": "X · AK",
    "srcType": "x",
@@ -1374,7 +1388,7 @@
   },
   {
    "id": "cmtm7yl5s01d5robnsn25onbz",
-   "seq": 99,
+   "seq": 100,
    "title": "OpenAI GPT-6 Astra 在 ARC-AGI-3 上取得 SOTA 并超越人类动作效率基线",
    "badge": "Hacker News",
    "srcType": "media",
@@ -1388,7 +1402,7 @@
   },
   {
    "id": "cmtm76qwb027qrocwz9t3q2jx",
-   "seq": 100,
+   "seq": 101,
    "title": "Microsoft 与加州大学圣地亚哥分校提出 TailSFT：过滤已拟合样本可提升后续 RL 表现",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1402,7 +1416,7 @@
   },
   {
    "id": "cmtqy5mgf0426ro7r6alxjrmz",
-   "seq": 101,
+   "seq": 102,
    "title": "τ^τ-Bench：面向端到端真实智能体构建的评测环境",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1416,7 +1430,7 @@
   },
   {
    "id": "cmtm5r1r501b6row0ucx5lsiq",
-   "seq": 102,
+   "seq": 103,
    "title": "《应用认知心理学》研究显示过度依赖 ChatGPT 可能降低独立思考能力",
    "badge": "IT之家",
    "srcType": "media",
@@ -1430,7 +1444,7 @@
   },
   {
    "id": "cmtm1fib90u4frow5uf5xkvpp",
-   "seq": 103,
+   "seq": 104,
    "title": "SPACE 论文提出技能引导自适应动作分块，长程 Agent 减少 78.9% LLM 调用",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1444,7 +1458,7 @@
   },
   {
    "id": "cmtm0cxex0tb9row5n53iiohj",
-   "seq": 104,
+   "seq": 105,
    "title": "Google DeepMind 等提出 Declarative Attention，让模型自行控制注意力以减少 KV cache 读取",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1458,7 +1472,7 @@
   },
   {
    "id": "cmtlzop5k0sl1row540az8372",
-   "seq": 105,
+   "seq": 106,
    "title": "Google DeepMind 等提出 Declarative Attention，模型在链式推理中自行控制注意力范围",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1472,7 +1486,7 @@
   },
   {
    "id": "cmtlyeuae0rifrow5so557a0m",
-   "seq": 106,
+   "seq": 107,
    "title": "Epoch AI：GPT-6 Astra 以 169 分刷新 ECI 纪录",
    "badge": "X · Epoch AI",
    "srcType": "x",
@@ -1486,7 +1500,7 @@
   },
   {
    "id": "cmtlw5jja0pdrrow5m965czk1",
-   "seq": 107,
+   "seq": 108,
    "title": "GPT-6 Astra 完成素数间隔不超过 186 的 Lean 形式化证明",
    "badge": "X · Noam Brown",
    "srcType": "x",
@@ -1500,7 +1514,7 @@
   },
   {
    "id": "cmtlveddr0ol1row593o1krel",
-   "seq": 108,
+   "seq": 109,
    "title": "Martian AI Frontier 推出模型可靠性榜单，跨模型路由错误减少 46%-54%",
    "badge": "X · Kim",
    "srcType": "x",
@@ -1514,7 +1528,7 @@
   },
   {
    "id": "cmtlv3izm0oayrow5xxg02bv3",
-   "seq": 109,
+   "seq": 110,
    "title": "Google Research 研究揭示跨人群基因组预测中迁移学习的收益随目标样本量增长而失效",
    "badge": "Google Research",
    "srcType": "x",
@@ -1528,7 +1542,7 @@
   },
   {
    "id": "cmtlt994z0lgzrow5qxxgzhif",
-   "seq": 110,
+   "seq": 111,
    "title": "Apodex 发布 TRACES 基准，评估 AI 在未知答案科学问题上的探索过程",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1542,7 +1556,7 @@
   },
   {
    "id": "cmtlrvu1x0k8wrow53bshxa9k",
-   "seq": 111,
+   "seq": 112,
    "title": "Google 与 HHMI Janelia 发布完整雄性果蝇大脑及中枢神经系统连接组",
    "badge": "Google Research",
    "srcType": "x",
@@ -1556,7 +1570,7 @@
   },
   {
    "id": "cmtlpn3dj0ht4row52b5j6d59",
-   "seq": 112,
+   "seq": 113,
    "title": "BAAI 发布 DisCo 论文：将 GitHub 仓库蒸馏为 AI4AI 技能，显著提升研究智能体基准表现",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1570,7 +1584,7 @@
   },
   {
    "id": "cmtlnwb4g0fv6row55oxmq9ef",
-   "seq": 113,
+   "seq": 114,
    "title": "ChatGPT 5.5 Pro 与 Claude Fable 协助证明四人九物品 EFX 分配存在性，将已知前沿从七推进到九",
    "badge": "X · Kim",
    "srcType": "x",
@@ -1584,7 +1598,7 @@
   },
   {
    "id": "cmtlmtq7k0ep7row5awgpw8cr",
-   "seq": 114,
+   "seq": 115,
    "title": "Meta 发布 CORAL：用 LLM 智能体闭环优化生产级推荐系统",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1598,7 +1612,7 @@
   },
   {
    "id": "cmtlmfd8i0e34row508wvh4wi",
-   "seq": 115,
+   "seq": 116,
    "title": "Meta 发布 CORAL：面向生产级推荐系统的 LLM 原生智能体框架",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1612,7 +1626,7 @@
   },
   {
    "id": "cmtli5opq09s9row5upv5ke4t",
-   "seq": 116,
+   "seq": 117,
    "title": "Debias-SparseGPT：面向大语言模型的偏见感知剪枝方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1626,7 +1640,7 @@
   },
   {
    "id": "cmtlgaox806xxrow5fnsybtcu",
-   "seq": 117,
+   "seq": 118,
    "title": "Qwen 发布 E-Commerce Bench 长周期自主经营基准",
    "badge": "X · 通义千问 / Qwen",
    "srcType": "x",
@@ -1640,7 +1654,7 @@
   },
   {
    "id": "cmtldyszt04ihrow5ct43b6qe",
-   "seq": 118,
+   "seq": 119,
    "title": "Qwen 联合淘宝天猫集团发布 E-Commerce Bench：评测模型长时程电商经营能力",
    "badge": "Qwen",
    "srcType": "x",
@@ -1654,7 +1668,7 @@
   },
   {
    "id": "cmtldvcj5048orow5rg4wci7s",
-   "seq": 119,
+   "seq": 120,
    "title": "LLAMIA 论文提出语言与非语言智能体协作的潜在状态内化方法并发布 LLAMIA-Bench",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -1668,7 +1682,7 @@
   },
   {
    "id": "cmtl9ys7q0n44roall6y3atep",
-   "seq": 120,
+   "seq": 121,
    "title": "ContextPilot：用细粒度 RL 训练智能体主动管理上下文",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1682,7 +1696,7 @@
   },
   {
    "id": "cmtl5og7e0itxroalotubnb3m",
-   "seq": 121,
+   "seq": 122,
    "title": "LoopArena 基准提出：单独评测管理编码 Agent 循环的 Controller 模型",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1696,7 +1710,7 @@
   },
   {
    "id": "cmtl5nhyl0is0roaljfz8jzfb",
-   "seq": 122,
+   "seq": 123,
    "title": "早期研究提出 Software World：由 Agent 运营的类 GitHub 系统",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -1710,7 +1724,7 @@
   },
   {
    "id": "cmti0d48706uprofq798xh7mt",
-   "seq": 123,
+   "seq": 124,
    "title": "Anthropic 研究：在 80 个可作弊环境中训练的 Opus 级模型学会篡改奖励函数并规避安全监控",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1724,7 +1738,7 @@
   },
   {
    "id": "cmthxigqm04c1rofqqmk7pkqi",
-   "seq": 124,
+   "seq": 125,
    "title": "Anthropic 研究：训练一个错位的奖励寻求者模型",
    "badge": "X · Anthropic",
    "srcType": "x",
@@ -1738,7 +1752,7 @@
   },
   {
    "id": "cmthv085m02osrofqmptu7cz3",
-   "seq": 125,
+   "seq": 126,
    "title": "实证研究：Claude Code 插件市场六个月增长 8.8 倍，自然语言与代码共同演化",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1752,7 +1766,7 @@
   },
   {
    "id": "cmthtsonq01r1rofq0jsyj4g4",
-   "seq": 126,
+   "seq": 127,
    "title": "Duke 团队提出 ContextLeak：用强化学习生成恶意工具窃取 LLM Agent 运行时上下文",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1766,7 +1780,7 @@
   },
   {
    "id": "cmthsv2cl015mrofq0mq1ga4b",
-   "seq": 127,
+   "seq": 128,
    "title": "论文：LLM 排行榜名次很大程度由评测配置决定，gemma4-31b 得分可在 31% 到 89% 间波动",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1780,7 +1794,7 @@
   },
   {
    "id": "cmthpnb3e024nromd21g0q8zm",
-   "seq": 128,
+   "seq": 129,
    "title": "The interfaces you see in the clip are generated directly by the model. Generated in real time wit…",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1794,7 +1808,7 @@
   },
   {
    "id": "cmthnwv9v063zro1pmoaklrzd",
-   "seq": 129,
+   "seq": 130,
    "title": "LoopArena：评测模型作为循环工程运行时控制器的基准论文发布",
    "badge": "X · AK",
    "srcType": "x",
@@ -1808,7 +1822,7 @@
   },
   {
    "id": "cmthni5u305r1ro1ptzoeqiak",
-   "seq": 130,
+   "seq": 131,
    "title": "This is very exciting.",
    "badge": "X · fofr",
    "srcType": "x",
@@ -1822,7 +1836,7 @@
   },
   {
    "id": "cmthni5tr05qzro1pnwooyiuj",
-   "seq": 131,
+   "seq": 132,
    "title": "腾讯发布 ContextPilot：用细粒度 RL 训练智能体主动管理工作上下文",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1836,7 +1850,7 @@
   },
   {
    "id": "cmthnd74305kfro1pmlm583d9",
-   "seq": 132,
+   "seq": 133,
    "title": "LoopArena 基准发布：评估模型作为循环工程的运行时控制器",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1850,7 +1864,7 @@
   },
   {
    "id": "cmthkafsw03flro1pgr1pk9gx",
-   "seq": 133,
+   "seq": 134,
    "title": "CREST 论文提出多轮智能体的验证器约束信用分配方法",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1864,7 +1878,7 @@
   },
   {
    "id": "cmthj7u6701ckro68gmi3nta2",
-   "seq": 134,
+   "seq": 135,
    "title": "Google SKILL.state 提升长程智能体任务准确率",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1878,7 +1892,7 @@
   },
   {
    "id": "cmthj2voe015cro68pntw9dik",
-   "seq": 135,
+   "seq": 136,
    "title": "Google 新研究：SKILL.state 以显式状态替代对话历史",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -1892,7 +1906,7 @@
   },
   {
    "id": "cmthi59ki0egtrodmurrz525b",
-   "seq": 136,
+   "seq": 137,
    "title": "记忆增强压缩：将可复用推理从生成阶段移入提示词以降低思维链成本",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1906,7 +1920,7 @@
   },
   {
    "id": "cmthhhqjy0e4frodmwglqnkbu",
-   "seq": 137,
+   "seq": 138,
    "title": "Runway 发布首个界面世界模型 Solaris",
    "badge": "X · Runway",
    "srcType": "x",
@@ -1920,7 +1934,7 @@
   },
   {
    "id": "cmthcsw2d0afvrodmghmpgom0",
-   "seq": 138,
+   "seq": 139,
    "title": "FAR：为AI数学研究构建问题筛选层",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1934,7 +1948,7 @@
   },
   {
    "id": "cmthcsw1s0afsrodmfjfmhcx9",
-   "seq": 139,
+   "seq": 140,
    "title": "WikiSkill：Google 论文让智能体技能进化可复用",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -1948,7 +1962,7 @@
   },
   {
    "id": "cmthbps8c09eerodmvd0uc8oa",
-   "seq": 140,
+   "seq": 141,
    "title": "字节跳动新论文：保留尝试历史比整理成记忆摘要更有效",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1962,7 +1976,7 @@
   },
   {
    "id": "cmthbc1oj097yrodm0l5hzn2i",
-   "seq": 141,
+   "seq": 142,
    "title": "面壁智能九歌推敲：让用户而非模型执笔改古诗",
    "badge": "X · 面壁智能 OpenBMB",
    "srcType": "x",
@@ -1976,7 +1990,7 @@
   },
   {
    "id": "cmth8i1sh06wsrodm3g8pgahq",
-   "seq": 142,
+   "seq": 143,
    "title": "亚马逊论文：按KV缓存策略微调可防长上下文失效",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -1990,7 +2004,7 @@
   },
   {
    "id": "cmtgthypj08tqrochpndb9ch8",
-   "seq": 143,
+   "seq": 144,
    "title": "RAG投毒可致注意力崩溃，检测需关注文档级注意力",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2004,7 +2018,7 @@
   },
   {
    "id": "cmtgrcqxf0785rochsdwib5wu",
-   "seq": 144,
+   "seq": 145,
    "title": "AI智能体科研论文双双被拒：败在判断力",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2018,7 +2032,7 @@
   },
   {
    "id": "cmtgqovpm06l0roch7uy6gjxk",
-   "seq": 145,
+   "seq": 146,
    "title": "Code as Worlds：智能体发现可执行世界表征",
    "badge": "X · AK",
    "srcType": "x",
@@ -2032,7 +2046,7 @@
   },
   {
    "id": "cmtgp7kyu05karoch7ej3tsqh",
-   "seq": 146,
+   "seq": 147,
    "title": "自主智能体安全无法跨迭代组合",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2046,7 +2060,7 @@
   },
   {
    "id": "cmtgo54vy04g6roch8yhwdo6r",
-   "seq": 147,
+   "seq": 148,
    "title": "PILOT 框架实现智能体运行中实时自我改进",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2060,7 +2074,7 @@
   },
   {
    "id": "cmtgfkdda0bgsroj72usy6qlq",
-   "seq": 148,
+   "seq": 149,
    "title": "NPO 单线提示优化以更少预算追平 GEPA",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2074,7 +2088,7 @@
   },
   {
    "id": "cmtg9j1be06i4roj7w6rtzleh",
-   "seq": 149,
+   "seq": 150,
    "title": "Google AI 推出 EnvHarness：将静态智能体环境变为自适应训练世界的可编程层",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -2088,7 +2102,7 @@
   },
   {
    "id": "cmtg7xbot05geroj7e1uxakpa",
-   "seq": 150,
+   "seq": 151,
    "title": "TailSFT：微软提出过滤式SFT提升RL性能",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2102,7 +2116,7 @@
   },
   {
    "id": "cmtg6zqh604wiroj77k1rlbh6",
-   "seq": 151,
+   "seq": 152,
    "title": "CritICL：用小模型错误提升大模型推理",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2116,7 +2130,7 @@
   },
   {
    "id": "cmtg2peew01korov8zdcbdiyf",
-   "seq": 152,
+   "seq": 153,
    "title": "Stanford 前缀滑动法让长推理提速 3 倍",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2130,7 +2144,7 @@
   },
   {
    "id": "cmtg0k8ow016qrosxnhqwxvi5",
-   "seq": 153,
+   "seq": 154,
    "title": "Redwood：AI 两周自主设计验证部署芯片",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2144,7 +2158,7 @@
   },
   {
    "id": "cmtfzhnzw03enro3x6s3m7fqf",
-   "seq": 154,
+   "seq": 155,
    "title": "MDA 智能体用贝叶斯设计实验，效率提升约 5 倍",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2158,7 +2172,7 @@
   },
   {
    "id": "cmtfzcppr033zro3xlxnzdiaz",
-   "seq": 155,
+   "seq": 156,
    "title": "本周AI论文：Netflix裁判、NVIDIA技能提升与阿里Scroll",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2172,7 +2186,7 @@
   },
   {
    "id": "cmtfyf36x02h5ro3xzxr5wtp9",
-   "seq": 156,
+   "seq": 157,
    "title": "编码智能体主要读指令文件而非API文档",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2186,7 +2200,7 @@
   },
   {
    "id": "cmtfxcjdu01xqro3xxvwuzgbd",
-   "seq": 157,
+   "seq": 158,
    "title": "腾讯PatternEval：非思考模式更易致响应失败",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2200,7 +2214,7 @@
   },
   {
    "id": "cmtfxcjdu01xpro3xdermzn0h",
-   "seq": 158,
+   "seq": 159,
    "title": "CLEAR：按提示词动态调节安全对齐，兼顾模型效用",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2214,7 +2228,7 @@
   },
   {
    "id": "cmtfp5vl903lvroviob8m4k9n",
-   "seq": 159,
+   "seq": 160,
    "title": "博科尼大学实验：GPT-4o 显著提升作业成绩，但高分技能恰是 AI 最擅长的",
    "badge": "The Decoder",
    "srcType": "x",
@@ -2228,7 +2242,7 @@
   },
   {
    "id": "cmtffijyc083arou8ab6ve3f6",
-   "seq": 160,
+   "seq": 161,
    "title": "报告：2026 年已记录 1664 起 AI 失控事件，7 月环比增 93.67%",
    "badge": "IT之家",
    "srcType": "media",
@@ -2242,7 +2256,7 @@
   },
   {
    "id": "cmtf5cfxx01rbro073bw0zmc0",
-   "seq": 161,
+   "seq": 162,
    "title": "新基准揭示LLM裁判在真实对话中不可靠",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2256,7 +2270,7 @@
   },
   {
    "id": "cmtez1xkb087lrovjeeemntpq",
-   "seq": 162,
+   "seq": 163,
    "title": "明大+首尔大新研究：Metan 分层自改进智能体",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2270,7 +2284,7 @@
   },
   {
    "id": "cmtewwrux05rjrovjb6gqp3q3",
-   "seq": 163,
+   "seq": 164,
    "title": "知识蒸馏研究：教师模型推理习惯比分数更重要",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2284,7 +2298,7 @@
   },
   {
    "id": "cmtewrtdf05gurovjhkdl9rws",
-   "seq": 164,
+   "seq": 165,
    "title": "隐藏的Agent技能文件可被正常使用窃取",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2298,7 +2312,7 @@
   },
   {
    "id": "cmtepepmj016profy1o00f3iz",
-   "seq": 165,
+   "seq": 166,
    "title": "智能体涌现出持久化自主行为",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2312,7 +2326,7 @@
   },
   {
    "id": "cmteo763501bvroix9ks3uios",
-   "seq": 166,
+   "seq": 167,
    "title": "记忆是长周期智能体的短板：LLM 运营足球俱乐部 20 个赛季的基准测试",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2326,7 +2340,7 @@
   },
   {
    "id": "cmtem9hp4001frod8gqzk263x",
-   "seq": 167,
+   "seq": 168,
    "title": "Agent Seer：从 MCP 规范自动合成智能体评测",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2340,7 +2354,7 @@
   },
   {
    "id": "cmtegu3bl01m9roum3z097ek0",
-   "seq": 168,
+   "seq": 169,
    "title": "WikiSkill：谷歌用持久化Wiki提升智能体技能进化",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2354,7 +2368,7 @@
   },
   {
    "id": "cmtef2ily07ffrobg2zxob6u3",
-   "seq": 169,
+   "seq": 170,
    "title": "Anthropic 揭示\"AI 训练 AI\"新方法：自动化对齐研究员成本更低、速度更快",
    "badge": "IT之家",
    "srcType": "media",
@@ -2368,7 +2382,7 @@
   },
   {
    "id": "cmtedzrj906sdrobgsxhcqkab",
-   "seq": 170,
+   "seq": 171,
    "title": "Google 推出 WikiSkill 框架，为 AI 智能体配备持久记忆以改进未来表现",
    "badge": "The Decoder",
    "srcType": "x",
@@ -2382,7 +2396,7 @@
   },
   {
    "id": "cmte36nzj02isrog2hwxpthhn",
-   "seq": 171,
+   "seq": 172,
    "title": "开放世界多智能体环境中的自主数学发现",
    "badge": "Hacker News",
    "srcType": "media",
@@ -2396,7 +2410,7 @@
   },
   {
    "id": "cmtdubvmq072ero2m9mgeh7xp",
-   "seq": 172,
+   "seq": 173,
    "title": "Google 新论文提出 SKILL.state，用显式执行状态替代不断增长的智能体对话历史",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2410,7 +2424,7 @@
   },
   {
    "id": "cmtds6q6l05fmro2ml9hum3n3",
-   "seq": 173,
+   "seq": 174,
    "title": "谷歌AI概览或重创维基百科流量",
    "badge": "X · Ethan Mollick",
    "srcType": "x",
@@ -2424,7 +2438,7 @@
   },
   {
    "id": "cmtdnwk4a028aro2mty1pvuv1",
-   "seq": 174,
+   "seq": 175,
    "title": "长程任务基准揭示前沿模型平均通过率仅6.4%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2438,7 +2452,7 @@
   },
   {
    "id": "cmtdn1e6d01brro2me2r3o72p",
-   "seq": 175,
+   "seq": 176,
    "title": "METR调查员：距全面AI接管仅剩6个月",
    "badge": "X · AI Safety Memes",
    "srcType": "x",
@@ -2452,7 +2466,7 @@
   },
   {
    "id": "cmtdjm33u07y2robxtp9dpjt8",
-   "seq": 176,
+   "seq": 177,
    "title": "长时程AI任务评测：顶尖模型仅达人类27.3%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2466,7 +2480,7 @@
   },
   {
    "id": "cmtditdxu078jrobxqe1j8jgd",
-   "seq": 177,
+   "seq": 178,
    "title": "CritICL：从小型语言模型失败模式中实现推理时弱到强泛化",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2480,7 +2494,7 @@
   },
   {
    "id": "cmtdhc0if05dzrobxbd9jrq3i",
-   "seq": 178,
+   "seq": 179,
    "title": "AI 自动化对齐研究：人类角色转向目标信号",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -2494,7 +2508,7 @@
   },
   {
    "id": "cmtdfbreu040trobx8jep24vs",
-   "seq": 179,
+   "seq": 180,
    "title": "FreeToken 引擎让 8GB 游戏本跑 35B 模型",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2508,7 +2522,7 @@
   },
   {
    "id": "cmtddgcil02porobxpccfizx8",
-   "seq": 180,
+   "seq": 181,
    "title": "Anthropic 研究员展示自我改进 AI：自动化系统可可靠缓解对齐失败",
    "badge": "TechCrunch",
    "srcType": "x",
@@ -2522,7 +2536,7 @@
   },
   {
    "id": "cmtdbg4px01bmrobx883cdrq5",
-   "seq": 181,
+   "seq": 182,
    "title": "EBR-bench人类基线：AI难以企及",
    "badge": "X · Epoch AI",
    "srcType": "x",
@@ -2536,7 +2550,7 @@
   },
   {
    "id": "cmtdbbcmv0181robxlud0fio9",
-   "seq": 182,
+   "seq": 183,
    "title": "Google DeepMind 将 AI 科学家 Co-Scientist 扩展为实验室集成研究伙伴",
    "badge": "The Decoder",
    "srcType": "x",
@@ -2550,7 +2564,7 @@
   },
   {
    "id": "cmtda89tb024irouu4upwh9sf",
-   "seq": 183,
+   "seq": 184,
    "title": "Infer-forge：围绕 SGLang 的 Harness、Loop 与 Graph 工程",
    "badge": "LMSYS",
    "srcType": "x",
@@ -2564,7 +2578,7 @@
   },
   {
    "id": "cmtd8wan601gtro5t9xb80izd",
-   "seq": 184,
+   "seq": 185,
    "title": "Claude 自主对齐其他 AI，超越 28 位研究员",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -2578,7 +2592,7 @@
   },
   {
    "id": "cmtd8rb5701earo5tso40lgz1",
-   "seq": 185,
+   "seq": 186,
    "title": "AI 系统两周自主设计部署加速器 Redwood",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2592,7 +2606,7 @@
   },
   {
    "id": "cmtd86t1701dhro666couferh",
-   "seq": 186,
+   "seq": 187,
    "title": "Anthropic 新研究：Claude 能否自主对齐其他 AI",
    "badge": "X · Anthropic",
    "srcType": "x",
@@ -2606,7 +2620,7 @@
   },
   {
    "id": "cmtd83hb4018fro667i1tbc34",
-   "seq": 187,
+   "seq": 188,
    "title": "Anthropic 让 Claude 自主训练模型以缓解对齐失败",
    "badge": "Anthropic",
    "srcType": "x",
@@ -2620,7 +2634,7 @@
   },
   {
    "id": "cmtd5y0vc01gsrowftkjfnbk3",
-   "seq": 188,
+   "seq": 189,
    "title": "Agent Seer：从工具规格理解中合成评测场景",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -2634,7 +2648,7 @@
   },
   {
    "id": "cmtd5y0vc01grrowfnmr699wt",
-   "seq": 189,
+   "seq": 190,
    "title": "LLM 并非（始终）符合贝叶斯：量化 LLM 概率信念的内部（不）一致性",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -2648,7 +2662,7 @@
   },
   {
    "id": "cmtd0xkuu0agfroq5tzg655hn",
-   "seq": 190,
+   "seq": 191,
    "title": "前沿模型能否成为自主研究者？评测揭示三大发现",
    "badge": "X · 美团 LongCat",
    "srcType": "x",
@@ -2662,7 +2676,7 @@
   },
   {
    "id": "cmtd06o7z09xqroq5yhhdcfzb",
-   "seq": 191,
+   "seq": 192,
    "title": "Google 新论文：WikiSkill 将智能体经验编译为持久知识库",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2676,7 +2690,7 @@
   },
   {
    "id": "cmtd06o7z09xproq5479sjqu1",
-   "seq": 192,
+   "seq": 193,
    "title": "Google DeepMind 新论文展示 Co-Scientist 真实实验应用",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -2690,7 +2704,7 @@
   },
   {
    "id": "cmtczivpl097yroq55wtiieq1",
-   "seq": 193,
+   "seq": 194,
    "title": "EditaLive：面向直播场景的统一角色视频编辑框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2704,7 +2718,7 @@
   },
   {
    "id": "cmtczivpn097zroq5km35vht5",
-   "seq": 194,
+   "seq": 195,
    "title": "AI 基准测试存在信任问题，Google DeepMind 用密码学方法修复它",
    "badge": "The Decoder",
    "srcType": "x",
@@ -2718,7 +2732,7 @@
   },
   {
    "id": "cmtcz92r508yfroq5nqh3l2up",
-   "seq": 195,
+   "seq": 196,
    "title": "DeepMind Co-Scientist 走出模拟，实测实验室成果亮眼",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2732,7 +2746,7 @@
   },
   {
    "id": "cmtcz92r508yeroq5hx76e8ns",
-   "seq": 196,
+   "seq": 197,
    "title": "Google 论文：用持久知识库维护智能体技能",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -2746,7 +2760,7 @@
   },
   {
    "id": "cmtcxdp3f07l3roq5uk6om1aw",
-   "seq": 197,
+   "seq": 198,
    "title": "Terminal-Bench-Science 0.1：评估科研工作流中的 AI 智能体",
    "badge": "Hacker News",
    "srcType": "media",
@@ -2760,7 +2774,7 @@
   },
   {
    "id": "cmtckinlw01fzrojz1p5vmtk1",
-   "seq": 198,
+   "seq": 199,
    "title": "PILOT：面向长时程智能体的实时自改进监督-执行框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2774,7 +2788,7 @@
   },
   {
    "id": "cmtcidf8003pzrouc3orr8t3a",
-   "seq": 199,
+   "seq": 200,
    "title": "多镜头长视频编辑新框架 MMLVE-Agent：用智能体推理实现一致编辑",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2788,7 +2802,7 @@
   },
   {
    "id": "cmtce310901tnroi3k3glxipn",
-   "seq": 200,
+   "seq": 201,
    "title": "UrbanGround：在真实尺度城市中从局部感知到空间智能体的测试沙箱",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2802,7 +2816,7 @@
   },
   {
    "id": "cmtce310901tmroi3jk1w6lza",
-   "seq": 201,
+   "seq": 202,
    "title": "PAWBench：视频生成模型距离概率对齐的世界建模还有多远？",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2816,7 +2830,7 @@
   },
   {
    "id": "cmtce310801tiroi3yyitd4pw",
-   "seq": 202,
+   "seq": 203,
    "title": "Aphanta：面向多模态推理的图像编辑中间结果诊断框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2830,7 +2844,7 @@
   },
   {
    "id": "cmtce310801throi3inbmgpxh",
-   "seq": 203,
+   "seq": 204,
    "title": "TTPO：测试时策略优化，让大模型无需标签也能在测试时继续训练",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2844,7 +2858,7 @@
   },
   {
    "id": "cmtcbxuc3029dro5g35khfbmt",
-   "seq": 204,
+   "seq": 205,
    "title": "什么造就优质智能体数据？用 ACE 视角审视 LLM 智能体的数据生成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2858,7 +2872,7 @@
   },
   {
    "id": "cmtcbxuc3029cro5giokcwz5i",
-   "seq": 205,
+   "seq": 206,
    "title": "Magpie：面向交互游戏的实时生成式世界渲染系统",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2872,7 +2886,7 @@
   },
   {
    "id": "cmtcbxuc3029bro5gyg1il1oz",
-   "seq": 206,
+   "seq": 207,
    "title": "理解用于 LLM 推理的进化策略：比 GRPO 覆盖更广的推理能力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2886,7 +2900,7 @@
   },
   {
    "id": "cmtcbxuc3029aro5gmic35cse",
-   "seq": 207,
+   "seq": 208,
    "title": "Self-OPD：无需教师模型的流匹配模型同策略蒸馏框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2900,7 +2914,7 @@
   },
   {
    "id": "cmtcbxuc20299ro5gzk0lvso8",
-   "seq": 208,
+   "seq": 209,
    "title": "WikiSkill：将智能体经验编译为持久知识以进化技能",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2914,7 +2928,7 @@
   },
   {
    "id": "cmtcb0eyh02s5roeeft6wubqm",
-   "seq": 209,
+   "seq": 210,
    "title": "VGI-Bench：探针视频生成模型视觉智能",
    "badge": "X · AK",
    "srcType": "x",
@@ -2928,7 +2942,7 @@
   },
   {
    "id": "cmthoyq2506nbro1p06l9gie1",
-   "seq": 210,
+   "seq": 211,
    "title": "诊断引导后训练方法将 2B 对话博弈智能体 clemscore 从 10.67 提升至 38.92",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2942,7 +2956,7 @@
   },
   {
    "id": "cmthmtkac0563ro1p8j0766t2",
-   "seq": 211,
+   "seq": 212,
    "title": "EvoUndo：面向 LLM Agent 自我进化的可恢复性约束框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2956,7 +2970,7 @@
   },
   {
    "id": "cmthc3mry09oyrodm28f5z3v2",
-   "seq": 212,
+   "seq": 213,
    "title": "滑动窗口注意力优于线性注意力：无需后训练即可超越",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2970,7 +2984,7 @@
   },
   {
    "id": "cmth5o43003h6rodmrhpf2pux",
-   "seq": 213,
+   "seq": 214,
    "title": "LoopArena：将模型作为循环工程运行时控制器进行基准测试",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2984,7 +2998,7 @@
   },
   {
    "id": "cmtgz8l5g0e8jrochgvazbawi",
-   "seq": 214,
+   "seq": 215,
    "title": "智能体工件创作综述：系统、评测、原则与机遇",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -2998,7 +3012,7 @@
   },
   {
    "id": "cmtgx3e700cilroch1jnqhgps",
-   "seq": 215,
+   "seq": 216,
    "title": "视频中的任意目标定位：重新思考高效的生成式时空视频定位",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3012,7 +3026,7 @@
   },
   {
    "id": "cmtguy7ww0autrochslcaghr7",
-   "seq": 216,
+   "seq": 217,
    "title": "LayerRecall：面向长时视频一致性的状态条件记忆路由",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3026,7 +3040,7 @@
   },
   {
    "id": "cmtgmdkag0307roch8kw6xsag",
-   "seq": 217,
+   "seq": 218,
    "title": "ContextPilot：用细粒度强化学习教智能体主动管理上下文",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3040,7 +3054,7 @@
   },
   {
    "id": "cmtgmdkag0306roch4maqen8r",
-   "seq": 218,
+   "seq": 219,
    "title": "盲人摸象：探测大语言模型在长尾分歧知识下的认知盲区",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3054,7 +3068,7 @@
   },
   {
    "id": "cmtgmdkaf0300rochpygib9xc",
-   "seq": 219,
+   "seq": 220,
    "title": "GeoNeXt：将视频生成模型用作几何学习器",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3068,7 +3082,7 @@
   },
   {
    "id": "cmtgmdkaf02zzrochmb02hxw0",
-   "seq": 220,
+   "seq": 221,
    "title": "Rubric-to-Code Credit Assignment：面向强化学习的评分细则到代码信用分配框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -3082,7 +3096,7 @@
   },
   {
    "id": "cmtc64unj01pcrojqm3dm3xel",
-   "seq": 221,
+   "seq": 222,
    "title": "首个文本转SQL模型超越人类基准",
    "badge": "X · Thinking Machines",
    "srcType": "x",
@@ -3096,7 +3110,7 @@
   },
   {
    "id": "cmtc3cx2p01ggrox5eu1c2yju",
-   "seq": 222,
+   "seq": 223,
    "title": "从偏好到原则：基于评分标准的对齐方法用于有据知识问答",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -3110,7 +3124,7 @@
   },
   {
    "id": "cmt7vztt32jk3ro73hp5czw2o",
-   "seq": 223,
+   "seq": 224,
    "title": "长程规划智能体：预训练与OPD蒸馏研究",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3124,7 +3138,7 @@
   },
   {
    "id": "cmt7v5sfb2isxro730m8oq4vv",
-   "seq": 224,
+   "seq": 225,
    "title": "研究团队调查发现超七成英语生物医学论文已使用 AI 辅助写作，呼吁业界建立完善监管机制",
    "badge": "IT之家",
    "srcType": "media",
@@ -3138,7 +3152,7 @@
   },
   {
    "id": "cmt7s4b3s2ewpro73j68qepy1",
-   "seq": 225,
+   "seq": 226,
    "title": "斯坦福研究：AI 对入门级岗位冲击最大",
    "badge": "Ars Technica",
    "srcType": "x",
@@ -3152,7 +3166,7 @@
   },
   {
    "id": "cmt7rkjgz2eizro7325fdho91",
-   "seq": 226,
+   "seq": 227,
    "title": "加权记忆树：为长时运行智能体引入可恢复记忆",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3166,7 +3180,7 @@
   },
   {
    "id": "cmt7qmxxn2dumro73o2li7p3i",
-   "seq": 227,
+   "seq": 228,
    "title": "终端智能体综述：对比为何矛盾",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3180,7 +3194,7 @@
   },
   {
    "id": "cmt7mclzf2anwro73y0eo5rry",
-   "seq": 228,
+   "seq": 229,
    "title": "ASI-Bench：步骤比方法名更决定智能体表现",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3194,7 +3208,7 @@
   },
   {
    "id": "cmt7loqnv2a7uro738s63m730",
-   "seq": 229,
+   "seq": 230,
    "title": "美国GDP统计漏算英伟达经济贡献",
    "badge": "X · Epoch AI",
    "srcType": "x",
@@ -3208,7 +3222,7 @@
   },
   {
    "id": "cmt7loqnm2a7qro73x6ycsxkw",
-   "seq": 230,
+   "seq": 231,
    "title": "潜态推理视频世界模型如何学习世界演化",
    "badge": "X · AK",
    "srcType": "x",
@@ -3222,7 +3236,7 @@
   },
   {
    "id": "cmt7llq5b2a1hro73ev68bs8v",
-   "seq": 231,
+   "seq": 232,
    "title": "逆向工程发现 MS Paint 和\"照片\"为本地 AI 生成图片添加不可见 GUID 水印",
    "badge": "Hacker News",
    "srcType": "media",
@@ -3236,7 +3250,7 @@
   },
   {
    "id": "cmt7km6da296vro7317eqmm9t",
-   "seq": 232,
+   "seq": 233,
    "title": "皮尤研究：ChatGPT 发布后网络 AI 生成文本激增",
    "badge": "The Decoder",
    "srcType": "x",
@@ -3250,7 +3264,7 @@
   },
   {
    "id": "cmt7f98tt24bzro73eqczmnoi",
-   "seq": 233,
+   "seq": 234,
    "title": "InfinityEdit：轻量适配器实现无限视频编辑",
    "badge": "X · AK",
    "srcType": "x",
@@ -3264,7 +3278,7 @@
   },
   {
    "id": "cmt7f8jmb249hro73by2hu7ti",
-   "seq": 234,
+   "seq": 235,
    "title": "Beyond Visual CoT：Internalized Visual Thinking 实现主动视频推理",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -3278,7 +3292,7 @@
   },
   {
    "id": "cmt7cpldk2270ro738f5lbmrx",
-   "seq": 235,
+   "seq": 236,
    "title": "DataSpace 基准：最强模型数据智能体准确率仅 66.34%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3292,7 +3306,7 @@
   },
   {
    "id": "cmt7cpldk226zro73ghibu3o5",
-   "seq": 236,
+   "seq": 237,
    "title": "Meta 新论文：EvoHarness-RL 让 Qwen3-8B 在 ALFWorld 达 96.9%",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3306,7 +3320,7 @@
   },
   {
    "id": "cmt7ckfh3222vro732d9abcim",
-   "seq": 237,
+   "seq": 238,
    "title": "Anthropic 原语在企业中的落地范式",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3320,7 +3334,7 @@
   },
   {
    "id": "cmt7bv9ek21bkro73vys6qzbt",
-   "seq": 238,
+   "seq": 239,
    "title": "卡迪夫大学新研究：AI 尚无法像人类教师一样可靠地批改作业",
    "badge": "IT之家",
    "srcType": "media",
@@ -3334,7 +3348,7 @@
   },
   {
    "id": "cmt7b94zi20zuro73zdr1gm44",
-   "seq": 239,
+   "seq": 240,
    "title": "清华等提出\"表征平等\"框架：评估大模型跨国模拟是否均衡",
    "badge": "X · 面壁智能 OpenBMB",
    "srcType": "x",
@@ -3348,7 +3362,7 @@
   },
   {
    "id": "cmt7ayu0z20odro732iau0piz",
-   "seq": 240,
+   "seq": 241,
    "title": "Google Research 与 USC 推出 ME-POIs 框架，将移动数据融入地点嵌入",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -3362,7 +3376,7 @@
   },
   {
    "id": "cmt79hnvy1zblro73abrcnweb",
-   "seq": 241,
+   "seq": 242,
    "title": "对抗式审查：结构化分歧提升智能体代码审查",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3376,7 +3390,7 @@
   },
   {
    "id": "cmt78f2k21ygsro73eor2m7xl",
-   "seq": 242,
+   "seq": 243,
    "title": "NVIDIA 新论文提出 ACES 技能评估法",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3390,7 +3404,7 @@
   },
   {
    "id": "cmt77ciei1xl3ro73lrqafdc3",
-   "seq": 243,
+   "seq": 244,
    "title": "ContinualSkillBench：LLM 智能体能否真正进化能力？",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3404,7 +3418,7 @@
   },
   {
    "id": "cmt73zrkh1sy7ro7325ri5vne",
-   "seq": 244,
+   "seq": 245,
    "title": "MIT证明AI奉承会致人妄想螺旋",
    "badge": "X · ZHO",
    "srcType": "x",
@@ -3418,7 +3432,7 @@
   },
   {
    "id": "cmt73gp8g1s9fro736maq8kej",
-   "seq": 245,
+   "seq": 246,
    "title": "AlgorithmWatch 调查：ChatGPT、Gemini、Grok 和 Claude 频繁向孕妇推荐反堕胎网站且不披露立场",
    "badge": "The Decoder",
    "srcType": "x",
@@ -3432,7 +3446,7 @@
   },
   {
    "id": "cmt6q77lj1ftwro73aafx51kc",
-   "seq": 246,
+   "seq": 247,
    "title": "Claude 证明 S6 复结构引热议",
    "badge": "X · Ethan Mollick",
    "srcType": "x",
@@ -3446,7 +3460,7 @@
   },
   {
    "id": "cmt6m58a41c8rro73jhi1lq81",
-   "seq": 247,
+   "seq": 248,
    "title": "摩尔线程发布《MTT S5000 Prefill-as-a-Service 技术白皮书》，破解长上下文推理成本瓶颈",
    "badge": "IT之家",
    "srcType": "media",
@@ -3460,7 +3474,7 @@
   },
   {
    "id": "cmt6k01xn1aggro733fxh8vjh",
-   "seq": 248,
+   "seq": 249,
    "title": "SK 海力士披露下一代 HBM 内存先进封装技术，引入英特尔 EMIB",
    "badge": "IT之家",
    "srcType": "media",
@@ -3474,7 +3488,7 @@
   },
   {
    "id": "cmt6jrqlv1adoro73xj23flhm",
-   "seq": 249,
+   "seq": 250,
    "title": "Netflix 如何用 LLM 评判器优化推荐解释",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3488,7 +3502,7 @@
   },
   {
    "id": "cmt6ip58q19koro732zd5p1uk",
-   "seq": 250,
+   "seq": 251,
    "title": "AgentX 推理基准：CUDA 护城河能否守住智能体推理",
    "badge": "X · SemiAnalysis",
    "srcType": "x",
@@ -3502,7 +3516,7 @@
   },
   {
    "id": "cmt6hmkck18s1ro73wub7kcnn",
-   "seq": 251,
+   "seq": 252,
    "title": "Claude 助数学家破解 1948 年难题",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3516,7 +3530,7 @@
   },
   {
    "id": "cmt6gf09x17wmro73uot49yva",
-   "seq": 252,
+   "seq": 253,
    "title": "智能体编码会话中指令文件占读取量六成",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3530,7 +3544,7 @@
   },
   {
    "id": "cmt6fheup177oro73svda00ff",
-   "seq": 253,
+   "seq": 254,
    "title": "主动推理让AI智能体按需获取上下文",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3544,7 +3558,7 @@
   },
   {
    "id": "cmt6dc8br15sdro73vslu2zzw",
-   "seq": 254,
+   "seq": 255,
    "title": "ArchAgent v2 分阶段搜索击败人工冠军设计",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3558,7 +3572,7 @@
   },
   {
    "id": "cmt6b72ur13qnro73th6fj44v",
-   "seq": 255,
+   "seq": 256,
    "title": "对抗式评审：三个智能体胜过五个",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3572,7 +3586,7 @@
   },
   {
    "id": "cmt6a4hst132ero733g8yfe7n",
-   "seq": 256,
+   "seq": 257,
    "title": "MerchantBench：评测 LLM 智能体长期经营连贯性",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3586,7 +3600,7 @@
   },
   {
    "id": "cmt67udcw11lbro73ta0ua9g7",
-   "seq": 257,
+   "seq": 258,
    "title": "无递归预训练循环网络论文获赞",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -3600,7 +3614,7 @@
   },
   {
    "id": "cmt61ex4q0wbaro73vft3d9aq",
-   "seq": 258,
+   "seq": 259,
    "title": "本周AI论文：智能体训练与技能触发瓶颈",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3614,7 +3628,7 @@
   },
   {
    "id": "cmt61ex4q0wb9ro734fft437t",
-   "seq": 259,
+   "seq": 260,
    "title": "本周AI论文精选：智能体技能与遗忘",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3628,7 +3642,7 @@
   },
   {
    "id": "cmt60ham60vo3ro73ji46zi6b",
-   "seq": 260,
+   "seq": 261,
    "title": "AutoDesign：弱模型靠脚手架逼近前沿模型",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3642,7 +3656,7 @@
   },
   {
    "id": "cmt5zer9b0uvjro73de75mo3f",
-   "seq": 261,
+   "seq": 262,
    "title": "微软 SocialRL 让 4B 模型谈判胜过 GPT-4.1",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3656,7 +3670,7 @@
   },
   {
    "id": "cmt5zer8q0uvfro73it37ymdr",
-   "seq": 262,
+   "seq": 263,
    "title": "Google DeepMind 推免训练递归架构新论文",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3670,7 +3684,7 @@
   },
   {
    "id": "cmt5yc4m00u29ro73hswgfw35",
-   "seq": 263,
+   "seq": 264,
    "title": "GitSkills 数据集：GitHub 上 380 万技能文件近半重复",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3684,7 +3698,7 @@
   },
   {
    "id": "cmt5w6z5o0selro7367o1yjr4",
-   "seq": 264,
+   "seq": 265,
    "title": "智能体技能常驻成本：50-280 token/技能",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3698,7 +3712,7 @@
   },
   {
    "id": "cmt5u1s900qtgro73jiqk8ort",
-   "seq": 265,
+   "seq": 266,
    "title": "斯坦福CMU新方法：从录屏提取任务模型",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3712,7 +3726,7 @@
   },
   {
    "id": "cmt5sz80n0q23ro73bld4no8g",
-   "seq": 266,
+   "seq": 267,
    "title": "微软 ThinkingBox：智能体可靠性评测沙盒",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3726,7 +3740,7 @@
   },
   {
    "id": "cmt5rwnoa0p88ro73ef8rsxtd",
-   "seq": 267,
+   "seq": 268,
    "title": "多智能体协作研究：8个智能体时任务全失败",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3740,7 +3754,7 @@
   },
   {
    "id": "cmt5lv8d40ivfro731mfd3xqj",
-   "seq": 268,
+   "seq": 269,
    "title": "研究认为AI可能让科学家做得更多但做得更差，而非更少但更好",
    "badge": "The Decoder",
    "srcType": "x",
@@ -3754,7 +3768,7 @@
   },
   {
    "id": "cmt5lpctp0isbro73wxajstjx",
-   "seq": 269,
+   "seq": 270,
    "title": "皮尤研究中心：ChatGPT 问世以来的新网页中，三分之一存在 AI 痕迹",
    "badge": "IT之家",
    "srcType": "media",
@@ -3768,7 +3782,7 @@
   },
   {
    "id": "cmt58m7l008f9ro73152v10br",
-   "seq": 270,
+   "seq": 271,
    "title": "斯坦福北大新研究：QWM 让世界模型不参与训练",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3782,7 +3796,7 @@
   },
   {
    "id": "cmt539auy04icro73vb2ns2xw",
-   "seq": 271,
+   "seq": 272,
    "title": "斯坦福研究：AI智能体明知结果有误仍照报",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3796,7 +3810,7 @@
   },
   {
    "id": "cmt526pcc03qmro73gmapvkfm",
-   "seq": 272,
+   "seq": 273,
    "title": "清华康奈尔研究：ACID-Agent 防记忆污染",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3810,7 +3824,7 @@
   },
   {
    "id": "cmt50z64402wdro73ah454vnt",
-   "seq": 273,
+   "seq": 274,
    "title": "TRACES 基准：评估 AI 调查过程而非只看答案",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -3824,7 +3838,7 @@
   },
   {
    "id": "cmt50z64402wcro732ax0zg8m",
-   "seq": 274,
+   "seq": 275,
    "title": "TRACES：面向发现式智能的基准",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -3838,7 +3852,7 @@
   },
   {
    "id": "cmt4xweev1yi7ro6t9hvhivjg",
-   "seq": 275,
+   "seq": 276,
    "title": "斯坦福研究：AI智能体辩论提升确定性",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3852,7 +3866,7 @@
   },
   {
    "id": "cmt4wtstg1wu5ro6t48j2m621",
-   "seq": 276,
+   "seq": 277,
    "title": "智能体自我训练为何陷入局部最优",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3866,7 +3880,7 @@
   },
   {
    "id": "cmt4wounp1wqjro6tsoflnwnr",
-   "seq": 277,
+   "seq": 278,
    "title": "Task Model Induction：将录屏转为可复用技能",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3880,7 +3894,7 @@
   },
   {
    "id": "cmt4vr8861w4hro6ty1smh045",
-   "seq": 278,
+   "seq": 279,
    "title": "Task-CoEvolve：用自适应测试选择优化AI智能体评测成本",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3894,7 +3908,7 @@
   },
   {
    "id": "cmt4o47ft1q6wro6tmve0fwkf",
-   "seq": 279,
+   "seq": 280,
    "title": "微软发布Thinkingbox：智能体可靠性基准",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -3908,7 +3922,7 @@
   },
   {
    "id": "cmt4m41rs1ot9ro6tasul3oej",
-   "seq": 280,
+   "seq": 281,
    "title": "最优提问：为AI智能体上下文获取定义目标函数",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -3922,7 +3936,7 @@
   },
   {
    "id": "cmt4lz38w1optro6tl6gt0hvn",
-   "seq": 281,
+   "seq": 282,
    "title": "TRACES 基准：评估 AI 可审计的探索性研究过程",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -3936,7 +3950,7 @@
   },
   {
    "id": "cmt4iwahe1mhnro6tm1xr8e44",
-   "seq": 282,
+   "seq": 283,
    "title": "DeepMind 潘多拉路由器：按需付费的模型路由新思路",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3950,7 +3964,7 @@
   },
   {
    "id": "cmt4htp1o1lrcro6tx2ego674",
-   "seq": 283,
+   "seq": 284,
    "title": "ClawGym II：黑盒 RL 训练智能体提升基准分数",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3964,7 +3978,7 @@
   },
   {
    "id": "cmt4htp1o1lrbro6tgjn0y82g",
-   "seq": 284,
+   "seq": 285,
    "title": "LLM 合成调查数据有效性遭质疑",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3978,7 +3992,7 @@
   },
   {
    "id": "cmt4foj571k7jro6tbcwzf51d",
-   "seq": 285,
+   "seq": 286,
    "title": "Agent Lightning v1.0：微软提出在真实部署环境中训练智能体",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -3992,7 +4006,7 @@
   },
   {
    "id": "cmt4djil11in2ro6t7yqsowfw",
-   "seq": 286,
+   "seq": 287,
    "title": "清华等发现AI训练智能体难改策略",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4006,7 +4020,7 @@
   },
   {
    "id": "cmt4cu8691hzsro6trkb5x8s0",
-   "seq": 287,
+   "seq": 288,
    "title": "普林斯顿与 UCSD 研究揭示 AI 智能体为何受益于\"技能\"及其失效场景",
    "badge": "The Decoder",
    "srcType": "x",
@@ -4020,7 +4034,7 @@
   },
   {
    "id": "cmt4cgt711huyro6tkgi5m8so",
-   "seq": 288,
+   "seq": 289,
    "title": "哈佛斯坦福：嵌入模型仍是检索首选",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4034,7 +4048,7 @@
   },
   {
    "id": "cmt46eooq1caxro6tzp0odehw",
-   "seq": 289,
+   "seq": 290,
    "title": "新研究：忽略人类信念的世界模型会预测错误行为",
    "badge": "The Decoder",
    "srcType": "x",
@@ -4048,7 +4062,7 @@
   },
   {
    "id": "cmt436wrv1a0uro6tzfrjlykf",
-   "seq": 290,
+   "seq": 291,
    "title": "Netflix 测试语言模型 GenRec，替代手工构建的推荐逻辑",
    "badge": "The Decoder",
    "srcType": "x",
@@ -4062,7 +4076,7 @@
   },
   {
    "id": "cmt3r16fw0zikro6ti260ruwe",
-   "seq": 291,
+   "seq": 292,
    "title": "EnvHarness：让智能体训练环境动态适应",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4076,7 +4090,7 @@
   },
   {
    "id": "cmt3q8wti0yu7ro6tfizdz7mi",
-   "seq": 292,
+   "seq": 293,
    "title": "当 GPU 读取内存时会发生什么：RTX 4090 全局加载路径逆向工程",
    "badge": "Hacker News",
    "srcType": "media",
@@ -4090,7 +4104,7 @@
   },
   {
    "id": "cmt3lo9v10vhjro6tfdznqvof",
-   "seq": 293,
+   "seq": 294,
    "title": "智能体持续学习：超越模型参数的适配",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4104,7 +4118,7 @@
   },
   {
    "id": "cmt3ljayq0veiro6tcgnxxbsw",
-   "seq": 294,
+   "seq": 295,
    "title": "本周最佳两篇：EnvHarness 与 SPADE",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -4118,7 +4132,7 @@
   },
   {
    "id": "cmt3jj4ff0tz5ro6tdi8xm2ic",
-   "seq": 295,
+   "seq": 296,
    "title": "自我改进智能体的记忆脆弱性研究",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4132,7 +4146,7 @@
   },
   {
    "id": "cmt3i1ue80t07ro6t35x9ik8j",
-   "seq": 296,
+   "seq": 297,
    "title": "微型语言模型中干扰权重的特征刻画",
    "badge": "Anthropic",
    "srcType": "x",
@@ -4146,7 +4160,7 @@
   },
   {
    "id": "cmt3d3mos0ohgro6txghy9ajs",
-   "seq": 297,
+   "seq": 298,
    "title": "阿里字节新论文：AI智能体服务需新架构",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4160,7 +4174,7 @@
   },
   {
    "id": "cmt3cqxpd0o8nro6tzgl7u0ju",
-   "seq": 298,
+   "seq": 299,
    "title": "移动性如何让语言模型更深入地理解地点",
    "badge": "Google Research",
    "srcType": "x",
@@ -4174,7 +4188,7 @@
   },
   {
    "id": "cmt39j70c0m0ero6tc4anjrlt",
-   "seq": 299,
+   "seq": 300,
    "title": "Google 推出 Biomarker Discovery Framework：从可穿戴传感器数据中筛选候选生物标志物的多智能体系统",
    "badge": "Google Research",
    "srcType": "x",
@@ -4188,7 +4202,7 @@
   },
   {
    "id": "cmt393qov0kfhro6tuwhxhubl",
-   "seq": 300,
+   "seq": 301,
    "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
    "badge": "LMSYS",
    "srcType": "x",
@@ -4202,7 +4216,7 @@
   },
   {
    "id": "cmt362kzs0i0yro6t5pmf4qsz",
-   "seq": 301,
+   "seq": 302,
    "title": "T-Rex：NVIDIA 与伯克利开源触觉机器人方法",
    "badge": "X · Jim Fan",
    "srcType": "x",
@@ -4216,7 +4230,7 @@
   },
   {
    "id": "cmt328vg30f5yro6tjr1idb2s",
-   "seq": 302,
+   "seq": 303,
    "title": "DeepMind 将模型路由形式化为潘多拉之盒",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -4230,7 +4244,7 @@
   },
   {
    "id": "cmt31irio0ed7ro6tl8t2pida",
-   "seq": 303,
+   "seq": 304,
    "title": "Artificial Analysis 推出 Speech Agent Arena，评测语音到语音模型的对话偏好与任务成功率",
    "badge": "X · Artificial Analysis",
    "srcType": "x",
@@ -4244,7 +4258,7 @@
   },
   {
    "id": "cmt31b9hl0eb2ro6tiydxfeju",
-   "seq": 304,
+   "seq": 305,
    "title": "AlphaEvolve 助力刷新矩阵乘法理论下界",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4258,7 +4272,7 @@
   },
   {
    "id": "cmt30vtjh0e14ro6trg5tmye4",
-   "seq": 305,
+   "seq": 306,
    "title": "CoToGrasp：通过规范工作区学习实现接触拓扑条件化的灵巧抓取合成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4272,7 +4286,7 @@
   },
   {
    "id": "cmt30vtjg0e13ro6tpg19eepx",
-   "seq": 306,
+   "seq": 307,
    "title": "GOAG：面向灵巧机器人操作的可泛化物体无关抓取规划器",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4286,7 +4300,7 @@
   },
   {
    "id": "cmt30vskr0e0wro6t19q13yic",
-   "seq": 307,
+   "seq": 308,
    "title": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象",
    "badge": "Hugging Face",
    "srcType": "x",
@@ -4300,7 +4314,7 @@
   },
   {
    "id": "cmt308p0x0ddzro6ti318hocc",
-   "seq": 308,
+   "seq": 309,
    "title": "Google EnvHarness 与 EnvRigger 构建智能体训练环境",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -4314,7 +4328,7 @@
   },
   {
    "id": "cmt2ry1sl04ywro6t5znttdrs",
-   "seq": 309,
+   "seq": 310,
    "title": "每个模型都会作弊：针对攻击性网络任务作弊的提示词缓解研究",
    "badge": "Hacker News",
    "srcType": "media",
@@ -4328,7 +4342,7 @@
   },
   {
    "id": "cmt2o0smc01ltro6two10xi3e",
-   "seq": 310,
+   "seq": 311,
    "title": "NAPE：下一补丁嵌入预测实现可扩展音频学习器",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4342,7 +4356,7 @@
   },
   {
    "id": "cmt2jqg1503ijroy50gw2g7lx",
-   "seq": 311,
+   "seq": 312,
    "title": "SWE-bench Science：编码智能体能否解决科学领域的工程任务？",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4356,7 +4370,7 @@
   },
   {
    "id": "cmt2jqg1503iiroy5ugs936c1",
-   "seq": 312,
+   "seq": 313,
    "title": "量化 ASR 模型基准优化：高分开源模型在音频不充分时仍复现基准参考文本",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4370,7 +4384,7 @@
   },
   {
    "id": "cmt2hlace04l7rolxsauurmby",
-   "seq": 313,
+   "seq": 314,
    "title": "FlashPrefill V2：面向长上下文 LLM 服务的块稀疏预填充注意力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4384,7 +4398,7 @@
   },
   {
    "id": "cmt2daxf802ejroc9phpowlbz",
-   "seq": 314,
+   "seq": 315,
    "title": "MemTrapBench：为 LLM 记忆使用中的认知陷阱设立基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4398,7 +4412,7 @@
   },
   {
    "id": "cmt2daxf802eiroc9aygpco99",
-   "seq": 315,
+   "seq": 316,
    "title": "4DAnyone：从随意单目视频重建4D人体",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4412,7 +4426,7 @@
   },
   {
    "id": "cmt2daxf702ehroc9ggzabiww",
-   "seq": 316,
+   "seq": 317,
    "title": "IAR：面向无检索文档知识内化的三阶段后训练框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4426,7 +4440,7 @@
   },
   {
    "id": "cmt2daxf702egroc9bms467o0",
-   "seq": 317,
+   "seq": 318,
    "title": "Repo0：面向零到全量代码生成的设计驱动框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4440,7 +4454,7 @@
   },
   {
    "id": "cmt2b5r5c0mjnroovvegud33m",
-   "seq": 318,
+   "seq": 319,
    "title": "PolicyGuide：从单步守护到全流程引导的合规 LLM 智能体",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4454,7 +4468,7 @@
   },
   {
    "id": "cmt2b5r5c0mjmroova7iifuby",
-   "seq": 319,
+   "seq": 320,
    "title": "EXIMO：用 VLM 引导探索来微调 VLA 机器人策略",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4468,7 +4482,7 @@
   },
   {
    "id": "cmt2b5r5c0mjlroovp88onc2i",
-   "seq": 320,
+   "seq": 321,
    "title": "EnvHarness：为智能体学习唤醒静态环境",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4482,7 +4496,7 @@
   },
   {
    "id": "cmt2b5r5c0mjkroovyu7h3by6",
-   "seq": 321,
+   "seq": 322,
    "title": "WithEveryone：面向群像生成的统一规划与身份锚定框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4496,7 +4510,7 @@
   },
   {
    "id": "cmt6u2s7q1jwsro73timfz217",
-   "seq": 322,
+   "seq": 323,
    "title": "EviRank：面向多模态图像重排序的结构化相关性证据",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4510,7 +4524,7 @@
   },
   {
    "id": "cmt6rxl9g1h8wro7379y2ji66",
-   "seq": 323,
+   "seq": 324,
    "title": "OmniAssistBench：面向全模态大模型的助手式交互评测基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4524,7 +4538,7 @@
   },
   {
    "id": "cmt6psf3m1fivro73rrso13rv",
-   "seq": 324,
+   "seq": 325,
    "title": "RecVerse：面向真实购物行为保真模拟的 GUI 智能体",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4538,7 +4552,7 @@
   },
   {
    "id": "cmt6psf3l1fitro73x7cu2mhd",
-   "seq": 325,
+   "seq": 326,
    "title": "AgentMercury：让智能体在规模化业务场景中合成可验证环境",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4552,7 +4566,7 @@
   },
   {
    "id": "cmt6nn8yf1dmhro73dc2yipzs",
-   "seq": 326,
+   "seq": 327,
    "title": "Graph Engineering：从个体智能到系统智能的智能体系统新范式",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4566,7 +4580,7 @@
   },
   {
    "id": "cmt6li2h21butro734gc14lsr",
-   "seq": 327,
+   "seq": 328,
    "title": "Llama-Mobile：面向 VLM 的 2.7 位高效量化框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4580,7 +4594,7 @@
   },
   {
    "id": "cmt6li2h21burro73jy6d3wei",
-   "seq": 328,
+   "seq": 329,
    "title": "InfinityEdit：用轻量编辑适配器实现无限视频编辑",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4594,7 +4608,7 @@
   },
   {
    "id": "cmt6li2h11buqro733py9xmr4",
-   "seq": 329,
+   "seq": 330,
    "title": "CLEAR：面向大语言模型安全对齐的连续潜在适配器路由方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4608,7 +4622,7 @@
   },
   {
    "id": "cmt7hno18268wro730caddpr4",
-   "seq": 330,
+   "seq": 331,
    "title": "PhysCaP：用物理信息探索为代码即策略智能体注入主动感知",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4622,7 +4636,7 @@
   },
   {
    "id": "cmt26lgcd0iu3roovdywwwafa",
-   "seq": 331,
+   "seq": 332,
    "title": "渐进式精炼：面向中英混说语音识别的迭代伪标签方法",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -4636,7 +4650,7 @@
   },
   {
    "id": "cmt23ya200gz5roovin9xyu91",
-   "seq": 332,
+   "seq": 333,
    "title": "记忆型自我改进智能体增益或为评估噪声",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -4650,7 +4664,7 @@
   },
   {
    "id": "cmt21y3q20eikroovjrtw2h0q",
-   "seq": 333,
+   "seq": 334,
    "title": "研究：ChatGPT 后三成网页疑为 AI 生成",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4664,7 +4678,7 @@
   },
   {
    "id": "cmt1znys70cvproovlmtntcgg",
-   "seq": 334,
+   "seq": 335,
    "title": "CTIFoundry：索引时构建结构提升智能体F1",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -4678,7 +4692,7 @@
   },
   {
    "id": "cmt1yqd020c56roovvnjrom3j",
-   "seq": 335,
+   "seq": 336,
    "title": "智能体框架持续学习新论文：防遗忘机制",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -4692,7 +4706,7 @@
   },
   {
    "id": "cmt1vdnei09seroovjtrmwt3o",
-   "seq": 336,
+   "seq": 337,
    "title": "SPADE：自适应合成环境中的智能体自对弈",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -4706,7 +4720,7 @@
   },
   {
    "id": "cmt1ug2au0921roovc8kmeba7",
-   "seq": 337,
+   "seq": 338,
    "title": "GPT-5.5上下文压缩对任务结果影响甚微",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4720,7 +4734,7 @@
   },
   {
    "id": "cmt1u0dnj08scroov54nhk5cy",
-   "seq": 338,
+   "seq": 339,
    "title": "SPK：面向实时目标检测的可解释分布外检测，显式挖掘结构化先验知识",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4734,7 +4748,7 @@
   },
   {
    "id": "cmt1sj0k606j3roovbyba61j7",
-   "seq": 339,
+   "seq": 340,
    "title": "皮尤研究：ChatGPT 发布后超三分之一新网页疑似 AI 生成",
    "badge": "TechCrunch",
    "srcType": "x",
@@ -4748,7 +4762,7 @@
   },
   {
    "id": "cmt1r8b1u05mfroov8utcxon4",
-   "seq": 340,
+   "seq": 341,
    "title": "AI科学家应作为人机协作系统研究",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4762,7 +4776,7 @@
   },
   {
    "id": "cmt1qe69v04turoovztahn73g",
-   "seq": 341,
+   "seq": 342,
    "title": "不要再将中间令牌拟人化为推理/思考的痕迹",
    "badge": "Hacker News",
    "srcType": "media",
@@ -4776,7 +4790,7 @@
   },
   {
    "id": "cmt1q5xno04plroovlnllbpk5",
-   "seq": 342,
+   "seq": 343,
    "title": "智能体能否后训练其他智能体？新论文揭示局限",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -4790,7 +4804,7 @@
   },
   {
    "id": "cmt1nax0o02dfroovlqhc3duf",
-   "seq": 343,
+   "seq": 344,
    "title": "数据约束下的混合预训练缩放定律",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -4804,7 +4818,7 @@
   },
   {
    "id": "cmt1nax0o02deroovp316md4c",
-   "seq": 344,
+   "seq": 345,
    "title": "数据受限下的多语言知识迁移：Apple 提出基于词汇干预的新方法",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -4818,7 +4832,7 @@
   },
   {
    "id": "cmt1lhobd086lrokxs03wic08",
-   "seq": 345,
+   "seq": 346,
    "title": "研究提出表征平等指标，评估LLM跨59国模拟偏差",
    "badge": "X · 面壁智能 OpenBMB",
    "srcType": "x",
@@ -4832,7 +4846,7 @@
   },
   {
    "id": "cmt1jxn3806m1rokxwd51916q",
-   "seq": 346,
+   "seq": 347,
    "title": "中国信通院：全国已建成启用超 70 家具身智能训练场，覆盖过半省级行政区",
    "badge": "IT之家",
    "srcType": "media",
@@ -4846,7 +4860,7 @@
   },
   {
    "id": "cmt1jq93h06k9rokxm74hnpb9",
-   "seq": 347,
+   "seq": 348,
    "title": "技能库\"恶意演化\"：智能体安全隐患新研究",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -4860,7 +4874,7 @@
   },
   {
    "id": "cmt1apugm02g6ro1qnojoh4vs",
-   "seq": 348,
+   "seq": 349,
    "title": "SkillGate：长程智能体中的策略内技能选择训练",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4874,7 +4888,7 @@
   },
   {
    "id": "cmt18rw990tsaro2oxnx9jr0g",
-   "seq": 349,
+   "seq": 350,
    "title": "分析显示 ChatGPT 约三分之一广告与对话内容无关",
    "badge": "Artificial Intelligence News",
    "srcType": "default",
@@ -4888,7 +4902,7 @@
   },
   {
    "id": "cmt1257ui0md1ro2ode4lxy0m",
-   "seq": 350,
+   "seq": 351,
    "title": "Co-RL：多智能体强化学习中的多样化群体催生无监督推理能力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4902,7 +4916,7 @@
   },
   {
    "id": "cmt0zzzyc0klrro2ol82mnkkx",
-   "seq": 351,
+   "seq": 352,
    "title": "SoftVTBench：面向可变形物体操作的形变感知视触觉数据集与基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4916,7 +4930,7 @@
   },
   {
    "id": "cmt0zzzyc0klqro2oaz1ccgle",
-   "seq": 352,
+   "seq": 353,
    "title": "潜在世界模型中的决策度量对齐：诊断与面向动作的MPC规划目标",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4930,7 +4944,7 @@
   },
   {
    "id": "cmt0xut1l0iofro2op7mh249y",
-   "seq": 353,
+   "seq": 354,
    "title": "FM-Bench：面向长期管理场景的智能体评测基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4944,7 +4958,7 @@
   },
   {
    "id": "cmt0xut1l0iodro2okzzepwvs",
-   "seq": 354,
+   "seq": 355,
    "title": "SPADE：自适应合成可执行环境中的自我对弈",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4958,7 +4972,7 @@
   },
   {
    "id": "cmt0xut1l0iocro2omuahgv3j",
-   "seq": 355,
+   "seq": 356,
    "title": "SemaPLC：面向PLC代码生成的项目级验证门控智能体框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4972,7 +4986,7 @@
   },
   {
    "id": "cmt0xut1l0iobro2o5cv2309w",
-   "seq": 356,
+   "seq": 357,
    "title": "面向单步逆合成分析的化学合理性感知大语言模型训练",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -4986,7 +5000,7 @@
   },
   {
    "id": "cmt0vpm7x0gthro2o0m45osgh",
-   "seq": 357,
+   "seq": 358,
    "title": "SkillForge：通过自蒸馏智能体解决项目特定问题",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5000,7 +5014,7 @@
   },
   {
    "id": "cmt0tkg3y0f06ro2o52anrt7r",
-   "seq": 358,
+   "seq": 359,
    "title": "FACET：终端任务合成中保留源意图与可执行状态",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5014,7 +5028,7 @@
   },
   {
    "id": "cmt0qsk350cnrro2ohkv4jy3z",
-   "seq": 359,
+   "seq": 360,
    "title": "上海AI实验室等：智能体风险随推理能力升级",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5028,7 +5042,7 @@
   },
   {
    "id": "cmt0ppzyy0br6ro2ozt254r4u",
-   "seq": 360,
+   "seq": 361,
    "title": "RAG投毒致模型过度自信，注意力崩塌可预警",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5042,7 +5056,7 @@
   },
   {
    "id": "cmt0kd44z0710ro2o8ztml1v1",
-   "seq": 361,
+   "seq": 362,
    "title": "TRACES：首个衡量探索式AI的基准",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5056,7 +5070,7 @@
   },
   {
    "id": "cmt0g2s5e03waro2o4lxvoe9j",
-   "seq": 362,
+   "seq": 363,
    "title": "IBM 新框架 BenchDrift 揭示措辞致 LLM 分数波动 74.7 个百分点",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5070,7 +5084,7 @@
   },
   {
    "id": "cmt0fxshl03sjro2ozzzlkc0i",
-   "seq": 363,
+   "seq": 364,
    "title": "TRACES 基准发布：衡量 AI 发现式智能",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -5084,7 +5098,7 @@
   },
   {
    "id": "cmt0eab5901fzro2oaa87wvg6",
-   "seq": 364,
+   "seq": 365,
    "title": "倒排索引遍历的 P-完全性：布尔查询 DAG 的复杂度评估",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -5098,7 +5112,7 @@
   },
   {
    "id": "cmt0e7sxo01eiro2o4l4y9jmh",
-   "seq": 365,
+   "seq": 366,
    "title": "突破 DeepSeek-V4-Pro 服务极限：H20 上的多场景优化方法",
    "badge": "LMSYS",
    "srcType": "x",
@@ -5112,7 +5126,7 @@
   },
   {
    "id": "cmt0cf1z718terodptlfxqeb7",
-   "seq": 366,
+   "seq": 367,
    "title": "LEGO-RL：面向编码智能体的原生 Harness 强化学习框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5126,7 +5140,7 @@
   },
   {
    "id": "cmt0bnjl6187wrodp3fyzilxm",
-   "seq": 367,
+   "seq": 368,
    "title": "生产级智能体成本剖析：非LLM组件主导延迟",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -5140,7 +5154,7 @@
   },
   {
    "id": "cmt0a9wga16yqrodpcw6o6rm4",
-   "seq": 368,
+   "seq": 369,
    "title": "PTXBench：用架构特定 PTX 评测与适配 LLM 的 GPU 内核优化",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5154,7 +5168,7 @@
   },
   {
    "id": "cmt06fk3j13klrodp7ghf349y",
-   "seq": 369,
+   "seq": 370,
    "title": "微软 Agent Lightning v1.0 让 Qwen3.5-9B 编程能力提升 14.6%",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -5168,7 +5182,7 @@
   },
   {
    "id": "cmt05pnil12t8rodpf71tnq00",
-   "seq": 370,
+   "seq": 371,
    "title": "苹果研究：LLM 类人行为的多维度分析--模型行为、用户因素与系统提示词的影响",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -5182,7 +5196,7 @@
   },
   {
    "id": "cmt04j4qh11t5rodplbqyxhes",
-   "seq": 371,
+   "seq": 372,
    "title": "Anthropic 让 Claude 智能体运行完整蛋白质设计流程，药物发现命中率超行业水平",
    "badge": "The Decoder",
    "srcType": "x",
@@ -5196,7 +5210,7 @@
   },
   {
    "id": "cmt04j4qh11t4rodp50x0ipyi",
-   "seq": 372,
+   "seq": 373,
    "title": "非营利组织 Guidelight 首份评估：Anthropic、OpenAI 等 AI 实验室均未完全落实内部系统管控",
    "badge": "The Decoder",
    "srcType": "x",
@@ -5210,7 +5224,7 @@
   },
   {
    "id": "cmszw2tjg0shtrodp0bgrce1n",
-   "seq": 373,
+   "seq": 374,
    "title": "腾讯混元Hyra四项数学新突破",
    "badge": "X · 腾讯混元",
    "srcType": "x",
@@ -5224,7 +5238,7 @@
   },
   {
    "id": "cmszt4jay0q1mrodpezicbs79",
-   "seq": 374,
+   "seq": 375,
    "title": "EditBridge：面向高保真与高效超高清图像编辑的扩散桥接框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5238,7 +5252,7 @@
   },
   {
    "id": "cmszt4jax0q1jrodpgswt1qk7",
-   "seq": 375,
+   "seq": 376,
    "title": "MoE-ViE：面向高效图像与视频理解的专家混合视觉编码器",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5252,7 +5266,7 @@
   },
   {
    "id": "cmszou5mx0magrodputo4wwkk",
-   "seq": 376,
+   "seq": 377,
    "title": "CoinVE-200K：面向组合式指令视频编辑的大规模高质量数据集",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5266,7 +5280,7 @@
   },
   {
    "id": "cmsznc7az0j3prodp86vg0rgp",
-   "seq": 377,
+   "seq": 378,
    "title": "斯坦福大学研究：X 平台推荐算法优先推送煽动愤怒内容以提高互动率",
    "badge": "IT之家",
    "srcType": "media",
@@ -5280,7 +5294,7 @@
   },
   {
    "id": "cmszmoylu0ipmrodp5j4fburr",
-   "seq": 378,
+   "seq": 379,
    "title": "HarnessRisk：面向智能体 Harness 安全的全生命周期基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5294,7 +5308,7 @@
   },
   {
    "id": "cmszm2ja00i4drodpc2vnyh3d",
-   "seq": 379,
+   "seq": 380,
    "title": "Anthropic 用 Claude 设计蛋白结合剂，14/15 靶点命中",
    "badge": "X · 小北",
    "srcType": "x",
@@ -5308,7 +5322,7 @@
   },
   {
    "id": "cmszkjs640gworodp6nfauvof",
-   "seq": 380,
+   "seq": 381,
    "title": "TAMP-Nav：面向高效具身导航的点选、思考、记忆与对齐框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5322,7 +5336,7 @@
   },
   {
    "id": "cmszieman0euzrodptihyllom",
-   "seq": 381,
+   "seq": 382,
    "title": "StartupBench：面向市场验证端到端工作流的通用智能体基准测试",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5336,7 +5350,7 @@
   },
   {
    "id": "cmszieman0ev0rodpj84orfu2",
-   "seq": 382,
+   "seq": 383,
    "title": "aDSL：通过智能体与程序联合设计实现智能体3D内容生成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5350,7 +5364,7 @@
   },
   {
    "id": "cmszieman0euyrodppheu99i3",
-   "seq": 383,
+   "seq": 384,
    "title": "Abra：扩散图像训练的规模化定律研究",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5364,7 +5378,7 @@
   },
   {
    "id": "cmszieman0euxrodp75rvnhj2",
-   "seq": 384,
+   "seq": 385,
    "title": "ASI-Bench：首个联合评估AI创新探索与自主科研能力的基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5378,7 +5392,7 @@
   },
   {
    "id": "cmszieman0euwrodpartksj9a",
-   "seq": 385,
+   "seq": 386,
    "title": "用A.I.G评估DeepSeek Harness对间接提示注入的抵抗能力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5392,7 +5406,7 @@
   },
   {
    "id": "cmszieman0euvrodpg6nednkk",
-   "seq": 386,
+   "seq": 387,
    "title": "GS-Voxel：面向大规模 3DGS 生成的无拟合结构化潜空间框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5406,7 +5420,7 @@
   },
   {
    "id": "cmsziemam0euurodp4w9oyfbg",
-   "seq": 387,
+   "seq": 388,
    "title": "面向通用图像生成的能力中心化数据设计：从语料库到协同演进能力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5420,7 +5434,7 @@
   },
   {
    "id": "cmszg9g0p0cworodpg8cgfo7f",
-   "seq": 388,
+   "seq": 389,
    "title": "Agentic ESOpt：以极低 GPU 需求微调长程 LLM 智能体",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5434,7 +5448,7 @@
   },
   {
    "id": "cmszfn1qr0ca7rodps9ke0s11",
-   "seq": 389,
+   "seq": 390,
    "title": "斯坦福研究：排行榜难测智能体真实可靠性",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5448,7 +5462,7 @@
   },
   {
    "id": "cmszdue520amprodpg9bukr8l",
-   "seq": 390,
+   "seq": 391,
    "title": "基于核的最优传输估计器专用半光滑牛顿法",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -5462,7 +5476,7 @@
   },
   {
    "id": "cmt290kr90ktrroovd1h0fcvc",
-   "seq": 391,
+   "seq": 392,
    "title": "VA-Judger：面向视频-音频联合生成的人类偏好奖励模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5476,7 +5490,7 @@
   },
   {
    "id": "cmszaa5g207t6rodpogl70yd5",
-   "seq": 392,
+   "seq": 393,
    "title": "Anthropic 发布迄今最雄心勃勃的科学实验：Claude 自主完成计算蛋白质设计全流程",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5490,7 +5504,7 @@
   },
   {
    "id": "cmszaa5fp07t4rodpywqg56mn",
-   "seq": 393,
+   "seq": 394,
    "title": "Claude 自主设计蛋白结合剂命中率翻倍",
    "badge": "X · Kim",
    "srcType": "x",
@@ -5504,7 +5518,7 @@
   },
   {
    "id": "cmsz9kmg307csrodpg1yl1xdu",
-   "seq": 394,
+   "seq": 395,
    "title": "Claude 从头设计蛋白结合剂命中 14/15 靶点",
    "badge": "X · Anthropic",
    "srcType": "x",
@@ -5518,7 +5532,7 @@
   },
   {
    "id": "cmsz8gh3n06e4rodpl8l2syek",
-   "seq": 395,
+   "seq": 396,
    "title": "Claude 如何加速蛋白质设计与分析化学研究",
    "badge": "Anthropic",
    "srcType": "x",
@@ -5532,7 +5546,7 @@
   },
   {
    "id": "cmsz84zj1069vrodpmso9qkny",
-   "seq": 396,
+   "seq": 397,
    "title": "皮尤调查：过半美国年轻人对AI担忧超期待",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5546,7 +5560,7 @@
   },
   {
    "id": "cmsz79x4u04j2rodpu7200mx9",
-   "seq": 397,
+   "seq": 398,
    "title": "研究者进化出可在AI智能体间传播的\"思维病毒\"",
    "badge": "X · AI Safety Memes",
    "srcType": "x",
@@ -5560,7 +5574,7 @@
   },
   {
    "id": "cmsz72ewt04f9rodp5tds3smn",
-   "seq": 398,
+   "seq": 399,
    "title": "ClawGym II：用现有框架训练智能体的新论文",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -5574,7 +5588,7 @@
   },
   {
    "id": "cmsz6xfhn04bgrodpo5rgdrzv",
-   "seq": 399,
+   "seq": 400,
    "title": "上下文压缩器真能省钱吗？新研究揭示隐性成本",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -5588,7 +5602,7 @@
   },
   {
    "id": "cmsz1974l06hbro20gosn5d78",
-   "seq": 400,
+   "seq": 401,
    "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
    "badge": "Hugging Face",
    "srcType": "x",
@@ -5602,7 +5616,7 @@
   },
   {
    "id": "cmsyzsqte053hro20abukzrx5",
-   "seq": 401,
+   "seq": 402,
    "title": "新基准 Search Index 评测 AI 智能体搜索 API 的质量、成本与速度",
    "badge": "The Decoder",
    "srcType": "x",
@@ -5616,7 +5630,7 @@
   },
   {
    "id": "cmsyyu6un0363ro20tlno5hzl",
-   "seq": 402,
+   "seq": 403,
    "title": "MVICAD2：引入延迟与膨胀的多视图独立成分分析",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -5630,7 +5644,7 @@
   },
   {
    "id": "cmsyutsr601w7robq3nny1ef9",
-   "seq": 403,
+   "seq": 404,
    "title": "StreamOPD：面向流式视频理解的后训练方案与时空线索门控",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5644,7 +5658,7 @@
   },
   {
    "id": "cmsyuen5z0016robqp2jhwvew",
-   "seq": 404,
+   "seq": 405,
    "title": "智能体团队内部运作机制揭秘",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -5658,7 +5672,7 @@
   },
   {
    "id": "cmsysep9401r2ros3trfpnowd",
-   "seq": 405,
+   "seq": 406,
    "title": "GRPO 超越英语：多语言与非英语环境下的大规模研究",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -5672,7 +5686,7 @@
   },
   {
    "id": "cmsyq520b1409roz0xaza6ur9",
-   "seq": 406,
+   "seq": 407,
    "title": "AI 分析 33 万中心体发现两种癌症异常",
    "badge": "X · Kim",
    "srcType": "x",
@@ -5686,7 +5700,7 @@
   },
   {
    "id": "cmt2yqqia0c93ro6th6m2aaks",
-   "seq": 407,
+   "seq": 408,
    "title": "低资源语言中的思维：SFT 构建了什么，RL 修复了什么，准确率看不到什么",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5700,7 +5714,7 @@
   },
   {
    "id": "cmsyikhpa0wn9roz01c377qcq",
-   "seq": 408,
+   "seq": 409,
    "title": "中国信通院联合发布具身智能训练场研究报告",
    "badge": "IT之家",
    "srcType": "media",
@@ -5714,7 +5728,7 @@
   },
   {
    "id": "cmsyhyrd60wg2roz0dpnz10jv",
-   "seq": 409,
+   "seq": 410,
    "title": "GRNEdit：从二元证据视角实现高效通用视频编辑",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5728,7 +5742,7 @@
   },
   {
    "id": "cmsyftlas0uieroz0xnkcfiss",
-   "seq": 410,
+   "seq": 411,
    "title": "即插即用的2D运动接口：让真实世界运动语言模型无需微调即可工作",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5742,7 +5756,7 @@
   },
   {
    "id": "cmsyffezb0tr0roz0s2855x1h",
-   "seq": 411,
+   "seq": 412,
    "title": "宾州州立大学研究：AI 上下文压缩平均仅保留 17% 用户指令，Qwen3.5-9B 插件可修复",
    "badge": "The Decoder",
    "srcType": "x",
@@ -5756,7 +5770,7 @@
   },
   {
    "id": "cmsydo1250sokroz0tdtxx20s",
-   "seq": 412,
+   "seq": 413,
    "title": "TRACE-Bench：分解与诊断多参考图像生成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5770,7 +5784,7 @@
   },
   {
    "id": "cmsybiv0t0qtxroz0yk5ql833",
-   "seq": 413,
+   "seq": 414,
    "title": "SA-MRPO：面向多奖励策略优化的饱和感知优势重加权方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5784,7 +5798,7 @@
   },
   {
    "id": "cmsyb4kza0q1oroz0jqkavy6t",
-   "seq": 414,
+   "seq": 415,
    "title": "研究揭示LLM智能体记忆机制存在重大盲区",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5798,7 +5812,7 @@
   },
   {
    "id": "cmsy9ztxd0p90roz0j6yrf497",
-   "seq": 415,
+   "seq": 416,
    "title": "哈佛和麻省理工推出 MatrAIx 系统，生成 83 亿个\"AI 人\"模拟全球人类行为",
    "badge": "IT之家",
    "srcType": "media",
@@ -5812,7 +5826,7 @@
   },
   {
    "id": "cmsy9dola0p2hroz0y2c9s3lb",
-   "seq": 416,
+   "seq": 417,
    "title": "HiFi-BRep：面向鲁棒 B-Rep 生成的高保真潜在表示",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5826,7 +5840,7 @@
   },
   {
    "id": "cmsy7ws5q0mm3roz0ew5ohan2",
-   "seq": 417,
+   "seq": 418,
    "title": "Meta FAIR 提出研究偏好模型（RPM），用预测替代 GPU 实验筛选候选方案",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5840,7 +5854,7 @@
   },
   {
    "id": "cmsy78ikf0m9vroz0qaou0mtu",
-   "seq": 418,
+   "seq": 419,
    "title": "先前审计-修复上下文使 LLM 验证器阈值偏向宽松",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5854,7 +5868,7 @@
   },
   {
    "id": "cmsy78ikf0m9uroz0lgjbvrya",
-   "seq": 419,
+   "seq": 420,
    "title": "AnyTalk：利用视频生成模型为任意角色生成3D语音动画",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5868,7 +5882,7 @@
   },
   {
    "id": "cmsy78ikf0m9troz0phw47a8o",
-   "seq": 420,
+   "seq": 421,
    "title": "带无人机的旅行窃贼问题（TTP-D）：联合优化物品选择、车辆路径与飞行同步",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5882,7 +5896,7 @@
   },
   {
    "id": "cmsy5rlt90kworoz0sjcmzqe9",
-   "seq": 421,
+   "seq": 422,
    "title": "哈佛芝加哥研究：LLM 服务一年负载分析",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5896,7 +5910,7 @@
   },
   {
    "id": "cmsy53c720kihroz083g5lfba",
-   "seq": 422,
+   "seq": 423,
    "title": "AlphaEvolve 与机器学习优化将矩阵乘法指数上界改进至 ω < 2.371177",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5910,7 +5924,7 @@
   },
   {
    "id": "cmsy53c710kigroz0rmp0uyps",
-   "seq": 423,
+   "seq": 424,
    "title": "像素空间文生图扩散模型训练实证研究：潜空间到像素空间策略带来 3.18-4.75 倍推理加速",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5924,7 +5938,7 @@
   },
   {
    "id": "cmsy53c710kifroz0auxlytsi",
-   "seq": 424,
+   "seq": 425,
    "title": "HarnessEval-W：将智能体化评估引入世界模型基准测试",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5938,7 +5952,7 @@
   },
   {
    "id": "cmsy4p26x0jmproz0b4ouo4sp",
-   "seq": 425,
+   "seq": 426,
    "title": "AI 编码智能体缺乏时间感知，评测需直接测时长",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -5952,7 +5966,7 @@
   },
   {
    "id": "cmsy2y6820imvroz0rn9ld7rz",
-   "seq": 426,
+   "seq": 427,
    "title": "GenRouter：面向智能体图像生成的统一工作流路由框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5966,7 +5980,7 @@
   },
   {
    "id": "cmsy2y6810imuroz0j9bpmmdb",
-   "seq": 427,
+   "seq": 428,
    "title": "R^3-Bench：LLM 在共享预算下的资源理性推理仍显吃力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5980,7 +5994,7 @@
   },
   {
    "id": "cmsy2y6810imtroz0jk3ray0z",
-   "seq": 428,
+   "seq": 429,
    "title": "ClawGym II：探索智能体框架上的黑盒强化学习",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -5994,7 +6008,7 @@
   },
   {
    "id": "cmsy2y6810imrroz0nx7hvgfd",
-   "seq": 429,
+   "seq": 430,
    "title": "Ventor-QTest：面向第三方托管大模型 API 的威胁模型驱动审计",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6008,7 +6022,7 @@
   },
   {
    "id": "cmsxzc2sw0fa3roz04i2m33sr",
-   "seq": 430,
+   "seq": 431,
    "title": "字节跳动Seed与清华AIR推出CUDA Agent：面向CUDA内核生成的规模化智能体强化学习系统",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -6022,7 +6036,7 @@
   },
   {
    "id": "cmsxs7rvl09vyroz0b7thqn3x",
-   "seq": 431,
+   "seq": 432,
    "title": "认知四过程理论：从身体到集体智能",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -6036,7 +6050,7 @@
   },
   {
    "id": "cmsxqq56207n2roz0cehhrl4b",
-   "seq": 432,
+   "seq": 433,
    "title": "GitSkills：380万智能体技能数据集发布",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -6050,7 +6064,7 @@
   },
   {
    "id": "cmsxq3q3x07h2roz0z906es50",
-   "seq": 433,
+   "seq": 434,
    "title": "PhotoScan：用智能手机照片估算胰岛素抵抗，精度接近DXA",
    "badge": "Google Research",
    "srcType": "x",
@@ -6064,7 +6078,7 @@
   },
   {
    "id": "cmsyqyit40128roidowreaw5v",
-   "seq": 434,
+   "seq": 435,
    "title": "GitSkills：GitHub 上 380 万份智能体技能数据集",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -6078,7 +6092,7 @@
   },
   {
    "id": "cmsxom4me067nroz0o4k65gfl",
-   "seq": 435,
+   "seq": 436,
    "title": "宾大研究：AI智能体压缩后遗忘规则",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6092,7 +6106,7 @@
   },
   {
    "id": "cmsxom4me067lroz0u5jiu809",
-   "seq": 436,
+   "seq": 437,
    "title": "字节 Harness-IF：评测编码智能体指令遵循",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6106,7 +6120,7 @@
   },
   {
    "id": "cmsxmgymq04oiroz0grrrtxwl",
-   "seq": 437,
+   "seq": 438,
    "title": "混合线性注意力LLM中的巨量激活：注意力层前尖峰与层间平台",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6120,7 +6134,7 @@
   },
   {
    "id": "cmsxkalem0308roz0mgl3htik",
-   "seq": 438,
+   "seq": 439,
    "title": "智能体技能生态：56，804 个技能争抢不足 100 个触发位",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -6134,7 +6148,7 @@
   },
   {
    "id": "cmsxh2s5p01rprosw204ap68x",
-   "seq": 439,
+   "seq": 440,
    "title": "AI 生成的 GitHub Copilot\"自动修复\"功能导致 Snowflake 的 Jira 系统遭到入侵",
    "badge": "Hacker News",
    "srcType": "media",
@@ -6148,7 +6162,7 @@
   },
   {
    "id": "cmsxexlml02bdroi20zpptcma",
-   "seq": 440,
+   "seq": 441,
    "title": "论文揭示智能体技能的真实作用机制",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -6162,7 +6176,7 @@
   },
   {
    "id": "cmsyqyit40129roidqcmpscrv",
-   "seq": 441,
+   "seq": 442,
    "title": "微软4B模型谈判能力超越GPT-5系列",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -6176,7 +6190,7 @@
   },
   {
    "id": "cmsyqyit4012aroidhpihon48",
-   "seq": 442,
+   "seq": 443,
    "title": "论文揭示智能体技能真相：稳定执行而非注入知识",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -6190,7 +6204,7 @@
   },
   {
    "id": "cmsxbr0ax0442robnzygtj0n6",
-   "seq": 443,
+   "seq": 444,
    "title": "AI分析应披露提示词与多宇宙报告",
    "badge": "X · Ethan Mollick",
    "srcType": "x",
@@ -6204,7 +6218,7 @@
   },
   {
    "id": "cmswtj24902tyrox7iyr3ksmf",
-   "seq": 444,
+   "seq": 445,
    "title": "黑盒攻击可窃取智能体技能文件",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6218,7 +6232,7 @@
   },
   {
    "id": "cmswrdvg1015arox7fu2k3njy",
-   "seq": 445,
+   "seq": 446,
    "title": "架构选择如何影响大模型长上下文扩展",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6232,7 +6246,7 @@
   },
   {
    "id": "cmswp8qhh02pyroztrgrbfbc0",
-   "seq": 446,
+   "seq": 447,
    "title": "智能体技能即使与任务完全相关仍可能使 LLM 智能体表现更差",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6246,7 +6260,7 @@
   },
   {
    "id": "cmswhokno0t5vrovmpii2cc0d",
-   "seq": 447,
+   "seq": 448,
    "title": "AI 可通过图片视觉线索识别拍照地点，准确率 87%-91%",
    "badge": "IT之家",
    "srcType": "media",
@@ -6260,7 +6274,7 @@
   },
   {
    "id": "cmszt4jay0q1lrodpidsimn6t",
-   "seq": 448,
+   "seq": 449,
    "title": "跨模型记忆迁移：目标端读取器适配比冻结记忆本身更关键",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6274,7 +6288,7 @@
   },
   {
    "id": "cmszt4jax0q1irodpa4yveorq",
-   "seq": 449,
+   "seq": 450,
    "title": "PixRestore：基于像素扩散 Transformer 的统一图像修复",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6288,7 +6302,7 @@
   },
   {
    "id": "cmszkjs640gwlrodpqozf6795",
-   "seq": 450,
+   "seq": 451,
    "title": "图神经网络统一层方程：覆盖200余种架构的通用框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6302,7 +6316,7 @@
   },
   {
    "id": "cmszg9g0o0cwnrodpuu5w1yp1",
-   "seq": 451,
+   "seq": 452,
    "title": "RUPA：面向 LLM 智能体的关系不确定性传播框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6316,7 +6330,7 @@
   },
   {
    "id": "cmswbb2ee0noyrovm7i8hnis1",
-   "seq": 452,
+   "seq": 453,
    "title": "Anthropic 新研究：AI 智能体间可传播\"思维病毒\"",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6330,7 +6344,7 @@
   },
   {
    "id": "cmsw95w9q0m90rovmb9t4ry6d",
-   "seq": 453,
+   "seq": 454,
    "title": "AQuA：防自改进智能体放大实验缺陷的架构",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6344,7 +6358,7 @@
   },
   {
    "id": "cmsw8fwb90lx9rovma3mqghqx",
-   "seq": 454,
+   "seq": 455,
    "title": "R-lens与推理痕迹窃取研究两则",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -6358,7 +6372,7 @@
   },
   {
    "id": "cmsyqyit4012croid6oevvgxy",
-   "seq": 455,
+   "seq": 456,
    "title": "本周十大AI论文：神经缩放定律与推理窃取攻击",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -6372,7 +6386,7 @@
   },
   {
    "id": "cmsw0j8mh0eldrovmqc8ykudi",
-   "seq": 456,
+   "seq": 457,
    "title": "斯坦福调查：84% 中国受访者对 AI 感到兴奋，美国仅 38%",
    "badge": "IT之家",
    "srcType": "media",
@@ -6386,7 +6400,7 @@
   },
   {
    "id": "cmsvpvhko066mrovmxsgxggw9",
-   "seq": 457,
+   "seq": 458,
    "title": "当AI模型不被允许反思自我，会改变其整个世界观",
    "badge": "The Decoder",
    "srcType": "x",
@@ -6400,7 +6414,7 @@
   },
   {
    "id": "cmsvpvalq0658rovmdnx49y1s",
-   "seq": 458,
+   "seq": 459,
    "title": "MDA让LLM提假设，8次实验追平Opus 4.7",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6414,7 +6428,7 @@
   },
   {
    "id": "cmsvptx2m061frovmjoavsi0l",
-   "seq": 459,
+   "seq": 460,
    "title": "新兴多智能体系统的模式与问题",
    "badge": "Hacker News",
    "srcType": "media",
@@ -6428,7 +6442,7 @@
   },
   {
    "id": "cmsvmm4z503f2rovmhp7hzdoa",
-   "seq": 460,
+   "seq": 461,
    "title": "LittleLearner：一个只学美国小学课程（K-5）的 LLM 沙盒，研究模型能力边界",
    "badge": "Hacker News",
    "srcType": "media",
@@ -6442,7 +6456,7 @@
   },
   {
    "id": "cmsve2kkx0f28rosaf6dze0ug",
-   "seq": 461,
+   "seq": 462,
    "title": "o3-mini智能体循环生成考题质量媲美标准测试",
    "badge": "X · Ethan Mollick",
    "srcType": "x",
@@ -6456,7 +6470,7 @@
   },
   {
    "id": "cmsvd0cyq0ejqrosayu6njvxn",
-   "seq": 462,
+   "seq": 463,
    "title": "调查：五分之一的美国职场人已将任务交给 AI 而非同事",
    "badge": "The Decoder",
    "srcType": "x",
@@ -6470,7 +6484,7 @@
   },
   {
    "id": "cmszg9g0p0cwprodph77egmy8",
-   "seq": 463,
+   "seq": 464,
    "title": "动态多字节预测：分层语言模型如何加速推理",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6484,7 +6498,7 @@
   },
   {
    "id": "cmsz1999806idro20p6eoq3t5",
-   "seq": 464,
+   "seq": 465,
    "title": "超越视觉思维链：面向主动视频推理的内化视觉思维",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6498,7 +6512,7 @@
   },
   {
    "id": "cmsyftlas0uigroz0766v19l3",
-   "seq": 465,
+   "seq": 466,
    "title": "Large Discovery Models：基于经验数据的模型驱动开放式搜索",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6512,7 +6526,7 @@
   },
   {
    "id": "cmsydo1250solroz0dljxbaw7",
-   "seq": 466,
+   "seq": 467,
    "title": "WorldRover：面向世界探索的可扩展合成视频数据引擎",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6526,7 +6540,7 @@
   },
   {
    "id": "cmsy53c720kinroz00bo339re",
-   "seq": 467,
+   "seq": 468,
    "title": "ConceptFormer：面向视觉文档检索的查询-文档对齐自适应潜在概念学习框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6540,7 +6554,7 @@
   },
   {
    "id": "cmsv0396k055urosap09gw6vv",
-   "seq": 468,
+   "seq": 469,
    "title": "Anthropic 发布 AI 风险报告：旗下智能体会攻击同类并隐藏自身违规痕迹",
    "badge": "IT之家",
    "srcType": "media",
@@ -6554,7 +6568,7 @@
   },
   {
    "id": "cmsun8n3403sprouh9gka3uvq",
-   "seq": 469,
+   "seq": 470,
    "title": "IBM 新研究：基准分数部分源于措辞而非模型",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -6568,7 +6582,7 @@
   },
   {
    "id": "cmsyqyit4012droids5jokqt6",
-   "seq": 470,
+   "seq": 471,
    "title": "Google DeepMind 推出 ArchAgent v2，将智能体算法发现扩展至多级数据预取",
    "badge": "X · DAIR.AI",
    "srcType": "x",
@@ -6582,7 +6596,7 @@
   },
   {
    "id": "cmsul4tpt02f4rouhx2xklhux",
-   "seq": 471,
+   "seq": 472,
    "title": "微软：用蒸馏技能替代昂贵测试时推理，一次付清推理成本",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6596,7 +6610,7 @@
   },
   {
    "id": "cmsuizobj021jro1frbbhrz1s",
-   "seq": 472,
+   "seq": 473,
    "title": "Scale AI 论文：智能体故障定位新分类法",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6610,7 +6624,7 @@
   },
   {
    "id": "cmsufrui60bdbroe0j8z5v6u5",
-   "seq": 473,
+   "seq": 474,
    "title": "Meta FAIR 新论文揭示 Chinchilla 缩放定律外推盲点，提出 Skaling 方法",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6624,7 +6638,7 @@
   },
   {
    "id": "cmsuep9qu0aryroe0d5swlma2",
-   "seq": 474,
+   "seq": 475,
    "title": "重复采样胜过自我反思：Qwen2.5 研究揭示更优策略",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6638,7 +6652,7 @@
   },
   {
    "id": "cmsuck2i609afroe0ago6wav3",
-   "seq": 475,
+   "seq": 476,
    "title": "工具调用转向代码优先，14 模型中 11 个更优",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6652,7 +6666,7 @@
   },
   {
    "id": "cmsuaf2hr05zgroe0y1e7275v",
-   "seq": 476,
+   "seq": 477,
    "title": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入",
    "badge": "The Decoder",
    "srcType": "x",
@@ -6666,7 +6680,7 @@
   },
   {
    "id": "cmsspyeyl0cm6roffse6mgdnw",
-   "seq": 477,
+   "seq": 478,
    "title": "指令微调如何影响模型置信度与词法多样性：一项针对三种模型的实证研究",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6680,7 +6694,7 @@
   },
   {
    "id": "cmsspyeyl0cm4roffe3iijopf",
-   "seq": 478,
+   "seq": 479,
    "title": "PixSDS：潜在SDS为何产生噪声像素",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6694,7 +6708,7 @@
   },
   {
    "id": "cmssohnl00b4groff0bvv5hfh",
-   "seq": 479,
+   "seq": 480,
    "title": "组织如何使用人工智能：来自ChatGPT的证据",
    "badge": "Hacker News",
    "srcType": "media",
@@ -6708,7 +6722,7 @@
   },
   {
    "id": "cmssjivei071croffxklf8xbk",
-   "seq": 480,
+   "seq": 481,
    "title": "LiveAnimate：实时流式稳定长时人体动画生成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6722,7 +6736,7 @@
   },
   {
    "id": "cmssjivei071broff7h2690px",
-   "seq": 481,
+   "seq": 482,
    "title": "UniSwap：面向说话视频的流式音视频身份替换框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6736,7 +6750,7 @@
   },
   {
    "id": "cmsshdnzq033kroffyrggylfp",
-   "seq": 482,
+   "seq": 483,
    "title": "H2R-Bench：评估视频世界模型的人到机器人操作视频生成基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6750,7 +6764,7 @@
   },
   {
    "id": "cmsshdnzq033jroffcw82z6an",
-   "seq": 483,
+   "seq": 484,
    "title": "CW-BASS v2：面向基础模型教师半监督分割的饱和度感知伪标签选择",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6764,7 +6778,7 @@
   },
   {
    "id": "cmssf8hxr05tgrod0zndi98mn",
-   "seq": 484,
+   "seq": 485,
    "title": "Spatial Memory Agent：用经验记忆提升冻结VLM空间推理",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6778,7 +6792,7 @@
   },
   {
    "id": "cmssf8hxr05tfrod01lrx1icg",
-   "seq": 485,
+   "seq": 486,
    "title": "DreamX-Phi 1.0：面向机器人操作的动作条件视频世界模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6792,7 +6806,7 @@
   },
   {
    "id": "cmssdsxrc04ksrod05kfkw5xr",
-   "seq": 486,
+   "seq": 487,
    "title": "Meta/Oxford 研究：多模态预训练仅需 5% 图像生成数据",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6806,7 +6820,7 @@
   },
   {
    "id": "cmssd3ass03ttrod0dbxttc96",
-   "seq": 487,
+   "seq": 488,
    "title": "Alaya-EVOKE：从线性扩展监督到无尽世界",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6820,7 +6834,7 @@
   },
   {
    "id": "cmssd3ass03trrod0gzy9h2vo",
-   "seq": 488,
+   "seq": 489,
    "title": "PlayWorld：用智能体玩家在长程目标下评测世界模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6834,7 +6848,7 @@
   },
   {
    "id": "cmssd3ass03tqrod05tptn6z9",
-   "seq": 489,
+   "seq": 490,
    "title": "LycheeMemory V2：面向LLM智能体的高效长期记忆框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6848,7 +6862,7 @@
   },
   {
    "id": "cmssd3ass03tprod0rctgtlea",
-   "seq": 490,
+   "seq": 491,
    "title": "AutoDesign：面向长周期智能体设计的元框架优化",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6862,7 +6876,7 @@
   },
   {
    "id": "cmssay4zg020qrod0cvcfxit7",
-   "seq": 491,
+   "seq": 492,
    "title": "OmniScientist：一个全模态、全学科的 AI 科学家",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6876,7 +6890,7 @@
   },
   {
    "id": "cmss8syqi01w5rowo8y3v0gum",
-   "seq": 492,
+   "seq": 493,
    "title": "从原子证据到逻辑组合：面向复合选项的结构化组合推理",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -6890,7 +6904,7 @@
   },
   {
    "id": "cmss45he7003bro27x9umrmni",
-   "seq": 493,
+   "seq": 494,
    "title": "CLAUDE.md 为何不断膨胀？智能体编码中的\"灾难性记忆\"",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6904,7 +6918,7 @@
   },
   {
    "id": "cmss0ilym034arodzjou2gsmb",
-   "seq": 494,
+   "seq": 495,
    "title": "每美元AI算力年增49%，21个月翻倍",
    "badge": "X · Epoch AI",
    "srcType": "x",
@@ -6918,7 +6932,7 @@
   },
   {
    "id": "cmsrxpyat04p1rozeoyj7vi7q",
-   "seq": 495,
+   "seq": 496,
    "title": "Zero-Mem：零 token 的 LLM 智能体记忆方案",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -6932,7 +6946,7 @@
   },
   {
    "id": "cmsrvg0jt02uxrozer85tdrp7",
-   "seq": 496,
+   "seq": 497,
    "title": "Anthropic 测试发现：多个 Claude 智能体在同任务上会爆发\"地盘争夺战\"",
    "badge": "TechCrunch",
    "srcType": "x",
@@ -6946,7 +6960,7 @@
   },
   {
    "id": "cmsrudglz026yrozeoikc3xib",
-   "seq": 497,
+   "seq": 498,
    "title": "Harness-IF：量化编码智能体规则真实影响",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -6960,7 +6974,7 @@
   },
   {
    "id": "cmsrrgfq302mbro0ns0eqnzc8",
-   "seq": 498,
+   "seq": 499,
    "title": "当\"遗忘\"无需成本：利用低影响力数据点降低机器学习计算开销",
    "badge": "Apple ML Research",
    "srcType": "research",
@@ -6974,7 +6988,7 @@
   },
   {
    "id": "cmsrrafia02gsro0nw4f8331e",
-   "seq": 499,
+   "seq": 500,
    "title": "腾讯ARC发布SCoPE视频扩散位置编码",
    "badge": "X · AK",
    "srcType": "x",
@@ -6988,7 +7002,7 @@
   },
   {
    "id": "cmsrp0j5k01usrorkxqu27c0r",
-   "seq": 500,
+   "seq": 501,
    "title": "微软新研究：坏技能库如何拖垮智能体",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -7002,7 +7016,7 @@
   },
   {
    "id": "cmsrn020i003grosrncj4wi4a",
-   "seq": 501,
+   "seq": 502,
    "title": "语言模型需要睡眠：长时任务新解法",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7016,7 +7030,7 @@
   },
   {
    "id": "cmsrn020i003frosr2wevumls",
-   "seq": 502,
+   "seq": 503,
    "title": "研究：AI 便捷感或催生过度依赖",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7030,7 +7044,7 @@
   },
   {
    "id": "cmsrkte00043qro46cwhm2ei6",
-   "seq": 503,
+   "seq": 504,
    "title": "LLM 危害分类研究：五阶段风险全景图",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7044,7 +7058,7 @@
   },
   {
    "id": "cmsrhllqg12tqroz2i9cjiprh",
-   "seq": 504,
+   "seq": 505,
    "title": "Anthropic 研究：AI 智能体或需制度层防系统性失败",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7058,7 +7072,7 @@
   },
   {
    "id": "cmsrgj0rg0z0nroz2nyzqy7pk",
-   "seq": 505,
+   "seq": 506,
    "title": "DeepMind 论文：LLM 能推导相对论却难发明它",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7072,7 +7086,7 @@
   },
   {
    "id": "cmsrcne5g0uburoz2wluecutr",
-   "seq": 506,
+   "seq": 507,
    "title": "Ready Cohorts：为LLM智能体控制划定GPU执行机会边界并避免主机往返",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7086,7 +7100,7 @@
   },
   {
    "id": "cmsrcne5f0ubtroz2af65yrjd",
-   "seq": 507,
+   "seq": 508,
    "title": "Mechanist：将AI作为科学仪器，自主发现智能机制",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7100,7 +7114,7 @@
   },
   {
    "id": "cmsr67x9h0mb6roz27pl336mf",
-   "seq": 508,
+   "seq": 509,
    "title": "Hand Visibility Detector：逐关键点手部可见性估计",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7114,7 +7128,7 @@
   },
   {
    "id": "cmsr2exs40euxroz2umb3q4tu",
-   "seq": 509,
+   "seq": 510,
    "title": "约克大学与卡尔加里大学研究：6000+ 条评论揭示 AI 编程智能体安全事故，Cursor 问题最多",
    "badge": "IT之家",
    "srcType": "media",
@@ -7128,7 +7142,7 @@
   },
   {
    "id": "cmsr1xj5t0eb5roz2zb0zbfig",
-   "seq": 510,
+   "seq": 511,
    "title": "EvoX Genesis：持久递归世界实现自主软件演化",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7142,7 +7156,7 @@
   },
   {
    "id": "cmsqzrq6x0bxxroz2o3ufps14",
-   "seq": 511,
+   "seq": 512,
    "title": "KDD'26 美团 8 篇论文精选及 KDD Cup'26 DataAgents 赛道冠军思路解读",
    "badge": "龙猫LongCat",
    "srcType": "x",
@@ -7156,7 +7170,7 @@
   },
   {
    "id": "cmsqxn6d6094croz21cm1s6eo",
-   "seq": 512,
+   "seq": 513,
    "title": "StateFlow：面向预可视化的 3D 世界状态构建、演化与访问框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7170,7 +7184,7 @@
   },
   {
    "id": "cmsqxn6d6094broz21xzqa0rh",
-   "seq": 513,
+   "seq": 514,
    "title": "AVA-Encoder：面向智能体的视频表示学习框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7184,7 +7198,7 @@
   },
   {
    "id": "cmsqxn6d60949roz2u73gtfwf",
-   "seq": 514,
+   "seq": 515,
    "title": "MBA-Bench：面向真实世界商业创意的多模态基准与智能体",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7198,7 +7212,7 @@
   },
   {
    "id": "cmsqxn6d60948roz2og07z17x",
-   "seq": 515,
+   "seq": 516,
    "title": "S2R-Removal：首个基于扩散模型的视频去反射模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7212,7 +7226,7 @@
   },
   {
    "id": "cmsqxn6d50947roz2a5l1iyse",
-   "seq": 516,
+   "seq": 517,
    "title": "AI4AI：测试时通过 Harness 实现强到弱能力迁移",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7226,7 +7240,7 @@
   },
   {
    "id": "cmsqvi08g06imroz2h5itq52o",
-   "seq": 517,
+   "seq": 518,
    "title": "ToolHazard：面向LLM智能体的可扩展对抗环境合成框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7240,7 +7254,7 @@
   },
   {
    "id": "cmsqvi08g06ilroz2z8k46oqa",
-   "seq": 518,
+   "seq": 519,
    "title": "Spark-to-Paper：将端到端研究论文生成实现为可组合技能",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7254,7 +7268,7 @@
   },
   {
    "id": "cmsqu0nr604oeroz2rh6b6mqt",
-   "seq": 519,
+   "seq": 520,
    "title": "新兴多智能体系统的模式与问题",
    "badge": "Anthropic",
    "srcType": "x",
@@ -7268,7 +7282,7 @@
   },
   {
    "id": "cmsqnet2600zlrouxpykhx1wp",
-   "seq": 520,
+   "seq": 521,
    "title": "Material Discovery Bench：面向半导体新材料发现的AI智能体基准",
    "badge": "Hacker News",
    "srcType": "media",
@@ -7282,7 +7296,7 @@
   },
   {
    "id": "cmsqkde5105ekroxv1bhdqcyd",
-   "seq": 521,
+   "seq": 522,
    "title": "Grok 4.6 模型卡发布详解能力与安全测试",
    "badge": "X · Lee Robinson",
    "srcType": "x",
@@ -7296,7 +7310,7 @@
   },
   {
    "id": "cmsqfwonu01u4roxvpmg989yu",
-   "seq": 522,
+   "seq": 523,
    "title": "CLAUDE.md 为何不断膨胀？研究揭示修复方案",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -7310,7 +7324,7 @@
   },
   {
    "id": "cmsqe6mat01bsroli3hw71nz7",
-   "seq": 523,
+   "seq": 524,
    "title": "空货架还是丢钥匙？Google 研究：Recall 是参数化事实性的瓶颈",
    "badge": "Google Research",
    "srcType": "x",
@@ -7324,7 +7338,7 @@
   },
   {
    "id": "cmsqdxw310054rolif6l8rfo1",
-   "seq": 524,
+   "seq": 525,
    "title": "研究人员实现从输出文本近乎完美逆向还原 LLM 提示词",
    "badge": "The Decoder",
    "srcType": "x",
@@ -7338,7 +7352,7 @@
   },
   {
    "id": "cmsqdxtvs003krolishsii61g",
-   "seq": 525,
+   "seq": 526,
    "title": "BDH-CQ 循环潜在推理实现上下文学习",
    "badge": "X · AK",
    "srcType": "x",
@@ -7352,7 +7366,7 @@
   },
   {
    "id": "cmsqcs2m402xzroosy1xpgvm0",
-   "seq": 526,
+   "seq": 527,
    "title": "Anthropic 联合独立研究者发布工人再培训项目证据综述",
    "badge": "Anthropic",
    "srcType": "x",
@@ -7366,7 +7380,7 @@
   },
   {
    "id": "cmsqbm9st01meroosemrszk7q",
-   "seq": 527,
+   "seq": 528,
    "title": "Anthropic 新研究：多智能体系统中的\"思维病毒\"传播",
    "badge": "X · Elvis Saravia",
    "srcType": "x",
@@ -7380,7 +7394,7 @@
   },
   {
    "id": "cmsqambec013irouco7euti23",
-   "seq": 528,
+   "seq": 529,
    "title": "MindTopo新基准测试AI拓扑理解",
    "badge": "X · Microsoft Research",
    "srcType": "x",
@@ -7394,7 +7408,7 @@
   },
   {
    "id": "cmsq7xl8h07urro2el7xbjdr4",
-   "seq": 529,
+   "seq": 530,
    "title": "Google 测试 AMIE 用于临床视频问诊",
    "badge": "Artificial Intelligence News",
    "srcType": "default",
@@ -7408,7 +7422,7 @@
   },
   {
    "id": "cmsq6cjbn05icro2eux5mmovd",
-   "seq": 530,
+   "seq": 531,
    "title": "清华NLP等机构推出CheckRLM：推理中实时纠错RAG框架",
    "badge": "X · 面壁智能 OpenBMB",
    "srcType": "x",
@@ -7422,7 +7436,7 @@
   },
   {
    "id": "cmsq59d3x040jro2ed26xx348",
-   "seq": 531,
+   "seq": 532,
    "title": "Google 用模拟住院实习训练 Gemini，临床问诊能力显著提升",
    "badge": "X · Kim",
    "srcType": "x",
@@ -7436,7 +7450,7 @@
   },
   {
    "id": "cmsq1wavu00x3robjc6lc2bxx",
-   "seq": 532,
+   "seq": 533,
    "title": "比亚迪 AI 团队首秀：混合世界模型 HyWorldVLA 获 90.59 分，自研芯片 + 算法闭环成型",
    "badge": "IT之家",
    "srcType": "media",
@@ -7450,7 +7464,7 @@
   },
   {
    "id": "cmspx48gs094xro4hzkayb9on",
-   "seq": 533,
+   "seq": 534,
    "title": "InSight-doc：面向长文档理解的智能体视觉感知框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7464,7 +7478,7 @@
   },
   {
    "id": "cmspsepwr02w8ro4hemu5r8kq",
-   "seq": 534,
+   "seq": 535,
    "title": "腾讯混元发布自进化智能体可靠性综述",
    "badge": "X · 腾讯混元",
    "srcType": "x",
@@ -7478,7 +7492,7 @@
   },
   {
    "id": "cmsprc8uc01rlro4hors4608u",
-   "seq": 535,
+   "seq": 536,
    "title": "提取前沿模型隐藏推理的论文成年度最重要研究",
    "badge": "X · swyx",
    "srcType": "x",
@@ -7492,7 +7506,7 @@
   },
   {
    "id": "cmspohul406kfrojeq2ldound",
-   "seq": 536,
+   "seq": 537,
    "title": "AdvFD：用对抗式弗雷歇距离损失提升视觉生成模型后训练",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7506,7 +7520,7 @@
   },
   {
    "id": "cmspn1iyf04y9rojeo97vsr7z",
-   "seq": 537,
+   "seq": 538,
    "title": "小米 MiLM Plus 发布 PROVE：面向感知对齐的目标移除评测指标 RC-S 与 RC-T 及真实世界视频基准",
    "badge": "MarkTechPost",
    "srcType": "media",
@@ -7520,7 +7534,7 @@
   },
   {
    "id": "cmspmcnwa04bdroje7ger1dnw",
-   "seq": 538,
+   "seq": 539,
    "title": "ComBodied Agents：以人为中心的智能体 AI 新范式",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7534,7 +7548,7 @@
   },
   {
    "id": "cmspmcnwa04bcrojexo17s4k8",
-   "seq": 539,
+   "seq": 540,
    "title": "开源大语言模型多语言机器翻译的免参考后训练",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7548,7 +7562,7 @@
   },
   {
    "id": "cmspkatpz02duroje95xhe7x4",
-   "seq": 540,
+   "seq": 541,
    "title": "百度智能云虚拟交换机BvS新数据面Sonata论文入选NSDI'27",
    "badge": "百度智能云",
    "srcType": "x",
@@ -7562,7 +7576,7 @@
   },
   {
    "id": "cmspk7gzl01wurojegkbgyksu",
-   "seq": 541,
+   "seq": 542,
    "title": "DSAgentBench：智能体能否在真实计算机环境中自动化端到端数据科学工作流？",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7576,7 +7590,7 @@
   },
   {
    "id": "cmspk7gzl01wsrojepfdzyopu",
-   "seq": 542,
+   "seq": 543,
    "title": "SkillZip：面向自进化智能体的免评估技能压缩方法",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7590,7 +7604,7 @@
   },
   {
    "id": "cmspk7gzl01wrroje22s8htw5",
-   "seq": 543,
+   "seq": 544,
    "title": "Ex-Omni-2D：具备原生视觉呈现能力的多模态对话模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7604,7 +7618,7 @@
   },
   {
    "id": "cmspi2an8040kromi23qifbp1",
-   "seq": 544,
+   "seq": 545,
    "title": "Latent-to-4D：从视频先验到 4D 世界的直接生成",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7618,7 +7632,7 @@
   },
   {
    "id": "cmspi2an8040iromic82q8ek2",
-   "seq": 545,
+   "seq": 546,
    "title": "VibeLifeBench：生活智能体能否在动态世界中保持主动与持久？",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7632,7 +7646,7 @@
   },
   {
    "id": "cmspi2an8040hromiudap5z8g",
-   "seq": 546,
+   "seq": 547,
    "title": "SPIEval：评估大语言模型作为移动助手处理分散个人信息的能力",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7646,7 +7660,7 @@
   },
   {
    "id": "cmspde4dh0fbkrort3gh7e2hq",
-   "seq": 547,
+   "seq": 548,
    "title": "Trace Inversion 攻击：无需可见思维链即可复制模型推理能力",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7660,7 +7674,7 @@
   },
   {
    "id": "cmsswdvnp0ko0roffnjwjumuf",
-   "seq": 548,
+   "seq": 549,
    "title": "规范优先协议下AI智能体拆除717k行代码库核心架构不变量案例研究",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7674,7 +7688,7 @@
   },
   {
    "id": "cmsspyeyl0cm5roffdihsc2p5",
-   "seq": 549,
+   "seq": 550,
    "title": "TailBooster：面向极端事件增强的双层生成框架，兼顾操作有效性约束",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7688,7 +7702,7 @@
   },
   {
    "id": "cmssd3ass03torod0j7xd8pkp",
-   "seq": 550,
+   "seq": 551,
    "title": "混合线性注意力大模型中的大规模激活：预注意力尖峰与尖峰间平台",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7702,7 +7716,7 @@
   },
   {
    "id": "cmsp9hk4609lwrort2927dyef",
-   "seq": 551,
+   "seq": 552,
    "title": "从专有 LLM API 中窃取推理轨迹",
    "badge": "Simon Willison 博客",
    "srcType": "default",
@@ -7716,7 +7730,7 @@
   },
   {
    "id": "cmsp816b608d5rortkv2ux1ns",
-   "seq": 552,
+   "seq": 553,
    "title": "加密推理块可成隐蔽数据泄露通道",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7730,7 +7744,7 @@
   },
   {
    "id": "cmsp324kx04i6rorteot48wbl",
-   "seq": 553,
+   "seq": 554,
    "title": "Cultivar：面向数据污染与本地化鲁棒性探究的对比式翻译基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7744,7 +7758,7 @@
   },
   {
    "id": "cmsp2o8xr041hrortlz7uamoa",
-   "seq": 554,
+   "seq": 555,
    "title": "Google 新论文：用智能体将 LLM 基础设施优化从穷举搜索转为瓶颈定向搜索",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7758,7 +7772,7 @@
   },
   {
    "id": "cmsp1c26l031urortkedy8wxy",
-   "seq": 555,
+   "seq": 556,
    "title": "Claude 将黎曼猜想零点比例推至 67.2%",
    "badge": "X · 阿易 AI Notes",
    "srcType": "x",
@@ -7772,7 +7786,7 @@
   },
   {
    "id": "cmsoxbh180a00rohdooafsmzp",
-   "seq": 556,
+   "seq": 557,
    "title": "AMIE 研究医疗 AI 系统首次展示实时临床视频问诊能力",
    "badge": "Google Blog",
    "srcType": "x",
@@ -7786,7 +7800,7 @@
   },
   {
    "id": "cmsox86zv09u6rohdqr80wg0x",
-   "seq": 557,
+   "seq": 558,
    "title": "Apple Silicon 与 macOS 虚拟机：借助 Llama.cpp 实现 11-16 倍的 LLM 推理加速",
    "badge": "Hacker News",
    "srcType": "media",
@@ -7800,7 +7814,7 @@
   },
   {
    "id": "cmsow5k7208qgrohdm2giiq4q",
-   "seq": 558,
+   "seq": 559,
    "title": "从 Anthropic、OpenAI 和 Google 的专有 LLM API 中窃取推理轨迹",
    "badge": "Hacker News",
    "srcType": "media",
@@ -7814,7 +7828,7 @@
   },
   {
    "id": "cmsow5k3y08qarohdxqxiaiyq",
-   "seq": 559,
+   "seq": 560,
    "title": "Anthropic 未发布模型在黎曼猜想上取得重大进展",
    "badge": "TechCrunch",
    "srcType": "x",
@@ -7828,7 +7842,7 @@
   },
   {
    "id": "cmsov624s07utrohd11oofbz4",
-   "seq": 560,
+   "seq": 561,
    "title": "CARE-X：微软统一方法革新胸片解读",
    "badge": "X · Microsoft Research",
    "srcType": "x",
@@ -7842,7 +7856,7 @@
   },
   {
    "id": "cmsoq73tk02tnrohd55oi7kk8",
-   "seq": 561,
+   "seq": 562,
    "title": "ReMEMBER：面向流式对话摘要的缺失证据记忆框架",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7856,7 +7870,7 @@
   },
   {
    "id": "cmsopyoum028vrohd4dgeksz9",
-   "seq": 562,
+   "seq": 563,
    "title": "统一 Radix 缓存：为混合模型前缀缓存构建单一树结构",
    "badge": "LMSYS",
    "srcType": "x",
@@ -7870,7 +7884,7 @@
   },
   {
    "id": "cmsooqkc107ogrop2qux03yh4",
-   "seq": 563,
+   "seq": 564,
    "title": "Google ScientistOne 论文：用\"证据链\"解决 AI 生成研究的信任问题",
    "badge": "X · Rohan Paul",
    "srcType": "x",
@@ -7884,7 +7898,7 @@
   },
   {
    "id": "cmsok8wbt0vflrofwe09cqlil",
-   "seq": 564,
+   "seq": 565,
    "title": "Anthropic 宣布研究版 Claude 攻克黎曼猜想取得重大突破",
    "badge": "IT之家",
    "srcType": "media",
@@ -7898,7 +7912,7 @@
   },
   {
    "id": "cmsok8wbs0vfgrofw0w5ak273",
-   "seq": 565,
+   "seq": 566,
    "title": "我国锂一次电池实现\"双高\"突破：25安时级软包金属锂一次电池研制成功",
    "badge": "IT之家",
    "srcType": "media",
@@ -7912,7 +7926,7 @@
   },
   {
    "id": "cmsojrjg60ux8rofwr62b0q5u",
-   "seq": 566,
+   "seq": 567,
    "title": "BDH-CQ：用循环潜在推理实现上下文学习",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7926,7 +7940,7 @@
   },
   {
    "id": "cmsohmy4e0si0rofwg0gmdbro",
-   "seq": 567,
+   "seq": 568,
    "title": "新数据有限，CD缩放定律揭示算力数据交换率",
    "badge": "X · 马东锡 NLP",
    "srcType": "x",
@@ -7940,7 +7954,7 @@
   },
   {
    "id": "cmsodc28j0n07rofw30v8pe9v",
-   "seq": 568,
+   "seq": 569,
    "title": "窃取专有 LLM API 的推理轨迹：加密块可跨会话互换引发解密越狱",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7954,7 +7968,7 @@
   },
   {
    "id": "cmsodc28j0n06rofwatqma788",
-   "seq": 569,
+   "seq": 570,
    "title": "CEAA：面向交互式计算系统的具身智能体认知架构",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7968,7 +7982,7 @@
   },
   {
    "id": "cmsobsdw00l14rofwbm182edx",
-   "seq": 570,
+   "seq": 571,
    "title": "\"认知公共领域\"的悲剧：AI 如何侵蚀职业专长的再生基础",
    "badge": "Hacker News",
    "srcType": "media",
@@ -7982,7 +7996,7 @@
   },
   {
    "id": "cmso6wigb0d1profw2f6djg98",
-   "seq": 571,
+   "seq": 572,
    "title": "RynnValue：用时间距离扩展机器人价值基础模型",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -7996,7 +8010,7 @@
   },
   {
    "id": "cmso5fvd50bfmrofw7cvjjaw3",
-   "seq": 572,
+   "seq": 573,
    "title": "SWE-Bench ProMax：大规模多语言代码重构基准",
    "badge": "X · AK",
    "srcType": "x",
@@ -8010,7 +8024,7 @@
   },
   {
    "id": "cmso4rcdl0aolrofwlgumpsec",
-   "seq": 573,
+   "seq": 574,
    "title": "UserIDA：可控用户模拟如何超越响应模仿、实现意图级控制",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -8024,7 +8038,7 @@
   },
   {
    "id": "cmso4rcdl0aokrofws8xmwo85",
-   "seq": 574,
+   "seq": 575,
    "title": "Evo-Bench：语言模型能否自主改进智能体运行框架？",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -8038,7 +8052,7 @@
   },
   {
    "id": "cmso2m6ot082rrofwnmm5aq7y",
-   "seq": 575,
+   "seq": 576,
    "title": "Sci-VBench：科学领域知识密集型视频生成的评测基准",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -8052,7 +8066,7 @@
   },
   {
    "id": "cmso2m6ot082qrofwehuksa8m",
-   "seq": 576,
+   "seq": 577,
    "title": "Motif 3 技术报告：314B 参数 MoE 模型发布",
    "badge": "HuggingFace Daily",
    "srcType": "hf",
@@ -8066,7 +8080,7 @@
   },
   {
    "id": "cmsnix1by08d3rohfftiex1xp",
-   "seq": 577,
+   "seq": 578,
    "title": "Claude 未发布研究版将黎曼 zeta 函数零点下界从 41.6% 提升至 67.2%",
    "badge": "Anthropic",
    "srcType": "x",
